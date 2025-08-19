@@ -52,7 +52,7 @@ function easeOutCubic(t: number) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-function useCountUp(target: number, duration = 1500, start = false) {
+function useCountUp(target: number, duration = 2000, start = false) {
   const [value, setValue] = useState(0);
   const rafRef = useRef<number | null>(null);
   const startTime = useRef<number | null>(null);
@@ -81,7 +81,7 @@ function useCountUp(target: number, duration = 1500, start = false) {
 }
 
 const StatItem: React.FC<{ stat: Stat } & { format?: (n: number) => string }> = ({ stat, format }) => {
-  const { value: target, suffix, color = "primary", durationMs = 1500, label } = stat;
+  const { value: target, suffix, color = "primary", durationMs = 2000, label } = stat;
   const ref = useRef<HTMLDivElement | null>(null);
   const [inView, setInView] = useState(false);
 
@@ -97,7 +97,7 @@ const StatItem: React.FC<{ stat: Stat } & { format?: (n: number) => string }> = 
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     io.observe(el);
     return () => io.disconnect();
@@ -118,11 +118,19 @@ const StatItem: React.FC<{ stat: Stat } & { format?: (n: number) => string }> = 
   return (
     <div ref={ref} className="group rounded-3xl bg-card/80 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border/50">
       <div className="flex flex-col items-center gap-4 text-center">
-        <div className={`text-5xl font-bold tracking-tight text-foreground ${inView ? 'number-spin' : ''}`}>
-          {formatted}
+        <div className={`text-5xl font-bold tracking-tight text-foreground transition-all duration-700 ${
+          inView ? 'animate-fade-in scale-100' : 'scale-90 opacity-0'
+        }`}>
+          <span className="inline-block animate-pulse text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+            {formatted}
+          </span>
         </div>
-        <div className={`h-2 w-20 rounded-full bg-gradient-to-r ${gradientClass}`} aria-hidden />
-        <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">{label}</p>
+        <div className={`h-2 w-20 rounded-full bg-gradient-to-r ${gradientClass} transition-all duration-500 ${
+          inView ? 'scale-x-100' : 'scale-x-0'
+        }`} aria-hidden />
+        <p className={`text-sm font-medium text-muted-foreground uppercase tracking-wide transition-all duration-500 ${
+          inView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+        }`}>{label}</p>
       </div>
     </div>
   );
