@@ -1,4 +1,8 @@
-# Welcome to your Lovable project
+#Watch our video
+
+[![Watch on YouTube](https://img.youtube.com/vi/rVsyJ2d9e-8/hqdefault.jpg)](https://youtu.be/rVsyJ2d9e-8?si=hdW9dCt4DA9r3kgV)
+
+Or watch directly here: [https://youtu.be/rVsyJ2d9e-8?si=hdW9dCt4DA9r3kgV](https://youtu.be/rVsyJ2d9e-8?si=hdW9dCt4DA9r3kgV)# Welcome to your Lovable project
 
 ## Project info
 
