@@ -117,9 +117,20 @@ const LoxdaleStrengthsSlider = () => {
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-green-metallic">
             What Makes Loxdale Special
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6">
             Discover the unique strengths that have made us one of the UK's top 8% of English language schools
           </p>
+          <div className="flex justify-center">
+            <a 
+              href="#" 
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors duration-200"
+            >
+              View our 12 Areas of Strength
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
