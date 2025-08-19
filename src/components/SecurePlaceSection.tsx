@@ -38,15 +38,15 @@ const SecurePlaceSection = () => {
           {/* Left Content */}
           <div className="lg:col-span-2">
             <Badge className="bg-yellow-100 text-yellow-800 border-yellow-200 mb-6">
-              ⭐ Limited Summer Spots
+              ⭐ Limited Autumn Spots
             </Badge>
             
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Secure Your <span className="text-green-600">Place for Summer</span> 2025
+              Secure Your <span className="text-green-600">Place for Autumn</span> 2025
             </h2>
             
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Our General English Course runs exclusively during summer months. With limited spots 
+              Our General English Course runs exclusively during autumn months. With limited spots 
               available and high demand from international students, early booking is essential to guarantee 
               your preferred dates.
             </p>
@@ -62,7 +62,7 @@ const SecurePlaceSection = () => {
               ))}
             </div>
             
-            <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 text-lg rounded-full">
+            <Button className="bg-gradient-primary hover:scale-105 transition-all duration-300 text-white px-8 py-3 text-lg rounded-full border-0">
               Enquire Now - Get Started →
             </Button>
           </div>
