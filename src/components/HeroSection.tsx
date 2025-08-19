@@ -2,8 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react";
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  }, []);
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" 
@@ -12,18 +20,19 @@ const HeroSection = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
+          src="/videos/loxdale-building.mp4"
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
           poster={heroImage}
-        >
-          <source src="/videos/loxdale-building.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Lighter Gradient Overlay */}
-        <div className="absolute inset-0" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.85) 0%, hsl(var(--card) / 0.55) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
+        <div className="absolute inset-0" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.6) 0%, hsl(var(--card) / 0.3) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
         
         {/* Animated Pattern Overlay */}
         <div className="absolute inset-0 animated-bg opacity-3"></div>
