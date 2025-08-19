@@ -410,7 +410,7 @@ const CourseFinderTool = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto justify-center">
           {/* Left Column - Enhanced Student-Teacher Image */}
           <div className="relative group order-2 lg:order-1">
             <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
@@ -447,9 +447,8 @@ const CourseFinderTool = () => {
           <div className="space-y-8 order-1 lg:order-2">
             {/* Chunked Progress Bar */}
             <div className="space-y-4">
-              <div className="flex justify-between text-sm text-muted-foreground">
+              <div className="flex justify-center text-sm text-muted-foreground">
                 <span>Step {currentStep + 1} of {questions.length}</span>
-                <span>{Math.round(progress)}% complete</span>
               </div>
               
               {/* 5-step chunked progress */}
@@ -489,7 +488,7 @@ const CourseFinderTool = () => {
                   {/* Age Input */}
                   {currentQuestion.type === "age-range" && (
                     <div className="space-y-4">
-                      <div className="relative">
+                      <div className="flex justify-center">
                         <input
                           type="number"
                           min="8"
@@ -497,7 +496,7 @@ const CourseFinderTool = () => {
                           placeholder={typingText}
                           value={answers[currentQuestion.id] || ""}
                           onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
-                          className="w-32 h-16 text-2xl font-bold text-center border-2 border-border rounded-xl bg-background focus:border-primary focus:outline-none transition-colors"
+                          className="w-40 h-16 text-2xl font-bold text-center border-2 border-border rounded-xl bg-background focus:border-primary focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -592,7 +591,7 @@ const CourseFinderTool = () => {
                       onClick={handleNext}
                       disabled={!answers[currentQuestion.id]}
                       size="lg"
-                      className="w-full sm:w-auto bg-gradient-red-3d shadow-red-glow text-white border-0 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      className="w-full sm:w-auto bg-gradient-red-3d shadow-red-glow text-white border-0 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       {currentStep === questions.length - 1 ? "Get My Recommendations" : "Next Question"}
                       <ArrowRight className="w-5 h-5 ml-2" />
