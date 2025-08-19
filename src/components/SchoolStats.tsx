@@ -140,11 +140,16 @@ const SchoolStats: React.FC = () => {
       
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <header className="mb-12 text-center">
+          <div className="mb-6">
+            <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
+              🏆 EL Gazette Centre of Excellence
+            </div>
+          </div>
           <h2 id="school-stats-title" className="text-4xl lg:text-5xl font-bold tracking-tight text-gradient-green-metallic mb-4">
-            Trusted By Students Worldwide
+            Ranked in UK's Top 8% Schools
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Join thousands of successful English learners from around the globe at Loxdale English Centre
+            Award-winning education that delivers exceptional results for students from over 60 countries worldwide
           </p>
         </header>
         <main>

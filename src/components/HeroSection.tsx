@@ -47,17 +47,16 @@ const HeroSection = () => {
             
             <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in">
               <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent">
-                General English
+                Transform Your English
               </span>
               <br />
               <span className="bg-gradient-to-r from-primary via-amber-400 to-white bg-clip-text text-transparent">
-                Excellence in Brighton
+                At Brighton's #1 Charity School
               </span>
             </h1>
             
             <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed max-w-2xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              Master General English in Brighton's most prestigious Victorian setting. 
-              Build essential communication skills with our proven teaching methods and expert faculty.
+              Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
             </p>
             
             {/* Stats */}
