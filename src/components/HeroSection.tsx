@@ -11,6 +11,9 @@ const HeroSection = () => {
     }}>
         <iframe title="Loxdale English Centre campus video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_aslaj5&autoplay=true&loop=true&colors[base]=%23FFFFFF&colors[accent]=%23FFFFFF&source_types[0]=webm%2Fvp9&poster_options[transformation][start_offset]=14&muted=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
         
+        {/* Gradient Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none"></div>
         
         {/* Animated Pattern Overlay */}
         <div className="absolute inset-0 animated-bg opacity-[0.06] pointer-events-none"></div>
