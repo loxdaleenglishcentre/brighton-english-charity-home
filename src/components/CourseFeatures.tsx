@@ -163,45 +163,6 @@ const CourseFeatures = () => {
 
         {/* White spacer */}
         <div className="section-spacer"></div>
-
-        {/* Two Column Section: Loxdale Lecture Series + Student Testimonial */}
-        <div className="text-center mb-8">
-          <h3 className="text-3xl lg:text-4xl font-bold text-gradient-green-metallic">
-            Real Results from Real Students
-          </h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-            See how our Loxdale Lecture Series and personalized approach help students achieve their English learning goals.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-          {/* Left Column: Loxdale Lecture Series */}
-          <Card className="glass hover-float border-0 shadow-xl h-full">
-            <CardContent className="p-6 lg:p-8 h-full flex flex-col">
-              <div className="mb-6">
-                <img src={lectureSeriesImage} alt="Students attending Loxdale Lecture Series on British culture" className="w-full h-48 lg:h-64 object-cover rounded-xl" />
-              </div>
-              
-              <div className="flex-1 flex flex-col">
-                <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-8 h-8 text-foreground" />
-                </div>
-                <h4 className="text-xl lg:text-2xl font-bold mb-4 text-center">Loxdale Lecture Series</h4>
-                <p className="text-muted-foreground mb-6 leading-relaxed text-center flex-1">
-                  As part of our commitment to making study time as stimulating and enlightening as possible, our students enjoy a weekly lecture on a Friday morning which focuses on various aspects of British life. Popular past lectures have included Homelessness, Things to do in London, British History, HIV and the Terence Higgins Trust, Presentation Techniques, Brighton Music Scene, London Architecture, Street Art, Acupuncture, and Nutrition.
-                </p>
-                <div className="text-center">
-                  <Button variant="outline" className="hover-float">
-                    Learn More About Lectures
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Right Column: Student Testimonial */}
-          <FeaturedTestimonial />
-        </div>
       </div>
       
       {/* White spacer */}

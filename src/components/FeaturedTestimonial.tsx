@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, Quote, ExternalLink, MessageCircle } from "lucide-react";
+import { Star, Quote, ExternalLink, Facebook, Chrome } from "lucide-react";
 import mariaImage from "@/assets/testimonials/maria-gonzalez.jpg";
 
 const FeaturedTestimonial = () => {
@@ -13,70 +13,102 @@ const FeaturedTestimonial = () => {
     rating: 5,
     text: "The Applied English approach was exactly what I needed! I chose Business English and Creative Writing, which helped me land my dream job in London. The teachers are incredibly supportive and the international atmosphere is amazing.",
     course: "4 weeks, Business English focus",
-    reviewLink: "https://www.languagecourse.net/school-loxdale-english-centre-brighton.php3"
+    verified: "Verified Student • June 2024"
   };
 
+  const reviewPlatforms = [
+    {
+      name: "Facebook Reviews",
+      icon: Facebook,
+      link: "https://www.facebook.com/LoxdaleEnglishCentre/reviews",
+      color: "text-blue-600 hover:text-blue-700"
+    },
+    {
+      name: "LanguageCourse.net",
+      icon: Chrome,
+      link: "https://www.languagecourse.net/school-loxdale-english-centre-brighton.php3",
+      color: "text-green-600 hover:text-green-700"
+    },
+    {
+      name: "Google Reviews",
+      icon: Chrome,
+      link: "https://www.google.com/search?q=loxdale+english+centre+brighton+reviews",
+      color: "text-red-600 hover:text-red-700"
+    }
+  ];
+
   return (
-    <div className="flex items-center justify-center lg:justify-start">
-      <Card className="glass hover-float border-0 shadow-lg overflow-hidden max-w-md">
-        <CardContent className="p-6 lg:p-8">
-          <div className="flex flex-col gap-6">
+    <div className="max-w-2xl mx-auto">
+      <div className="text-center mb-8">
+        <h3 className="text-3xl font-bold text-gray-900 mb-2">
+          What Our Students Say
+        </h3>
+        <p className="text-gray-600">
+          Real feedback from real students
+        </p>
+      </div>
+
+      <Card className="bg-white border border-gray-200 shadow-sm">
+        <CardContent className="p-8">
+          <div className="flex flex-col lg:flex-row gap-6">
             {/* Student Image */}
-            <div className="flex items-center gap-4">
-              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg flex-shrink-0">
+            <div className="flex-shrink-0 text-center lg:text-left">
+              <div className="w-24 h-24 rounded-full overflow-hidden shadow-md mx-auto lg:mx-0 mb-4">
                 <img 
                   src={testimonial.image}
                   alt={`${testimonial.name} profile photo`}
                   className="w-full h-full object-cover"
                 />
               </div>
-              
-              <div>
-                <h4 className="text-xl font-bold">{testimonial.name}</h4>
-                <p className="text-muted-foreground">
+              <div className="lg:w-24">
+                <h4 className="text-lg font-semibold text-gray-900">{testimonial.name}</h4>
+                <p className="text-sm text-gray-600 mb-2">
                   {testimonial.country} • Age {testimonial.age}
                 </p>
-                <div className="flex items-center gap-1 mt-1">
+                <div className="flex items-center justify-center lg:justify-start gap-1 mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
+                <p className="text-xs text-green-600 font-medium">
+                  {testimonial.verified}
+                </p>
               </div>
             </div>
             
             {/* Testimonial Content */}
             <div className="flex-1">
-              <Quote className="w-8 h-8 text-primary/20 mb-3" />
+              <Quote className="w-6 h-6 text-gray-300 mb-3" />
               
-              <p className="text-lg leading-relaxed text-foreground font-medium italic mb-4">
-                "{testimonial.text}"
+              <p className="text-gray-700 leading-relaxed mb-4 text-base">
+                {testimonial.text}
               </p>
               
-              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 text-xs mb-4">
+              <Badge variant="outline" className="bg-gray-50 text-gray-700 border-gray-200 text-sm mb-6">
                 {testimonial.course}
               </Badge>
-              
-                <div className="flex flex-col gap-3 items-center">
-                  <a 
-                    href={testimonial.reviewLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors"
-                  >
-                    <Star className="w-4 h-4 fill-green-400 text-green-400" />
-                    Read More Reviews
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="flex items-center gap-2 text-sm hover-float"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    Get in touch with this student
-                  </Button>
-              </div>
+            </div>
+          </div>
+
+          {/* Review Platform Links */}
+          <div className="border-t border-gray-100 pt-6 mt-6">
+            <p className="text-sm text-gray-600 mb-4 text-center">
+              Read more reviews on:
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              {reviewPlatforms.map((platform, index) => (
+                <a
+                  key={index}
+                  href={platform.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-200 ${platform.color} hover:shadow-sm`}
+                >
+                  <platform.icon className="w-4 h-4" />
+                  <span className="text-sm font-medium">{platform.name}</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              ))}
             </div>
           </div>
         </CardContent>
