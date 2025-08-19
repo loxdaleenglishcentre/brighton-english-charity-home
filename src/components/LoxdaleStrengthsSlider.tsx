@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Award, Users, Globe, BookOpen, Heart, MapPin, GraduationCap, Palmtree } from "lucide-react";
+import { ChevronLeft, ChevronRight, Award, Users, Globe, BookOpen, Heart, MapPin, GraduationCap, Palmtree, Target, FileText, Building, Settings, Leaf, Calendar, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Strength {
   id: string;
@@ -78,9 +79,26 @@ const strengths: Strength[] = [
   }
 ];
 
+// 12 Areas of Strength data
+const areasOfStrength = [
+  { id: "strategic", title: "Strategic & Quality Management", icon: Target, color: "bg-green-500" },
+  { id: "staff", title: "Staff Management", icon: Users, color: "bg-green-400" },
+  { id: "student", title: "Student Administration", icon: FileText, color: "bg-blue-500" },
+  { id: "publicity", title: "Publicity", icon: Globe, color: "bg-purple-500" },
+  { id: "premises", title: "Premises and Facilities", icon: Building, color: "bg-orange-500" },
+  { id: "academic-staff", title: "Academic Staff Profile", icon: GraduationCap, color: "bg-blue-600" },
+  { id: "academic-mgmt", title: "Academic Management", icon: Settings, color: "bg-slate-600" },
+  { id: "course-design", title: "Course Design", icon: Leaf, color: "bg-teal-500" },
+  { id: "teaching", title: "Teaching", icon: Award, color: "bg-orange-400" },
+  { id: "care", title: "Care of Students", icon: Heart, color: "bg-red-500" },
+  { id: "leisure", title: "Leisure Opportunities", icon: Calendar, color: "bg-pink-500" },
+  { id: "safeguarding", title: "Safeguarding under 18s", icon: Shield, color: "bg-green-600" }
+];
+
 const LoxdaleStrengthsSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [activeStrengthTab, setActiveStrengthTab] = useState(areasOfStrength[0].id);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -241,6 +259,64 @@ const LoxdaleStrengthsSlider = () => {
                   </div>
                 </button>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 12 Areas of Strength Tabbed Section */}
+        <div className="bg-gray-50 py-16">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                12 Areas of Strength
+              </h3>
+            </div>
+
+            <Tabs value={activeStrengthTab} onValueChange={setActiveStrengthTab} className="w-full">
+              <TabsList className="grid grid-cols-12 gap-1 h-auto p-1 bg-white rounded-2xl shadow-sm border w-full">
+                {areasOfStrength.map((area) => {
+                  const IconComponent = area.icon;
+                  return (
+                    <TabsTrigger
+                      key={area.id}
+                      value={area.id}
+                      className="flex flex-col items-center gap-2 p-4 rounded-xl data-[state=active]:bg-gray-50 h-auto min-h-[100px]"
+                    >
+                      <div className={`w-12 h-12 ${area.color} rounded-full flex items-center justify-center flex-shrink-0`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                      <span className="text-xs font-medium text-center leading-tight">
+                        {area.title}
+                      </span>
+                    </TabsTrigger>
+                  );
+                })}
+              </TabsList>
+
+              {areasOfStrength.map((area) => (
+                <TabsContent key={area.id} value={area.id} className="mt-8">
+                  <div className="text-center p-8 bg-white rounded-2xl shadow-sm border">
+                    <div className={`w-20 h-20 ${area.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <area.icon className="w-10 h-10 text-white" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-4">{area.title}</h4>
+                    <p className="text-gray-600 max-w-2xl mx-auto">
+                      Excellence in {area.title.toLowerCase()} - part of our comprehensive approach to delivering outstanding English language education.
+                    </p>
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+
+            {/* Centered Article Link */}
+            <div className="text-center mt-12">
+              <Button
+                variant="ghost"
+                className="text-green-600 hover:text-green-700 text-base font-medium flex items-center gap-1 mx-auto"
+                onClick={() => window.open('https://www.britishcouncil.org/education/accreditation', '_blank')}
+              >
+                Read the full British Council report ↗
+              </Button>
             </div>
           </div>
         </div>
