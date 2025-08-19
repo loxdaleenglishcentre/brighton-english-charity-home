@@ -10,8 +10,8 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" 
       aria-labelledby="hero-title"
     >
-      {/* Video Background - Full viewport */}
-      <div className="fixed inset-0 z-0">
+      {/* Video Background - Full height covering header + hero */}
+      <div className="absolute inset-0 z-0" style={{ top: '-80px', height: 'calc(100% + 80px)' }}>
         <iframe
           title="Loxdale English Centre campus video"
           src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c&profile=LOXDALE%20HOMEPAGE%20VIDEO&poster_options[transformation][start_offset]=3&autoplay=true&muted=true&loop=true&controls=false&preload=auto&playsinline=true"
