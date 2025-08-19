@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Mic, PenTool, Globe, Music, Briefcase, Palette, ArrowRight, CheckCircle } from "lucide-react";
 import FeaturedTestimonial from "./FeaturedTestimonial";
+import SecurePlaceSection from "./SecurePlaceSection";
 import lectureSeriesImage from "@/assets/lecture-series.jpg";
 const CourseFeatures = () => {
   const features = [{
@@ -166,6 +167,12 @@ const CourseFeatures = () => {
 
         {/* Student Reviews Section */}
         <FeaturedTestimonial />
+        
+        {/* White spacer */}
+        <div className="section-spacer"></div>
+        
+        {/* Secure Place Section */}
+        <SecurePlaceSection />
       </div>
       
       {/* White spacer */}
