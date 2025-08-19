@@ -35,15 +35,20 @@ const HeroSection = () => {
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in relative">
+            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative">
               <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent mix-blend-difference">
-                Loxdale
+                Study English in England.
                 <br />
-                English
-                <br />
-                Centre
+                Live, Learn, and Belong.
               </span>
             </h1>
+            
+            {/* Subline */}
+            <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in mix-blend-difference max-w-4xl" style={{
+              animationDelay: '0.3s'
+            }}>
+              Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships.
+            </p>
             
             {/* Stats */}
             <div className="flex flex-wrap gap-8 mb-12 justify-center lg:justify-start animate-fade-in" style={{
@@ -59,11 +64,14 @@ const HeroSection = () => {
             animationDelay: '0.9s'
           }}>
               <Button size="lg" className="bg-gradient-red-3d shadow-red-glow transition-all duration-500 hover:scale-105 border-0 text-white px-10 py-6 text-xl rounded-full">
-                Explore Programmes
+                Apply Now
                 <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
               
-              
+              <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 px-10 py-6 text-xl rounded-full backdrop-blur-sm transition-all duration-500 hover:scale-105">
+                <PlayCircle className="w-6 h-6 mr-3" />
+                Watch Student Stories
+              </Button>
             </div>
           </div>
           
@@ -74,10 +82,7 @@ const HeroSection = () => {
       <div className="absolute top-64 right-8 lg:right-16 z-30 max-w-md">
         <p className="text-lg lg:text-xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference text-right" style={{
         animationDelay: '0.3s'
-      }}>Join the UK's top 8% 
-English schools as an educational 
-charity offering world-class teaching 
-at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.</p>
+      }}>Join the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence in beautiful Sussex.</p>
       </div>
       
       {/* Scroll Indicator */}
