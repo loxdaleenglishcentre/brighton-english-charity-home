@@ -9,18 +9,18 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" 
       aria-labelledby="hero-title"
     >
-      {/* YouTube Video Background */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/rVsyJ2d9e-8?si=4gVHc8fGE-bwABsR&autoplay=1&mute=1&playsinline=1&loop=1&playlist=rVsyJ2d9e-8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
-          title="Loxdale English Centre Video"
-          className="absolute inset-0 w-full h-full"
-          style={{ width: '100vw', height: '100vh', objectFit: 'cover' as const }}
-          frameBorder={0}
-          referrerPolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster={heroImage}
+        >
+          <source src="/videos/loxdale-building.mp4" type="video/mp4" />
+        </video>
         
         {/* Lighter Gradient Overlay */}
         <div className="absolute inset-0" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.85) 0%, hsl(var(--card) / 0.55) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
