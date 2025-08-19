@@ -32,7 +32,7 @@ const strengths: Strength[] = [
     id: "classroom-learning",
     title: "Dynamic Classroom Experience",
     description: "Our vibrant classrooms bring together international students in an engaging, supportive environment where English comes alive.",
-    image: "/lovable-uploads/ecacf8b5-7576-472f-a7d4-aec2195676bf.png", 
+    image: "/lovable-uploads/055e2379-f8ff-48c2-ac54-35a812d4ed33.png", 
     icon: GraduationCap,
     highlights: ["Small class sizes", "Interactive learning", "International mix", "Modern teaching methods"]
   },
@@ -40,7 +40,7 @@ const strengths: Strength[] = [
     id: "brighton-exploration",
     title: "Brighton & Beyond Adventures",
     description: "Explore vibrant Brighton and iconic English destinations. Learning extends far beyond the classroom into real-world experiences.",
-    image: "/lovable-uploads/664cc247-9d60-40ff-9efc-dc9deaf1aa2c.png",
+    image: "/lovable-uploads/62225732-2c4f-4ce0-9825-60191dc95842.png",
     icon: MapPin,
     highlights: ["Brighton seaside location", "London day trips", "Cultural excursions", "Real-world English practice"]
   },
