@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 32 32" version="1.1">
+  <defs>
+    <linearGradient id="planeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#60a5fa" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <title>Airplane</title>
+  <desc>Gradient blue airplane icon</desc>
+  <path d="M-16 8V4l14-8v-10a2 2 0 014 0v10l14 8v4L2 3v8l3 2v3l-5-2-5 2v-3l3-2V3z" fill="url(#planeGrad)" filter="url(#glow)"/>
+</svg>
