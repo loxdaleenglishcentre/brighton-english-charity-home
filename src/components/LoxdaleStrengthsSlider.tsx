@@ -135,17 +135,13 @@ const LoxdaleStrengthsSlider = () => {
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-green-metallic">
             What Makes Loxdale Special
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
             Discover the unique strengths that have made us one of the UK's top 8% of English language schools
           </p>
-        </div>
-      </div>
 
-      {/* 12 Areas of Strength Section */}
-      <div className="bg-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-8">
-            <h3 className="text-4xl font-bold text-gray-900 mb-6">
+          {/* 12 Areas of Strength Section */}
+          <div className="mb-8">
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">
               12 Areas of Strength
             </h3>
             
@@ -153,7 +149,7 @@ const LoxdaleStrengthsSlider = () => {
             <div className="flex flex-col items-center gap-4 mb-8">
               <Button
                 variant="ghost"
-                className="text-green-600 hover:text-green-700 text-base font-medium flex items-center gap-1"
+                className="text-green-600 hover:text-white text-base font-medium flex items-center gap-1 transition-colors duration-300"
                 onClick={() => window.open('https://www.britishcouncil.org/education/accreditation', '_blank')}
               >
                 Read the full British Council report ↗
@@ -170,31 +166,28 @@ const LoxdaleStrengthsSlider = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Slow Moving Slider */}
-          <div className="relative overflow-hidden">
-            <div className="flex animate-[slide_60s_linear_infinite] hover:[animation-play-state:paused]">
-              {[...areasOfStrength, ...areasOfStrength].map((area, index) => {
-                const IconComponent = area.icon;
-                return (
-                  <div key={`${area.id}-${index}`} className="flex-shrink-0 w-80 mx-4">
-                    <div className="bg-white rounded-2xl shadow-sm border p-6 hover:shadow-md transition-all duration-300 hover-scale">
-                      <div className="text-center">
-                        <div className={`w-16 h-16 ${area.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                          <IconComponent className="w-8 h-8 text-white" />
+            {/* Slow Moving Slider */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-[slide_60s_linear_infinite] hover:[animation-play-state:paused]">
+                {[...areasOfStrength, ...areasOfStrength].map((area, index) => {
+                  const IconComponent = area.icon;
+                  return (
+                    <div key={`${area.id}-${index}`} className="flex-shrink-0 w-80 mx-4">
+                      <div className="bg-gray-800 text-white rounded-full px-6 py-4 hover:bg-gray-700 transition-all duration-300 hover-scale">
+                        <div className="flex items-center justify-center gap-3">
+                          <div className={`w-8 h-8 ${area.color} rounded-full flex items-center justify-center flex-shrink-0`}>
+                            <IconComponent className="w-4 h-4 text-white" />
+                          </div>
+                          <span className="font-medium text-sm text-center">
+                            {area.title}
+                          </span>
                         </div>
-                        <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                          {area.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          Excellence in {area.title.toLowerCase()} - part of our comprehensive approach to delivering outstanding English language education.
-                        </p>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
