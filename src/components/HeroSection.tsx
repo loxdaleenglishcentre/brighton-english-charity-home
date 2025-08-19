@@ -2,30 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react";
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
-import { useEffect, useRef } from "react";
+
 
 const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = true;
-    // Ensure iOS treats as muted
-    v.defaultMuted = true;
-    // Try to play immediately
-    v.play().catch((err) => {
-      console.info("Hero video autoplay blocked, awaiting user gesture", err);
-    });
-    // Gesture fallback
-    const tryPlayOnGesture = () => {
-      v.play().catch(() => {});
-      document.removeEventListener("pointerdown", tryPlayOnGesture);
-    };
-    document.addEventListener("pointerdown", tryPlayOnGesture, { once: true });
-    return () => {
-      document.removeEventListener("pointerdown", tryPlayOnGesture);
-    };
-  }, []);
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" 
@@ -33,31 +12,13 @@ const HeroSection = () => {
     >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
-          poster={heroImage}
-          // Ensure iOS treats as muted
-          
-          onLoadedData={(e) => {
-            e.currentTarget.play().catch(() => {});
-          }}
-          onPlay={() => console.info("Hero video playing")}
-          onError={(e) => {
-            const v = e.currentTarget;
-            console.warn("Hero video error, switching to fallback");
-            v.src = '/videos/loxdale-building.mp4';
-            v.load();
-            v.play().catch(() => {});
-          }}
-        >
-          <source src="/videos/loxdale-building.mp4" type="video/mp4" />
-        </video>
+        <iframe
+          title="Loxdale English Centre campus video"
+          src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c&profile=LOXDALE%20HOMEPAGE%20VIDEO&poster_options[transformation][start_offset]=3&autoplay=true&muted=true&loop=true&controls=false&preload=auto&playsinline=true"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+          frameBorder="0"
+        ></iframe>
         
         {/* Lighter Gradient Overlay */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.6) 0%, hsl(var(--card) / 0.3) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
