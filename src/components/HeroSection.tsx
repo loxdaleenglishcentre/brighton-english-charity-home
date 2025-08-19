@@ -2,23 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react";
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
-
-
 const HeroSection = () => {
-  return (
-    <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" 
-      aria-labelledby="hero-title"
-    >
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" aria-labelledby="hero-title">
       {/* Video Background - Full height covering header + hero */}
-      <div className="absolute inset-0 z-0" style={{ top: '-80px', height: 'calc(100% + 80px)' }}>
-        <iframe
-          title="Loxdale English Centre campus video"
-          src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c&profile=LOXDALE%20HOMEPAGE%20VIDEO&poster_options[transformation][start_offset]=3&autoplay=true&muted=true&loop=true&controls=false&preload=auto&playsinline=true"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-          frameBorder="0"
-        ></iframe>
+      <div className="absolute inset-0 z-0" style={{
+      top: '-80px',
+      height: 'calc(100% + 80px)'
+    }}>
+        <iframe title="Loxdale English Centre campus video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c&profile=LOXDALE%20HOMEPAGE%20VIDEO&poster_options[transformation][start_offset]=3&autoplay=true&muted=true&loop=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
         
         
         {/* Animated Pattern Overlay */}
@@ -26,19 +17,21 @@ const HeroSection = () => {
       </div>
       
       
-      <div className="absolute top-40 right-12 glass rounded-full p-4 animate-float z-30" style={{ animationDelay: '2s' }}>
+      <div className="absolute top-40 right-12 glass rounded-full p-4 animate-float z-30" style={{
+      animationDelay: '2s'
+    }}>
         <Award className="w-8 h-8 text-primary" />
       </div>
       
       <div className="container mx-auto px-8 lg:px-10 relative z-20">
-        <div className="grid grid-cols-1 gap-12 items-center pt-48 md:pt-44"style={{ paddingTop: '12rem' }}>
+        <div className="grid grid-cols-1 gap-12 items-center pt-48 md:pt-44" style={{
+        paddingTop: '12rem'
+      }}>
           
           {/* Content */}
           <div className="text-center lg:text-left">
             <div className="flex items-center gap-3 mb-8 justify-center lg:justify-start">
-              <Badge className="bg-gradient-chrome-3d text-white border-white/40 shadow-chrome-glow text-base px-6 py-3 animate-bounce-in">
-                📚 Out Of Summer Only
-              </Badge>
+              
             </div>
             
             <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in">
@@ -51,12 +44,16 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed max-w-2xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed max-w-2xl animate-fade-in" style={{
+            animationDelay: '0.3s'
+          }}>
               Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
             </p>
             
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 mb-12 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="flex flex-wrap gap-8 mb-12 justify-center lg:justify-start animate-fade-in" style={{
+            animationDelay: '0.6s'
+          }}>
               <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
                 <Users className="w-6 h-6 text-primary" />
                 <span className="font-semibold text-white">16+ Age Group</span>
@@ -72,20 +69,15 @@ const HeroSection = () => {
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.9s' }}>
-              <Button 
-                size="lg" 
-                className="bg-gradient-red-3d shadow-red-glow transition-all duration-500 hover:scale-105 border-0 text-white px-10 py-6 text-xl rounded-full"
-              >
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start animate-fade-in" style={{
+            animationDelay: '0.9s'
+          }}>
+              <Button size="lg" className="bg-gradient-red-3d shadow-red-glow transition-all duration-500 hover:scale-105 border-0 text-white px-10 py-6 text-xl rounded-full">
                 Start Your Journey
                 <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="glass border-white/30 text-white hover:bg-white/20 px-10 py-6 text-xl rounded-full hover:scale-105 transition-all duration-300"
-              >
+              <Button variant="outline" size="lg" className="glass border-white/30 text-white hover:bg-white/20 px-10 py-6 text-xl rounded-full hover:scale-105 transition-all duration-300">
                 <PlayCircle className="w-6 h-6 mr-3" />
                 Watch Our Story
               </Button>
@@ -104,8 +96,6 @@ const HeroSection = () => {
       
       {/* Small white spacer between hero and next section */}
       <div className="h-4 bg-background"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
