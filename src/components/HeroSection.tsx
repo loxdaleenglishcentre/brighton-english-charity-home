@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0">
         <iframe
-          src="https://www.youtube.com/embed/rVsyJ2d9e-8?si=4gVHc8fGE-bwABsR&autoplay=1&mute=1&loop=1&playlist=rVsyJ2d9e-8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          src="https://www.youtube.com/embed/rVsyJ2d9e-8?si=4gVHc8fGE-bwABsR&autoplay=1&mute=1&playsinline=1&loop=1&playlist=rVsyJ2d9e-8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
           title="Loxdale English Centre Video"
           className="absolute inset-0 w-full h-full pointer-events-none"
           style={{ 
@@ -38,7 +38,7 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-8 lg:px-10 relative z-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center pt-48 md:pt-44"style={{ paddingTop: '12rem' }}>
+        <div className="grid grid-cols-1 gap-12 items-center pt-48 md:pt-44"style={{ paddingTop: '12rem' }}>
           
           {/* Content */}
           <div className="text-center lg:text-left">
@@ -99,57 +99,6 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Interactive Visual Element */}
-          <div className="relative lg:block hidden">
-            <div className="relative glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-700 shadow-depth">
-              <img 
-                src={heroImage} 
-                alt="Students learning English in our beautiful Victorian building" 
-                className="w-full h-[500px] object-cover"
-              />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-accent/80 via-transparent to-primary/30"></div>
-              
-              {/* Floating Info Cards */}
-              <div className="absolute top-8 left-8 glass rounded-2xl p-6 animate-bounce-in" style={{ animationDelay: '1.5s' }}>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">98%</div>
-                  <div className="text-sm text-white/80">Success Rate</div>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-28 right-8 glass rounded-2xl p-4 animate-bounce-in" style={{ animationDelay: '2s' }}>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white mb-1">50+</div>
-                  <div className="text-sm text-white/80">Nationalities</div>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-16 left-8 glass rounded-2xl p-6">
-                <div className="flex items-center justify-between text-white min-w-72">
-                  <div>
-                    <p className="text-sm opacity-90 mb-1">Next Course Starts</p>
-                    <p className="font-bold text-lg">June 2025</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm opacity-90 mb-1">Brighton, UK</p>
-                    <p className="font-bold text-lg">Historic Building</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Excellence Award Badge */}
-            <div className="absolute -top-8 -right-8 glass rounded-2xl p-6 animate-bounce-in shadow-premium z-40" style={{ animationDelay: '2.5s' }}>
-              <div className="text-center">
-                <Award className="w-10 h-10 text-yellow-400 mb-3 mx-auto" />
-                <p className="text-sm font-bold text-white leading-tight">EL Gazette</p>
-                <p className="text-sm font-semibold text-yellow-400">Excellence Award</p>
-                <p className="text-xs text-white/90">2024-2025</p>
-                <p className="text-sm font-bold text-primary">Top 8% Global</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       
