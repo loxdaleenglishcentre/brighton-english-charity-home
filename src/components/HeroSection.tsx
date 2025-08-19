@@ -45,7 +45,7 @@ const HeroSection = () => {
         <div className="absolute inset-0" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.6) 0%, hsl(var(--card) / 0.3) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
         
         {/* Animated Pattern Overlay */}
-        <div className="absolute inset-0 animated-bg opacity-3"></div>
+        <div className="absolute inset-0 animated-bg opacity-[0.06] pointer-events-none"></div>
       </div>
       
       
