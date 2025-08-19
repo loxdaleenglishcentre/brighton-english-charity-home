@@ -100,11 +100,11 @@ const WhyChooseLoxdale = () => {
           ))}
         </div>
 
-        {/* Visual Banner with Generated Image */}
+        {/* Visual Banner with Students High-Five Image */}
         <div className="mb-12">
           <img 
-            src="/lovable-uploads/c336b1bb-062a-4a43-b3ab-23dee6360707.png"
-            alt="International students celebrating success at Loxdale English Centre Brighton"
+            src="/lovable-uploads/2f4eedc8-47fb-468a-b754-f7d4d99657f4.png"
+            alt="Students celebrating together with high-fives in the garden at Loxdale English Centre"
             className="w-full h-80 lg:h-96 object-cover rounded-3xl shadow-2xl"
           />
         </div>
