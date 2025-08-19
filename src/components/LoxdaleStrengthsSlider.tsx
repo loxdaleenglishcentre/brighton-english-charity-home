@@ -198,6 +198,9 @@ const LoxdaleStrengthsSlider = () => {
         </div>
       </div>
 
+      {/* Small white spacer */}
+      <div className="bg-white h-8"></div>
+
       {/* Interactive Slider */}
       <div className="relative bg-background">
         <div className="relative h-[70vh] w-full overflow-hidden">
