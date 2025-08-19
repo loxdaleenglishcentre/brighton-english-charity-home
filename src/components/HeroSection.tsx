@@ -74,9 +74,10 @@ const HeroSection = () => {
       <div className="absolute top-64 right-8 lg:right-16 z-30 max-w-md">
         <p className="text-lg lg:text-xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference text-right" style={{
         animationDelay: '0.3s'
-      }}>
-          Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
-        </p>
+      }}>Join the UK's top 8% 
+English schools as an educational 
+charity offering world-class teaching 
+at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.</p>
       </div>
       
       {/* Scroll Indicator */}
