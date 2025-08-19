@@ -59,7 +59,7 @@ const HeroSection = () => {
             animationDelay: '0.9s'
           }}>
               <Button size="lg" className="bg-gradient-red-3d shadow-red-glow transition-all duration-500 hover:scale-105 border-0 text-white px-10 py-6 text-xl rounded-full">
-                Start Your Journey
+                Explore Programmes
                 <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
               
@@ -73,8 +73,8 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Bottom right description text */}
-      <div className="absolute bottom-32 right-8 lg:right-16 z-30 max-w-md">
+      {/* Right side description text */}
+      <div className="absolute top-64 right-8 lg:right-16 z-30 max-w-md">
         <p className="text-lg lg:text-xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference text-right" style={{
         animationDelay: '0.3s'
       }}>
