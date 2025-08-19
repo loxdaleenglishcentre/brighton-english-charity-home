@@ -18,7 +18,10 @@ import {
   ArrowRight,
   User,
   UsersIcon,
-  Home
+  Home,
+  CheckCircle,
+  Trophy,
+  MapPin
 } from "lucide-react";
 
 interface Course {
@@ -164,12 +167,15 @@ const CourseFinderTool = () => {
       id: "age",
       title: "What's your age?",
       type: "age-range",
-      description: "This helps us recommend age-appropriate courses"
+      description: "This helps us recommend age-appropriate courses",
+      icon: User
     },
     {
       id: "goals",
       title: "What are your main goals?",
       type: "multiple-choice",
+      description: "Select all that apply",
+      icon: Trophy,
       options: [
         { value: "general-english", label: "Improve general English skills", icon: BookOpen },
         { value: "career", label: "Career development", icon: GraduationCap },
@@ -185,6 +191,8 @@ const CourseFinderTool = () => {
       id: "timing",
       title: "When would you like to study?",
       type: "single-choice",
+      description: "Choose your preferred time",
+      icon: Calendar,
       options: [
         { value: "summer", label: "Summer holidays", icon: Calendar },
         { value: "year-round", label: "Any time of year", icon: Clock },
@@ -198,12 +206,15 @@ const CourseFinderTool = () => {
       min: 1,
       max: 52,
       unit: "weeks",
-      description: "Minimum 1 week, maximum 52 weeks"
+      description: "Minimum 1 week, maximum 52 weeks",
+      icon: MapPin
     },
     {
       id: "learning-style",
       title: "What's your preferred learning style?",
       type: "single-choice",
+      description: "How do you learn best?",
+      icon: Heart,
       options: [
         { value: "group", label: "Group classes with other students", icon: Users },
         { value: "individual", label: "One-to-one lessons", icon: User },
@@ -272,14 +283,15 @@ const CourseFinderTool = () => {
 
   const currentQuestion = questions[currentStep];
   const progress = ((currentStep + 1) / questions.length) * 100;
+  const questionsRemaining = questions.length - currentStep - 1;
 
   if (recommendations.length > 0) {
     return (
-      <section className="py-24 bg-gradient-to-br from-background via-background to-muted/20">
+      <section className="py-24 bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
-              Perfect Courses for You
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <span className="text-gradient-green-metallic">Perfect</span> Courses for You
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
               Based on your preferences, here are our top recommendations
@@ -378,115 +390,224 @@ const CourseFinderTool = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-background to-muted/20">
+    <section className="py-24 bg-gradient-to-br from-background via-muted/30 to-background">
       <div className="container mx-auto px-6">
+        {/* Enhanced Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 gradient-text">
-            Find Your Perfect Course
+          <div className="mb-4">
+            <Badge className="bg-gradient-primary text-white border-0 px-6 py-2 text-sm font-medium">
+              🎯 Course Finder
+            </Badge>
+          </div>
+          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+            Find Your <span className="text-gradient-green-metallic">Perfect</span> Course
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Answer a few questions to discover the ideal English course for your goals
+          <p className="text-xl text-muted-foreground font-light mb-4">
+            Answer 5 quick questions to unlock your ideal English journey
+          </p>
+          <p className="text-sm text-muted-foreground/80">
+            ✨ Personalized recommendations • 🚀 Takes 2 minutes • 🎓 Expert guidance
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Left Column - Engaging Image */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-green-3d rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+          {/* Left Column - Enhanced Student-Teacher Image */}
+          <div className="relative group order-2 lg:order-1">
+            <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
               <img 
-                src="/lovable-uploads/37506b5b-a6c5-42f9-b42a-c1afa7a6ba3f.png" 
-                alt="Students learning English together"
-                className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                src="/lovable-uploads/4079b7b1-e649-4edb-a852-465edcd360ba.png" 
+                alt="Students and teacher engaged in dynamic English lesson"
+                className="w-full h-[500px] object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                style={{
+                  filter: "brightness(110%) contrast(105%) saturate(110%)"
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Join Our Community</h3>
-                <p className="text-white/90">Discover your perfect English learning journey</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column - Course Finder */}
-          <div className="space-y-8">
-            {/* Progress Bar */}
-            <div>
-              <div className="flex justify-between text-sm text-muted-foreground mb-2">
-                <span>Question {currentStep + 1} of {questions.length}</span>
-                <span>{Math.round(progress)}% complete</span>
-              </div>
-              <div className="w-full bg-muted rounded-full h-2">
-                <div 
-                  className="h-2 rounded-full transition-all duration-500"
-                  style={{ 
-                    width: `${progress}%`,
-                    background: progress < 25 
-                      ? 'linear-gradient(90deg, #ff6b35, #ff8c42)' 
-                      : progress < 50 
-                      ? 'linear-gradient(90deg, #ff8c42, #ffd23f)' 
-                      : progress < 75 
-                      ? 'linear-gradient(90deg, #ffd23f, #06ffa5)' 
-                      : 'linear-gradient(90deg, #06ffa5, #00bf8f)'
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Age Input Box */}
-            <div className="space-y-6">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-green-3d rounded-2xl blur-sm opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-                <div className="relative bg-gradient-green-3d border-2 border-white/20 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10"></div>
-                  <div className="relative p-8">
-                    <div className="flex justify-center mb-6">
-                      <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full shadow-lg border border-white/30">
-                        <User className="w-8 h-8 text-white" />
-                      </div>
+              {/* Soft gradient overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              
+              {/* Student quote overlay */}
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                  <p className="text-lg font-medium mb-2 italic">
+                    "This quiz helped me find the perfect course — now I'm studying in Brighton!"
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
                     </div>
-                    
-                    <div className="flex justify-center">
-                      <div className="relative w-64">
-                        <input
-                          type="number"
-                          placeholder={typingText}
-                          className="w-full p-4 bg-white/90 backdrop-blur-sm border-2 border-white/30 rounded-2xl text-xl text-center font-bold text-gray-800 focus:border-white focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 hover:border-white/80 hover:shadow-lg placeholder:text-gray-500"
-                          onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
-                          min="8"
-                          max="100"
-                          style={{
-                            boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1), 0 4px 20px rgba(255,255,255,0.2)'
-                          }}
-                        />
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                      </div>
-                    </div>
+                    <span className="text-sm font-medium">Maria, Spain</span>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Navigation Buttons */}
-            <div className="flex justify-between pt-6">
-              <Button
-                variant="outline"
-                onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
-                disabled={currentStep === 0}
-                size="lg"
-              >
-                Previous
-              </Button>
+          {/* Right Column - Enhanced Form */}
+          <div className="space-y-8 order-1 lg:order-2">
+            {/* Chunked Progress Bar */}
+            <div className="space-y-4">
+              <div className="flex justify-between text-sm text-muted-foreground">
+                <span>Step {currentStep + 1} of {questions.length}</span>
+                <span>{Math.round(progress)}% complete</span>
+              </div>
               
-              <Button
-                onClick={handleNext}
-                disabled={!answers[currentQuestion.id]}
-                size="lg"
-                className="bg-gradient-red-3d shadow-red-glow"
-              >
-                {currentStep === questions.length - 1 ? "Get Recommendations" : "Next"}
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              {/* 5-step chunked progress */}
+              <div className="flex gap-2">
+                {Array.from({ length: questions.length }, (_, i) => (
+                  <div 
+                    key={i}
+                    className={`flex-1 h-3 rounded-full transition-all duration-500 ${
+                      i <= currentStep 
+                        ? 'bg-gradient-to-r from-primary to-accent' 
+                        : 'bg-muted'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
+
+            {/* Enhanced Form Card */}
+            <Card className="border-0 shadow-xl bg-card/80 backdrop-blur-sm rounded-3xl overflow-hidden">
+              <CardContent className="p-8">
+                <div className="space-y-6">
+                  {/* Question Header with Icon */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                      <currentQuestion.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-foreground">
+                        {currentQuestion.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {currentQuestion.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Age Input */}
+                  {currentQuestion.type === "age-range" && (
+                    <div className="space-y-4">
+                      <div className="relative">
+                        <input
+                          type="number"
+                          min="8"
+                          max="80"
+                          placeholder={typingText}
+                          value={answers[currentQuestion.id] || ""}
+                          onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
+                          className="w-32 h-16 text-2xl font-bold text-center border-2 border-border rounded-xl bg-background focus:border-primary focus:outline-none transition-colors"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Multiple Choice */}
+                  {currentQuestion.type === "multiple-choice" && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {currentQuestion.options?.map((option) => {
+                        const isSelected = Array.isArray(answers[currentQuestion.id]) 
+                          ? answers[currentQuestion.id]?.includes(option.value)
+                          : answers[currentQuestion.id] === option.value;
+                        
+                        return (
+                          <button
+                            key={option.value}
+                            onClick={() => {
+                              const currentAnswers = answers[currentQuestion.id] || [];
+                              const newAnswers = Array.isArray(currentAnswers) 
+                                ? (currentAnswers.includes(option.value)
+                                    ? currentAnswers.filter(a => a !== option.value)
+                                    : [...currentAnswers, option.value])
+                                : [option.value];
+                              handleAnswer(currentQuestion.id, newAnswers);
+                            }}
+                            className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all hover:scale-[1.02] ${
+                              isSelected 
+                                ? 'border-primary bg-primary/10 text-primary' 
+                                : 'border-border hover:border-primary/50'
+                            }`}
+                          >
+                            <option.icon className="w-5 h-5 flex-shrink-0" />
+                            <span className="text-sm font-medium">{option.label}</span>
+                            {isSelected && <CheckCircle className="w-4 h-4 ml-auto" />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {/* Single Choice */}
+                  {currentQuestion.type === "single-choice" && (
+                    <div className="space-y-3">
+                      {currentQuestion.options?.map((option) => {
+                        const isSelected = answers[currentQuestion.id] === option.value;
+                        
+                        return (
+                          <button
+                            key={option.value}
+                            onClick={() => handleAnswer(currentQuestion.id, option.value)}
+                            className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all hover:scale-[1.02] w-full ${
+                              isSelected 
+                                ? 'border-primary bg-primary/10 text-primary' 
+                                : 'border-border hover:border-primary/50'
+                            }`}
+                          >
+                            <option.icon className="w-5 h-5 flex-shrink-0" />
+                            <span className="text-sm font-medium">{option.label}</span>
+                            {isSelected && <CheckCircle className="w-4 h-4 ml-auto" />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {/* Slider */}
+                  {currentQuestion.type === "slider" && (
+                    <div className="space-y-4">
+                      <div className="text-center">
+                        <span className="text-3xl font-bold text-primary">
+                          {answers[currentQuestion.id] || currentQuestion.min} {currentQuestion.unit}
+                        </span>
+                      </div>
+                      <Slider
+                        value={[answers[currentQuestion.id] || currentQuestion.min]}
+                        onValueChange={(value) => handleAnswer(currentQuestion.id, value[0])}
+                        max={currentQuestion.max}
+                        min={currentQuestion.min}
+                        step={1}
+                        className="w-full"
+                      />
+                      <div className="flex justify-between text-sm text-muted-foreground">
+                        <span>{currentQuestion.min} {currentQuestion.unit}</span>
+                        <span>{currentQuestion.max} {currentQuestion.unit}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Enhanced Next Button */}
+                  <div className="pt-6 space-y-3">
+                    <Button
+                      onClick={handleNext}
+                      disabled={!answers[currentQuestion.id]}
+                      size="lg"
+                      className="w-full sm:w-auto bg-gradient-red-3d shadow-red-glow text-white border-0 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    >
+                      {currentStep === questions.length - 1 ? "Get My Recommendations" : "Next Question"}
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                    
+                    {/* Encouraging microcopy */}
+                    {questionsRemaining > 0 && (
+                      <p className="text-sm text-muted-foreground">
+                        Just {questionsRemaining} more question{questionsRemaining > 1 ? 's' : ''}! 🎉
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
