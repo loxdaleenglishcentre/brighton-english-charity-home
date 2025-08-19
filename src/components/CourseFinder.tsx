@@ -447,43 +447,44 @@ const CourseFinderTool = () => {
           <div className="space-y-8 order-1 lg:order-2">
             {/* Chunked Progress Bar */}
             <div className="space-y-4">
-              <div className="flex justify-center text-sm text-muted-foreground">
-                <span>Step {currentStep + 1} of {questions.length}</span>
-              </div>
-              
-              {/* 5-step chunked progress */}
-              <div className="flex gap-2">
-                {Array.from({ length: questions.length }, (_, i) => (
-                  <div 
-                    key={i}
-                    className={`flex-1 h-3 rounded-full transition-all duration-500 ${
-                      i <= currentStep 
-                        ? 'bg-gradient-to-r from-primary to-accent' 
-                        : 'bg-muted'
-                    }`}
+              <div className="space-y-3">
+                {/* Step dots */}
+                <div className="flex items-center justify-center gap-3">
+                  {Array.from({ length: questions.length }, (_, i) => (
+                    <div
+                      key={i}
+                      className={`w-3 h-3 rounded-full transition-colors ${i <= currentStep ? 'bg-primary' : 'bg-muted'}`}
+                    />
+                  ))}
+                </div>
+                {/* Gradient progress bar */}
+                <div className="h-3 w-full bg-muted rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-primary transition-all duration-500"
+                    style={{ width: `${progress}%` }}
                   />
-                ))}
+                </div>
               </div>
             </div>
 
             {/* Enhanced Form Card */}
-            <Card className="border-0 shadow-xl bg-card/80 backdrop-blur-sm rounded-3xl overflow-hidden">
+            <Card className="border border-border ring-1 ring-primary/25 shadow-2xl bg-gradient-to-b from-background/60 to-card/90 backdrop-blur-md rounded-3xl overflow-hidden">
               <CardContent className="p-8">
                 <div className="space-y-6">
                   {/* Question Header with Icon */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                      <currentQuestion.icon className="w-6 h-6 text-white" />
+                    <div className="flex flex-col items-center gap-4 mb-6 text-center">
+                      <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-red-glow">
+                        <currentQuestion.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-foreground">
+                          {currentQuestion.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm">
+                          {currentQuestion.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground">
-                        {currentQuestion.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {currentQuestion.description}
-                      </p>
-                    </div>
-                  </div>
 
                   {/* Age Input */}
                   {currentQuestion.type === "age-range" && (
@@ -496,7 +497,7 @@ const CourseFinderTool = () => {
                           placeholder={typingText}
                           value={answers[currentQuestion.id] || ""}
                           onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
-                          className="w-40 h-16 text-2xl font-bold text-center border-2 border-border rounded-xl bg-background focus:border-primary focus:outline-none transition-colors"
+                          className="w-64 h-16 text-2xl font-bold text-center border-2 border-border rounded-xl bg-background focus:border-primary focus:outline-none transition-colors placeholder:text-muted-foreground"
                         />
                       </div>
                     </div>
@@ -586,12 +587,12 @@ const CourseFinderTool = () => {
                   )}
 
                   {/* Enhanced Next Button */}
-                  <div className="pt-6 space-y-3">
+                  <div className="pt-6 space-y-3 text-center">
                     <Button
                       onClick={handleNext}
                       disabled={!answers[currentQuestion.id]}
                       size="lg"
-                      className="w-full sm:w-auto bg-gradient-red-3d shadow-red-glow text-white border-0 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      className="w-full sm:w-auto mx-auto bg-gradient-red-3d shadow-red-glow text-white border-0 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 disabled:opacity-90 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       {currentStep === questions.length - 1 ? "Get My Recommendations" : "Next Question"}
                       <ArrowRight className="w-5 h-5 ml-2" />
