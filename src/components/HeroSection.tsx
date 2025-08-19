@@ -58,15 +58,15 @@ const HeroSection = () => {
           }}>
               <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
                 <Users className="w-6 h-6 text-primary" />
-                <span className="font-semibold text-white">16+ Age Group</span>
+                <span className="font-semibold text-white mix-blend-difference">16+ Age Group</span>
               </div>
               <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
                 <Clock className="w-6 h-6 text-secondary" />
-                <span className="font-semibold text-white">20 Lessons/Week</span>
+                <span className="font-semibold text-white mix-blend-difference">20 Lessons/Week</span>
               </div>
               <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
                 <Award className="w-6 h-6 text-yellow-400" />
-                <span className="font-semibold text-white">Applied English</span>
+                <span className="font-semibold text-white mix-blend-difference">Applied English</span>
               </div>
             </div>
             
