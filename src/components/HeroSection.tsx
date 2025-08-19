@@ -9,7 +9,7 @@ const HeroSection = () => {
       top: '-80px',
       height: 'calc(100% + 80px)'
     }}>
-        <iframe title="Loxdale English Centre campus video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c&profile=LOXDALE%20HOMEPAGE%20VIDEO&poster_options[transformation][start_offset]=15&autoplay=true&muted=true&loop=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
+        <iframe title="Loxdale English Centre campus video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_aslaj5&autoplay=true&loop=true&colors[base]=%23FFFFFF&colors[accent]=%23FFFFFF&source_types[0]=webm%2Fvp9&poster_options[transformation][start_offset]=14&muted=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
         
         
         {/* Animated Pattern Overlay */}
