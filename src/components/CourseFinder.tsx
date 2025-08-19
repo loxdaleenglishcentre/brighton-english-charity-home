@@ -447,29 +447,31 @@ const CourseFinderTool = () => {
           <div className="space-y-8 order-1 lg:order-2">
             {/* Chunked Progress Bar */}
             <div className="space-y-4">
-              <div className="space-y-3">
-                {/* Chunked 5-step progress bar with color gradients */}
-                <div className="flex gap-1">
-                  {Array.from({ length: questions.length }, (_, i) => {
-                    const colors = [
-                      'from-red-500 to-orange-500', // Red to Orange
-                      'from-orange-500 to-yellow-500', // Orange to Yellow  
-                      'from-yellow-500 to-green-500', // Yellow to Green
-                      'from-green-500 to-blue-500', // Green to Blue
-                      'from-blue-500 to-purple-500' // Blue to Purple
-                    ];
-                    
-                    return (
-                      <div 
-                        key={i}
-                        className={`flex-1 h-4 rounded-full transition-all duration-500 ${
-                          i <= currentStep 
-                            ? `bg-gradient-to-r ${colors[i]}` 
-                            : 'bg-muted'
-                        }`}
-                      />
-                    );
-                  })}
+              <div className="flex justify-center mb-8">
+                <div className="w-80">
+                  {/* Chunked 5-step progress bar with color gradients */}
+                  <div className="flex gap-1">
+                    {Array.from({ length: questions.length }, (_, i) => {
+                      const colors = [
+                        'from-red-500 to-orange-500', // Red to Orange
+                        'from-orange-500 to-yellow-500', // Orange to Yellow  
+                        'from-yellow-500 to-green-500', // Yellow to Green
+                        'from-green-500 to-blue-500', // Green to Blue
+                        'from-blue-500 to-purple-500' // Blue to Purple
+                      ];
+                      
+                      return (
+                        <div 
+                          key={i}
+                          className={`flex-1 h-4 rounded-full transition-all duration-500 ${
+                            i <= currentStep 
+                              ? `bg-gradient-to-r ${colors[i]}` 
+                              : 'bg-muted'
+                          }`}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
