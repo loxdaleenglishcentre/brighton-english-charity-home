@@ -11,9 +11,6 @@ import {
   Twitter, 
   Linkedin,
   ExternalLink,
-  Award,
-  Users,
-  BookOpen,
   Star,
   Target,
   UserCheck,
@@ -79,11 +76,6 @@ const SiteFooter = () => {
     { icon: Linkedin, href: "https://linkedin.com/company/loxdale", label: "LinkedIn" }
   ];
 
-  const stats = [
-    { icon: Users, value: "50+", label: "Years of Excellence" },
-    { icon: BookOpen, value: "15k+", label: "Students Taught" },
-    { icon: Award, value: "98%", label: "Success Rate" }
-  ];
 
   return (
     <footer className="bg-gradient-to-br from-muted/30 via-background to-muted/20 relative overflow-hidden">
@@ -117,19 +109,6 @@ const SiteFooter = () => {
               and student success continues to make us one of the UK's most trusted language schools.
             </p>
 
-            <div className="flex flex-wrap gap-6 justify-center">
-              {stats.map((stat, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                    <stat.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
         {/* Links Section */}
