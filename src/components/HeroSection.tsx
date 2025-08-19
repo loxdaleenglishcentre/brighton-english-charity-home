@@ -35,7 +35,10 @@ const HeroSection = () => {
             </div>
             
             <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in">
-              <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent" style={{
+                textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.3)',
+                filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))'
+              }}>
                 Loxdale
                 <br />
                 English
@@ -46,8 +49,10 @@ const HeroSection = () => {
               
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed max-w-2xl animate-fade-in" style={{
-            animationDelay: '0.3s'
+            <p className="text-xl lg:text-2xl mb-10 text-white leading-relaxed max-w-2xl animate-fade-in" style={{
+            animationDelay: '0.3s',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.7)',
+            filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.8))'
           }}>
               Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
             </p>
