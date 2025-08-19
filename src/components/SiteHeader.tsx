@@ -66,7 +66,10 @@ const SiteHeader = () => {
       role="banner"
     >
       
-      <div className="container mx-auto px-4 lg:px-8">
+      {/* Subtle gradient behind logo */}
+      <div className="absolute left-0 top-0 bottom-0 w-80 pointer-events-none" style={{ background: "linear-gradient(90deg, hsl(0 0% 100% / 0.15) 0%, hsl(0 0% 100% / 0.08) 40%, transparent 70%)" }} />
+      
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         <nav className="flex items-center justify-between h-32 lg:h-36" role="navigation" aria-label="Main navigation">
           
           {/* Logo */}
@@ -85,7 +88,7 @@ const SiteHeader = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-300 hover:text-primary ${
+                className={`text-base font-medium transition-all duration-300 hover:text-primary ${
                   activeSection === item.href.slice(1)
                     ? "text-primary border-b-2 border-primary pb-1"
                     : "text-white drop-shadow-lg hover:text-white"
