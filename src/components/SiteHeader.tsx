@@ -65,7 +65,7 @@ const SiteHeader = () => {
       }`}
       role="banner"
     >
-      <div className="absolute inset-0 pointer-events-none" style={{ background: scrolled ? "linear-gradient(180deg, hsl(0 0% 0% / 0.55) 0%, hsl(0 0% 0% / 0.28) 60%, transparent 100%)" : "radial-gradient(1000px 600px at 8% 55%, hsl(var(--card) / 0.98) 0%, hsl(var(--card) / 0.82) 40%, transparent 72%)" }} />
+      
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="flex items-center justify-between h-32 lg:h-36" role="navigation" aria-label="Main navigation">
           
