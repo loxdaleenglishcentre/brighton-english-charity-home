@@ -62,7 +62,7 @@ const SecurePlaceSection = () => {
               ))}
             </div>
             
-            <Button className="bg-gradient-primary hover:scale-105 transition-all duration-300 text-white px-8 py-3 text-lg rounded-full border-0">
+            <Button className="bg-gradient-red-3d hover:scale-105 transition-all duration-300 text-white px-8 py-3 text-lg rounded-full border-0 shadow-lg">
               Enquire Now - Get Started →
             </Button>
           </div>
