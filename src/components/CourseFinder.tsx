@@ -448,21 +448,28 @@ const CourseFinderTool = () => {
             {/* Chunked Progress Bar */}
             <div className="space-y-4">
               <div className="space-y-3">
-                {/* Step dots */}
-                <div className="flex items-center justify-center gap-3">
-                  {Array.from({ length: questions.length }, (_, i) => (
-                    <div
-                      key={i}
-                      className={`w-3 h-3 rounded-full transition-colors ${i <= currentStep ? 'bg-primary' : 'bg-muted'}`}
-                    />
-                  ))}
-                </div>
-                {/* Gradient progress bar */}
-                <div className="h-3 w-full bg-muted rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-primary transition-all duration-500"
-                    style={{ width: `${progress}%` }}
-                  />
+                {/* Chunked 5-step progress bar with color gradients */}
+                <div className="flex gap-1">
+                  {Array.from({ length: questions.length }, (_, i) => {
+                    const colors = [
+                      'from-red-500 to-orange-500', // Red to Orange
+                      'from-orange-500 to-yellow-500', // Orange to Yellow  
+                      'from-yellow-500 to-green-500', // Yellow to Green
+                      'from-green-500 to-blue-500', // Green to Blue
+                      'from-blue-500 to-purple-500' // Blue to Purple
+                    ];
+                    
+                    return (
+                      <div 
+                        key={i}
+                        className={`flex-1 h-4 rounded-full transition-all duration-500 ${
+                          i <= currentStep 
+                            ? `bg-gradient-to-r ${colors[i]}` 
+                            : 'bg-muted'
+                        }`}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             </div>
