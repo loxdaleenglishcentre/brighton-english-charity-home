@@ -50,7 +50,7 @@ const HeroSection = () => {
             animationDelay: '0.6s'
           }}>
               <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
-                <Users className="w-6 h-6 text-primary" />
+                
                 <span className="font-semibold text-white mix-blend-difference">16+ Age Group</span>
               </div>
               <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
@@ -85,8 +85,8 @@ const HeroSection = () => {
       {/* Bottom right description text */}
       <div className="absolute bottom-32 right-8 lg:right-16 z-30 max-w-md">
         <p className="text-lg lg:text-xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference text-right" style={{
-          animationDelay: '0.3s'
-        }}>
+        animationDelay: '0.3s'
+      }}>
           Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
         </p>
       </div>
