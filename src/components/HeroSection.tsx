@@ -63,10 +63,7 @@ const HeroSection = () => {
                 <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
               
-              <Button variant="outline" size="lg" className="glass border-white/30 text-white hover:bg-white/20 px-10 py-6 text-xl rounded-full hover:scale-105 transition-all duration-300">
-                <PlayCircle className="w-6 h-6 mr-3" />
-                Watch Our Story
-              </Button>
+              
             </div>
           </div>
           
