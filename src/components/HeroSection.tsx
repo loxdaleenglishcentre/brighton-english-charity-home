@@ -9,7 +9,7 @@ const HeroSection = () => {
       top: '-80px',
       height: 'calc(100% + 80px)'
     }}>
-        <iframe title="Loxdale English Centre campus video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c&profile=LOXDALE%20HOMEPAGE%20VIDEO&poster_options[transformation][start_offset]=8&autoplay=true&muted=true&loop=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
+        <iframe title="Loxdale English Centre campus video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c/so_8&profile=LOXDALE%20HOMEPAGE%20VIDEO&autoplay=true&muted=true&loop=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
         
         
         {/* Animated Pattern Overlay */}
@@ -34,25 +34,16 @@ const HeroSection = () => {
               
             </div>
             
-            {/* Title and Description Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-8">
-              <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold leading-tight animate-fade-in relative">
-                <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent mix-blend-difference">
-                  Loxdale
-                  <br />
-                  English
-                  <br />
-                  Centre
-                </span>
+            {/* Title */}
+            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in relative">
+              <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent mix-blend-difference">
+                Loxdale
                 <br />
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference lg:mt-8" style={{
-                animationDelay: '0.3s'
-              }}>
-                Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
-              </p>
-            </div>
+                English
+                <br />
+                Centre
+              </span>
+            </h1>
             
             {/* Stats */}
             <div className="flex flex-wrap gap-8 mb-12 justify-center lg:justify-start animate-fade-in" style={{
@@ -89,6 +80,15 @@ const HeroSection = () => {
           </div>
           
         </div>
+      </div>
+      
+      {/* Bottom right description text */}
+      <div className="absolute bottom-32 right-8 lg:right-16 z-30 max-w-md">
+        <p className="text-lg lg:text-xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference text-right" style={{
+          animationDelay: '0.3s'
+        }}>
+          Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
+        </p>
       </div>
       
       {/* Scroll Indicator */}
