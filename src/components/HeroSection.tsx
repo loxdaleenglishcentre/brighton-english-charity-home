@@ -20,7 +20,7 @@ const HeroSection = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
-          src="/videos/loxdale-building.mp4"
+          src="/videos/loxdale-building-new.mp4"
           autoPlay
           muted
           loop
