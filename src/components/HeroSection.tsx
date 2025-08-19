@@ -34,8 +34,8 @@ const HeroSection = () => {
               
             </div>
             
-            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in">
-              <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent">
+            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in relative">
+              <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent mix-blend-difference">
                 Loxdale
                 <br />
                 English
@@ -46,7 +46,7 @@ const HeroSection = () => {
               
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed max-w-2xl animate-fade-in" style={{
+            <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed max-w-2xl animate-fade-in mix-blend-difference" style={{
             animationDelay: '0.3s'
           }}>
               Join the UK's top 8% English schools as an educational charity offering world-class teaching at unbeatable prices. Experience our unique Applied English approach in beautiful Brighton.
