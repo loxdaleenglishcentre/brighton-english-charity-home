@@ -141,6 +141,65 @@ const LoxdaleStrengthsSlider = () => {
         </div>
       </div>
 
+      {/* 12 Areas of Strength Section */}
+      <div className="bg-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8">
+            <h3 className="text-4xl font-bold text-gray-900 mb-6">
+              12 Areas of Strength
+            </h3>
+            
+            {/* British Council Link and El Gazette Logo */}
+            <div className="flex flex-col items-center gap-4 mb-8">
+              <Button
+                variant="ghost"
+                className="text-green-600 hover:text-green-700 text-base font-medium flex items-center gap-1"
+                onClick={() => window.open('https://www.britishcouncil.org/education/accreditation', '_blank')}
+              >
+                Read the full British Council report ↗
+              </Button>
+              
+              <div className="flex items-center gap-6">
+                <div className="border-2 border-red-500 rounded-lg p-3 bg-white">
+                  <div className="text-red-500 font-bold text-base">el-gazette</div>
+                  <div className="text-xs text-gray-600">Centre of Excellence</div>
+                  <div className="text-xs text-gray-600">2024 – 2025</div>
+                </div>
+                <div className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                  Top 8% UK
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Slow Moving Slider */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-[slide_60s_linear_infinite] hover:[animation-play-state:paused]">
+              {[...areasOfStrength, ...areasOfStrength].map((area, index) => {
+                const IconComponent = area.icon;
+                return (
+                  <div key={`${area.id}-${index}`} className="flex-shrink-0 w-80 mx-4">
+                    <div className="bg-white rounded-2xl shadow-sm border p-6 hover:shadow-md transition-all duration-300 hover-scale">
+                      <div className="text-center">
+                        <div className={`w-16 h-16 ${area.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                          <IconComponent className="w-8 h-8 text-white" />
+                        </div>
+                        <h4 className="font-semibold text-lg text-gray-900 mb-2">
+                          {area.title}
+                        </h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          Excellence in {area.title.toLowerCase()} - part of our comprehensive approach to delivering outstanding English language education.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Interactive Slider */}
       <div className="relative bg-background">
         <div className="relative h-[70vh] w-full overflow-hidden">
@@ -259,64 +318,6 @@ const LoxdaleStrengthsSlider = () => {
                   </div>
                 </button>
               ))}
-            </div>
-          </div>
-        </div>
-
-        {/* 12 Areas of Strength Tabbed Section */}
-        <div className="bg-gray-50 py-16">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                12 Areas of Strength
-              </h3>
-            </div>
-
-            <Tabs value={activeStrengthTab} onValueChange={setActiveStrengthTab} className="w-full">
-              <TabsList className="grid grid-cols-12 gap-1 h-auto p-1 bg-white rounded-2xl shadow-sm border w-full">
-                {areasOfStrength.map((area) => {
-                  const IconComponent = area.icon;
-                  return (
-                    <TabsTrigger
-                      key={area.id}
-                      value={area.id}
-                      className="flex flex-col items-center gap-2 p-4 rounded-xl data-[state=active]:bg-gray-50 h-auto min-h-[100px]"
-                    >
-                      <div className={`w-12 h-12 ${area.color} rounded-full flex items-center justify-center flex-shrink-0`}>
-                        <IconComponent className="w-6 h-6 text-white" />
-                      </div>
-                      <span className="text-xs font-medium text-center leading-tight">
-                        {area.title}
-                      </span>
-                    </TabsTrigger>
-                  );
-                })}
-              </TabsList>
-
-              {areasOfStrength.map((area) => (
-                <TabsContent key={area.id} value={area.id} className="mt-8">
-                  <div className="text-center p-8 bg-white rounded-2xl shadow-sm border">
-                    <div className={`w-20 h-20 ${area.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                      <area.icon className="w-10 h-10 text-white" />
-                    </div>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-4">{area.title}</h4>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                      Excellence in {area.title.toLowerCase()} - part of our comprehensive approach to delivering outstanding English language education.
-                    </p>
-                  </div>
-                </TabsContent>
-              ))}
-            </Tabs>
-
-            {/* Centered Article Link */}
-            <div className="text-center mt-12">
-              <Button
-                variant="ghost"
-                className="text-green-600 hover:text-green-700 text-base font-medium flex items-center gap-1 mx-auto"
-                onClick={() => window.open('https://www.britishcouncil.org/education/accreditation', '_blank')}
-              >
-                Read the full British Council report ↗
-              </Button>
             </div>
           </div>
         </div>
