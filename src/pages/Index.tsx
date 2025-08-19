@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import CourseFinder from "@/components/CourseFinder";
-import LoxdaleStrengthsSlider from "@/components/LoxdaleStrengthsSlider";
+import StrengthsSlimSlideshow from "@/components/StrengthsSlimSlideshow";
 import WhyChooseLoxdale from "@/components/WhyChooseLoxdale";
 import CourseFeatures from "@/components/CourseFeatures";
 import SchoolStrengths from "@/components/SchoolStrengths";
@@ -15,7 +15,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
-      <LoxdaleStrengthsSlider />
+      <StrengthsSlimSlideshow />
       <WhyChooseLoxdale />
       <CourseFinder />
       <CourseFeatures />
