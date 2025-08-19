@@ -79,6 +79,15 @@ const WhyChooseLoxdale = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-secondary opacity-5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 lg:px-8">
+        {/* School Building Image */}
+        <div className="mb-16">
+          <img 
+            src="/lovable-uploads/dace829c-1240-4e3a-ae65-1905c1c72eb6.png"
+            alt="Loxdale English Centre - Beautiful Victorian building exterior"
+            className="w-full max-w-4xl mx-auto h-80 lg:h-96 object-cover rounded-3xl shadow-2xl"
+          />
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <div className="mb-6">
