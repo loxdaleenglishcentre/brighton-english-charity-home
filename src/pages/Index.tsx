@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import CourseFinder from "@/components/CourseFinder";
 import LoxdaleStrengthsSlider from "@/components/LoxdaleStrengthsSlider";
 import WhyChooseLoxdale from "@/components/WhyChooseLoxdale";
-import SchoolStats from "@/components/SchoolStats";
 import CourseFeatures from "@/components/CourseFeatures";
 import SchoolStrengths from "@/components/SchoolStrengths";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -19,7 +18,6 @@ const Index = () => {
       <LoxdaleStrengthsSlider />
       <WhyChooseLoxdale />
       <CourseFinder />
-      <SchoolStats />
       <CourseFeatures />
       <SchoolStrengths />
       <TestimonialsSection />

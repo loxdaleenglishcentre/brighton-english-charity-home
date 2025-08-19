@@ -2,6 +2,40 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Award, Heart, TrendingUp, Users, Star, Shield, DollarSign, Globe } from "lucide-react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+
+// Rolling counter hook for animated numbers
+function easeOutCubic(t: number) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+function useCountUp(target: number, duration = 2000, start = false) {
+  const [value, setValue] = useState(0);
+  const rafRef = useRef<number | null>(null);
+  const startTime = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!start) return;
+
+    const step = (timestamp: number) => {
+      if (startTime.current === null) startTime.current = timestamp;
+      const progress = Math.min(1, (timestamp - startTime.current) / duration);
+      const eased = easeOutCubic(progress);
+      setValue(Math.round(target * eased));
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(step);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      startTime.current = null;
+    };
+  }, [target, duration, start]);
+
+  return value;
+}
 
 const WhyChooseLoxdale = () => {
   const advantages = [
@@ -32,10 +66,10 @@ const WhyChooseLoxdale = () => {
   ];
 
   const achievements = [
-    { label: "Years of Excellence", value: "40+" },
-    { label: "Student Satisfaction", value: "98%" },
-    { label: "Nationalities Welcome", value: "60+" },
-    { label: "IELTS Success Rate", value: "95%" }
+    { label: "YEARS OF EXCELLENCE", value: 45, suffix: "+" },
+    { label: "TOTAL STUDENTS SINCE OPENING", value: 20000, suffix: "+" },
+    { label: "NATIONALITIES REPRESENTED", value: 80, suffix: "+" },
+    { label: "AVERAGE AGE", value: 24, suffix: "" }
   ];
 
   return (
@@ -46,33 +80,74 @@ const WhyChooseLoxdale = () => {
       
       <div className="container mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <Badge className="mb-6 bg-gradient-primary text-white border-0 px-6 py-2 text-sm font-medium">
-            🏆 Why Choose Us
-          </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-green-metallic">
-            The UK's Most Trusted English School
+        <div className="text-center mb-16">
+          <div className="mb-6">
+            <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
+              🏆 EL Gazette Centre of Excellence
+            </div>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gradient-green-metallic mb-4">
+            Ranked in UK's Top 8% Schools
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            As an educational charity, we offer world-class English teaching at accessible prices. 
-            Join thousands of successful students who've transformed their English skills with us.
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Award-winning education that delivers exceptional results for students from over 60 countries worldwide
           </p>
         </div>
 
-        {/* Achievement Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-12">
-          {achievements.map((achievement, index) => (
-            <Card key={index} className="hover-float border-0 shadow-lg text-center">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-gradient-green-metallic mb-2">
-                  {achievement.value}
+        {/* Rolling Achievement Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {achievements.map((achievement, index) => {
+            const StatItem = ({ stat }) => {
+              const ref = useRef<HTMLDivElement | null>(null);
+              const [inView, setInView] = useState(false);
+
+              useEffect(() => {
+                const el = ref.current;
+                if (!el) return;
+                const io = new IntersectionObserver(
+                  (entries) => {
+                    entries.forEach((entry) => {
+                      if (entry.isIntersecting) {
+                        setInView(true);
+                        io.disconnect();
+                      }
+                    });
+                  },
+                  { threshold: 0.2 }
+                );
+                io.observe(el);
+                return () => io.disconnect();
+              }, []);
+
+              const current = useCountUp(stat.value, 2000, inView);
+              const formatted = useMemo(() => {
+                const base = new Intl.NumberFormat().format(current);
+                return `${base}${stat.suffix ?? ""}`;
+              }, [current, stat.suffix]);
+
+              return (
+                <div ref={ref} className="group rounded-3xl bg-card/80 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border/50">
+                  <div className="flex flex-col items-center gap-4 text-center">
+                    <div className={`text-5xl font-bold tracking-tight text-foreground transition-all duration-700 ${
+                      inView ? 'animate-fade-in scale-100' : 'scale-90 opacity-0'
+                    }`}>
+                      <span className="inline-block animate-pulse text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+                        {formatted}
+                      </span>
+                    </div>
+                    <div className={`h-2 w-20 rounded-full bg-gradient-to-r from-primary to-primary/70 transition-all duration-500 ${
+                      inView ? 'scale-x-100' : 'scale-x-0'
+                    }`} aria-hidden />
+                    <p className={`text-sm font-medium text-muted-foreground uppercase tracking-wide transition-all duration-500 ${
+                      inView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                    }`}>{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground font-medium">
-                  {achievement.label}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+              );
+            };
+
+            return <StatItem key={index} stat={achievement} />;
+          })}
         </div>
 
         {/* Main Advantages Grid */}
