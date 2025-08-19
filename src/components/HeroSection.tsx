@@ -36,7 +36,7 @@ const HeroSection = () => {
             
             <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-8 leading-tight animate-fade-in">
               <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent">
-                Transform Your English
+                Loxdale English Centre
               </span>
               <br />
               <span className="bg-gradient-to-r from-primary via-amber-400 to-white bg-clip-text text-transparent">
