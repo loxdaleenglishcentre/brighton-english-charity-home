@@ -381,8 +381,17 @@ const CourseFinderTool = () => {
             </div>
             <div className="w-full bg-muted rounded-full h-2">
               <div 
-                className="bg-gradient-to-r from-primary to-primary/80 h-2 rounded-full transition-all duration-300"
-                style={{ width: `${progress}%` }}
+                className="h-2 rounded-full transition-all duration-500"
+                style={{ 
+                  width: `${progress}%`,
+                  background: progress < 25 
+                    ? 'linear-gradient(90deg, #ff6b35, #ff8c42)' 
+                    : progress < 50 
+                    ? 'linear-gradient(90deg, #ff8c42, #ffd23f)' 
+                    : progress < 75 
+                    ? 'linear-gradient(90deg, #ffd23f, #06ffa5)' 
+                    : 'linear-gradient(90deg, #06ffa5, #00bf8f)'
+                }}
               />
             </div>
           </div>
@@ -405,27 +414,27 @@ const CourseFinderTool = () => {
                     <div className="relative bg-gradient-green-3d border-2 border-white/20 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]">
                       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10"></div>
                       <div className="relative p-8">
-                        <div className="text-center mb-6">
-                          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-4 shadow-lg border border-white/30">
+                        <div className="flex justify-center mb-6">
+                          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full shadow-lg border border-white/30">
                             <User className="w-8 h-8 text-white" />
                           </div>
-                          <h3 className="text-xl font-semibold text-white mb-2">What's your age?</h3>
-                          <p className="text-white/80">This helps us recommend the perfect course for you</p>
                         </div>
                         
-                        <div className="relative">
-                          <input
-                            type="number"
-                            placeholder="Enter your age (8-100)"
-                            className="w-full p-6 bg-white/90 backdrop-blur-sm border-2 border-white/30 rounded-2xl text-2xl text-center font-bold text-gray-800 focus:border-white focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 hover:border-white/80 hover:shadow-lg placeholder:text-gray-500"
-                            onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
-                            min="8"
-                            max="100"
-                            style={{
-                              boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1), 0 4px 20px rgba(255,255,255,0.2)'
-                            }}
-                          />
-                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        <div className="flex justify-center">
+                          <div className="relative w-32">
+                            <input
+                              type="number"
+                              placeholder="Type your age"
+                              className="w-full p-4 bg-white/90 backdrop-blur-sm border-2 border-white/30 rounded-2xl text-xl text-center font-bold text-gray-800 focus:border-white focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 hover:border-white/80 hover:shadow-lg placeholder:text-gray-500"
+                              onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
+                              min="8"
+                              max="100"
+                              style={{
+                                boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1), 0 4px 20px rgba(255,255,255,0.2)'
+                              }}
+                            />
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                          </div>
                         </div>
                       </div>
                     </div>
