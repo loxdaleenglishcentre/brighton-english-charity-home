@@ -60,6 +60,9 @@ All colors MUST be HSL.
     --gradient-green-text: linear-gradient(to right, #001510, #00bf8f);
     --gradient-green-glow: 0 0 60px rgba(13, 40, 24, 0.6);
     
+    /* Green 3D Gradient - Light to Dark */
+    --gradient-green-3d: linear-gradient(135deg, #00bf8f 0%, #00a876 25%, #00915e 50%, #007a47 75%, #006330 100%);
+    
     /* Chrome 3D Gradient for Summer Dates */
     --gradient-chrome-3d: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 15%, #9ca3af 30%, #6b7280 50%, #4b5563 70%, #374151 85%, #1f2937 100%);
     --gradient-chrome-glow: 0 0 40px rgba(107, 114, 128, 0.4);

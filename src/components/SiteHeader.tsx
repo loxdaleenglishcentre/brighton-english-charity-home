@@ -99,7 +99,7 @@ const SiteHeader = () => {
             <Button 
               asChild 
               size="sm" 
-              className="bg-gradient-green-3d text-white border-0 shadow-green-glow transition-all duration-300 px-6"
+              className="bg-gradient-green-3d text-primary-foreground border-0 shadow-green-glow transition-all duration-300 px-6 font-semibold"
             >
               <a href="#contact" className="flex items-center gap-2">
                 Enquire Now
