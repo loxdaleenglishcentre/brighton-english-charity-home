@@ -111,32 +111,15 @@ const LoxdaleStrengthsSlider = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Hero Header with Background Image */}
-      <div className="relative h-[60vh] w-full">
-        <div className="absolute inset-0">
-          <img
-            src="/lovable-uploads/84db4cdb-dc2c-4c6b-8ffb-4ec5a426fc84.png"
-            alt="Students celebrating together at Loxdale English Centre"
-            className="w-full h-full object-cover"
-            style={{
-              filter: "sepia(5%) saturate(110%) contrast(95%) brightness(98%)"
-            }}
-          />
-          
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
-        </div>
-        
-        {/* Header Content */}
-        <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-5xl lg:text-7xl font-bold mb-6 text-outline-sm">
-              What Makes Loxdale Special
-            </h2>
-            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed text-outline-sm">
-              Discover the unique strengths that have made us one of the UK's top 8% of English language schools
-            </p>
-          </div>
+      {/* Clean Green Gradient Header */}
+      <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 py-16">
+        <div className="container mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-green-metallic">
+            What Makes Loxdale Special
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Discover the unique strengths that have made us one of the UK's top 8% of English language schools
+          </p>
         </div>
       </div>
 
@@ -149,7 +132,7 @@ const LoxdaleStrengthsSlider = () => {
               alt={currentStrength.title}
               className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
               style={{
-                filter: "sepia(8%) saturate(110%) contrast(98%) brightness(103%) hue-rotate(2deg)"
+                filter: "sepia(3%) saturate(115%) contrast(105%) brightness(110%) hue-rotate(2deg)"
               }}
             />
             
