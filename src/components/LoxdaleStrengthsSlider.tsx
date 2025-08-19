@@ -1,0 +1,269 @@
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Award, Users, Globe, BookOpen, Heart, MapPin, GraduationCap, Palmtree } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+interface Strength {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  icon: React.ElementType;
+  highlights: string[];
+}
+
+const strengths: Strength[] = [
+  {
+    id: "teaching-excellence",
+    title: "Teaching Excellence",
+    description: "Experience world-class English education in our historic Victorian building, where traditional elegance meets cutting-edge teaching methods.",
+    image: "/lovable-uploads/4079b7b1-e649-4edb-a852-465edcd360ba.png",
+    icon: BookOpen,
+    highlights: ["Top 8% of UK English schools", "British Council accredited", "Expert qualified teachers", "Historic Victorian setting"]
+  },
+  {
+    id: "international-community",
+    title: "International Community", 
+    description: "Join students from over 60 countries in our warm, family-like environment where lifelong friendships and cultural exchange flourish.",
+    image: "/lovable-uploads/5d5e1a9a-7693-47b2-9bde-db2524ba7c83.png",
+    icon: Globe,
+    highlights: ["60+ nationalities welcome", "International dining hall", "Cultural celebration events", "Family atmosphere"]
+  },
+  {
+    id: "classroom-learning",
+    title: "Dynamic Classroom Experience",
+    description: "Our vibrant classrooms bring together international students in an engaging, supportive environment where English comes alive.",
+    image: "/lovable-uploads/ecacf8b5-7576-472f-a7d4-aec2195676bf.png", 
+    icon: GraduationCap,
+    highlights: ["Small class sizes", "Interactive learning", "International mix", "Modern teaching methods"]
+  },
+  {
+    id: "brighton-exploration",
+    title: "Brighton & Beyond Adventures",
+    description: "Explore vibrant Brighton and iconic English destinations. Learning extends far beyond the classroom into real-world experiences.",
+    image: "/lovable-uploads/664cc247-9d60-40ff-9efc-dc9deaf1aa2c.png",
+    icon: MapPin,
+    highlights: ["Brighton seaside location", "London day trips", "Cultural excursions", "Real-world English practice"]
+  },
+  {
+    id: "outdoor-activities",
+    title: "Outdoor Learning & Sports",
+    description: "Combine English learning with outdoor adventures and sports activities. We believe in learning through experience and fun.",
+    image: "/lovable-uploads/3f1f4f61-65be-4efa-a47e-fe3ed78a4eac.png",
+    icon: Palmtree,
+    highlights: ["Outdoor classroom sessions", "Sports activities", "Nature exploration", "Team building events"]
+  },
+  {
+    id: "creative-workshops",
+    title: "Creative Arts & Workshops",
+    description: "Express yourself through art, crafts, and creative projects while practicing English in a fun, relaxed environment.",
+    image: "/lovable-uploads/ece82a4c-b751-4a3f-9d65-1b86efdcf5d9.png",
+    icon: Heart,
+    highlights: ["Art & craft workshops", "Creative expression", "English through arts", "Relaxed learning environment"]
+  },
+  {
+    id: "social-celebration",
+    title: "Celebrations & Social Events",
+    description: "Experience British culture through themed parties, international celebrations, and social gatherings throughout the year.",
+    image: "/lovable-uploads/efc7b0d6-eeb0-40e1-a1ce-f561e604974d.png",
+    icon: Users,
+    highlights: ["Cultural celebrations", "Themed social events", "International festivals", "British traditions"]
+  },
+  {
+    id: "historic-facilities",
+    title: "Historic Victorian Facilities",
+    description: "Study in our magnificent Victorian mansion with grand staircases and period features that create a unique learning atmosphere.",
+    image: "/lovable-uploads/67f8db19-2355-4914-a3ea-9aa4335132ac.png",
+    icon: Award,
+    highlights: ["Victorian mansion setting", "Historic architecture", "Inspiring atmosphere", "Unique learning environment"]
+  }
+];
+
+const LoxdaleStrengthsSlider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % strengths.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [isAutoPlaying]);
+
+  const nextStrength = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev + 1) % strengths.length);
+  };
+
+  const prevStrength = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev - 1 + strengths.length) % strengths.length);
+  };
+
+  const goToStrength = (index: number) => {
+    setIsAutoPlaying(false);
+    setCurrentIndex(index);
+  };
+
+  const currentStrength = strengths[currentIndex];
+
+  return (
+    <section className="relative w-full overflow-hidden">
+      {/* Hero Header with Background Image */}
+      <div className="relative h-[60vh] w-full">
+        <div className="absolute inset-0">
+          <img
+            src="/lovable-uploads/84db4cdb-dc2c-4c6b-8ffb-4ec5a426fc84.png"
+            alt="Students celebrating together at Loxdale English Centre"
+            className="w-full h-full object-cover"
+            style={{
+              filter: "sepia(5%) saturate(110%) contrast(95%) brightness(98%)"
+            }}
+          />
+          
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
+        </div>
+        
+        {/* Header Content */}
+        <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-5xl lg:text-7xl font-bold mb-6 text-outline-sm">
+              What Makes Loxdale Special
+            </h2>
+            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed text-outline-sm">
+              Discover the unique strengths that have made us one of the UK's top 8% of English language schools
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Interactive Slider */}
+      <div className="relative bg-background">
+        <div className="relative h-[70vh] w-full overflow-hidden">
+          <div className="absolute inset-0 transition-all duration-1000 ease-in-out">
+            <img
+              src={currentStrength.image}
+              alt={currentStrength.title}
+              className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              style={{
+                filter: "sepia(8%) saturate(110%) contrast(98%) brightness(103%) hue-rotate(2deg)"
+              }}
+            />
+            
+            {/* Content Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 p-8 lg:p-16 text-white max-w-2xl">
+                {/* Icon */}
+                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 border border-white/20">
+                  <currentStrength.icon className="w-8 h-8 text-white" />
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-4xl lg:text-5xl font-bold mb-6 text-outline-sm">
+                  {currentStrength.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed text-outline-sm">
+                  {currentStrength.description}
+                </p>
+
+                {/* Highlights */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {currentStrength.highlights.map((highlight, index) => (
+                    <div 
+                      key={index}
+                      className="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20"
+                    >
+                      <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                      <span className="text-sm font-medium text-white">
+                        {highlight}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Progress indicator */}
+                <div className="flex items-center gap-4">
+                  <span className="text-sm text-white/70 font-medium">
+                    {currentIndex + 1} of {strengths.length}
+                  </span>
+                  <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-white transition-all duration-300"
+                      style={{ width: `${((currentIndex + 1) / strengths.length) * 100}%` }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={prevStrength}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white"
+          >
+            <ChevronLeft className="w-7 h-7" />
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={nextStrength}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white"
+          >
+            <ChevronRight className="w-7 h-7" />
+          </Button>
+        </div>
+
+        {/* Thumbnail Navigation */}
+        <div className="bg-card/95 backdrop-blur-sm border-t">
+          <div className="container mx-auto px-6 py-6">
+            <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+              {strengths.map((strength, index) => (
+                <button
+                  key={strength.id}
+                  onClick={() => goToStrength(index)}
+                  className={`flex-shrink-0 group ${
+                    index === currentIndex ? 'opacity-100' : 'opacity-60 hover:opacity-80'
+                  }`}
+                >
+                  <div className="flex items-center gap-3 p-3 rounded-lg transition-all duration-300">
+                    <div className={`w-12 h-12 rounded-lg overflow-hidden transition-all duration-300 ${
+                      index === currentIndex ? 'ring-2 ring-primary scale-110' : ''
+                    }`}>
+                      <img
+                        src={strength.image}
+                        alt={strength.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="font-semibold text-sm text-foreground">
+                        {strength.title}
+                      </h4>
+                      <div className="flex items-center gap-1 mt-1">
+                        <strength.icon className="w-3 h-3 text-primary" />
+                        <span className="text-xs text-muted-foreground">
+                          {strength.highlights[0]}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LoxdaleStrengthsSlider;
