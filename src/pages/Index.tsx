@@ -15,6 +15,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      {/* Small white spacer */}
+      <div className="bg-white h-8"></div>
       <LoxdaleStrengthsSlider />
       <WhyChooseLoxdale />
       <CourseFinder />
