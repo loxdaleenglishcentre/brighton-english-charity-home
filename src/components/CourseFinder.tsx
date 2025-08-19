@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -141,6 +141,23 @@ const CourseFinderTool = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, any>>({});
   const [recommendations, setRecommendations] = useState<Course[]>([]);
+  const [typingText, setTypingText] = useState("");
+  
+  const fullText = "Type your age";
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setTypingText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 150);
+    
+    return () => clearInterval(timer);
+  }, []);
 
   const questions = [
     {
@@ -253,6 +270,9 @@ const CourseFinderTool = () => {
     setRecommendations([]);
   };
 
+  const currentQuestion = questions[currentStep];
+  const progress = ((currentStep + 1) / questions.length) * 100;
+
   if (recommendations.length > 0) {
     return (
       <section className="py-24 bg-gradient-to-br from-background via-background to-muted/20">
@@ -357,182 +377,117 @@ const CourseFinderTool = () => {
     );
   }
 
-  const currentQuestion = questions[currentStep];
-  const progress = ((currentStep + 1) / questions.length) * 100;
-
   return (
     <section className="py-24 bg-gradient-to-br from-background via-background to-muted/20">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 gradient-text">
-              Find Your Perfect Course
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Answer a few questions to discover the ideal English course for your goals
-            </p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 gradient-text">
+            Find Your Perfect Course
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Answer a few questions to discover the ideal English course for your goals
+          </p>
+        </div>
 
-          {/* Progress Bar */}
-          <div className="mb-8">
-            <div className="flex justify-between text-sm text-muted-foreground mb-2">
-              <span>Question {currentStep + 1} of {questions.length}</span>
-              <span>{Math.round(progress)}% complete</span>
-            </div>
-            <div className="w-full bg-muted rounded-full h-2">
-              <div 
-                className="h-2 rounded-full transition-all duration-500"
-                style={{ 
-                  width: `${progress}%`,
-                  background: progress < 25 
-                    ? 'linear-gradient(90deg, #ff6b35, #ff8c42)' 
-                    : progress < 50 
-                    ? 'linear-gradient(90deg, #ff8c42, #ffd23f)' 
-                    : progress < 75 
-                    ? 'linear-gradient(90deg, #ffd23f, #06ffa5)' 
-                    : 'linear-gradient(90deg, #06ffa5, #00bf8f)'
-                }}
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          {/* Left Column - Engaging Image */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-green-3d rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <img 
+                src="/lovable-uploads/37506b5b-a6c5-42f9-b42a-c1afa7a6ba3f.png" 
+                alt="Students learning English together"
+                className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">Join Our Community</h3>
+                <p className="text-white/90">Discover your perfect English learning journey</p>
+              </div>
             </div>
           </div>
 
-          <Card className="border-2">
-            <CardHeader>
-              <CardTitle className="text-2xl">{currentQuestion.title}</CardTitle>
-              {currentQuestion.description && (
-                <CardDescription className="text-base">
-                  {currentQuestion.description}
-                </CardDescription>
-              )}
-            </CardHeader>
+          {/* Right Column - Course Finder */}
+          <div className="space-y-8">
+            {/* Progress Bar */}
+            <div>
+              <div className="flex justify-between text-sm text-muted-foreground mb-2">
+                <span>Question {currentStep + 1} of {questions.length}</span>
+                <span>{Math.round(progress)}% complete</span>
+              </div>
+              <div className="w-full bg-muted rounded-full h-2">
+                <div 
+                  className="h-2 rounded-full transition-all duration-500"
+                  style={{ 
+                    width: `${progress}%`,
+                    background: progress < 25 
+                      ? 'linear-gradient(90deg, #ff6b35, #ff8c42)' 
+                      : progress < 50 
+                      ? 'linear-gradient(90deg, #ff8c42, #ffd23f)' 
+                      : progress < 75 
+                      ? 'linear-gradient(90deg, #ffd23f, #06ffa5)' 
+                      : 'linear-gradient(90deg, #06ffa5, #00bf8f)'
+                  }}
+                />
+              </div>
+            </div>
 
-            <CardContent className="space-y-6">
-              {currentQuestion.type === "age-range" && (
-                <div className="space-y-6">
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-green-3d rounded-2xl blur-sm opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-                    <div className="relative bg-gradient-green-3d border-2 border-white/20 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10"></div>
-                      <div className="relative p-8">
-                        <div className="flex justify-center mb-6">
-                          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full shadow-lg border border-white/30">
-                            <User className="w-8 h-8 text-white" />
-                          </div>
-                        </div>
-                        
-                        <div className="flex justify-center">
-                          <div className="relative w-32">
-                            <input
-                              type="number"
-                              placeholder="Type your age"
-                              className="w-full p-4 bg-white/90 backdrop-blur-sm border-2 border-white/30 rounded-2xl text-xl text-center font-bold text-gray-800 focus:border-white focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 hover:border-white/80 hover:shadow-lg placeholder:text-gray-500"
-                              onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
-                              min="8"
-                              max="100"
-                              style={{
-                                boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1), 0 4px 20px rgba(255,255,255,0.2)'
-                              }}
-                            />
-                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                          </div>
-                        </div>
+            {/* Age Input Box */}
+            <div className="space-y-6">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-green-3d rounded-2xl blur-sm opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                <div className="relative bg-gradient-green-3d border-2 border-white/20 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10"></div>
+                  <div className="relative p-8">
+                    <div className="flex justify-center mb-6">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full shadow-lg border border-white/30">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-center">
+                      <div className="relative w-64">
+                        <input
+                          type="number"
+                          placeholder={typingText}
+                          className="w-full p-4 bg-white/90 backdrop-blur-sm border-2 border-white/30 rounded-2xl text-xl text-center font-bold text-gray-800 focus:border-white focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 hover:border-white/80 hover:shadow-lg placeholder:text-gray-500"
+                          onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
+                          min="8"
+                          max="100"
+                          style={{
+                            boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1), 0 4px 20px rgba(255,255,255,0.2)'
+                          }}
+                        />
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
-
-              {currentQuestion.type === "multiple-choice" && (
-                <div className="grid md:grid-cols-2 gap-4">
-                  {currentQuestion.options?.map((option) => {
-                    const IconComponent = option.icon;
-                    const isSelected = Array.isArray(answers[currentQuestion.id]) 
-                      ? answers[currentQuestion.id]?.includes(option.value)
-                      : answers[currentQuestion.id] === option.value;
-                    
-                    return (
-                      <Button
-                        key={option.value}
-                        variant={isSelected ? "default" : "outline"}
-                        className="p-6 h-auto text-left justify-start"
-                        onClick={() => {
-                          const current = answers[currentQuestion.id] || [];
-                          const newValue = Array.isArray(current)
-                            ? current.includes(option.value)
-                              ? current.filter(v => v !== option.value)
-                              : [...current, option.value]
-                            : [option.value];
-                          handleAnswer(currentQuestion.id, newValue);
-                        }}
-                      >
-                        <IconComponent className="w-6 h-6 mr-3 flex-shrink-0" />
-                        <span>{option.label}</span>
-                      </Button>
-                    );
-                  })}
-                </div>
-              )}
-
-              {currentQuestion.type === "single-choice" && (
-                <div className="space-y-3">
-                  {currentQuestion.options?.map((option) => {
-                    const IconComponent = option.icon;
-                    return (
-                      <Button
-                        key={option.value}
-                        variant={answers[currentQuestion.id] === option.value ? "default" : "outline"}
-                        className="w-full p-6 h-auto text-left justify-start"
-                        onClick={() => handleAnswer(currentQuestion.id, option.value)}
-                      >
-                        <IconComponent className="w-6 h-6 mr-4" />
-                        <span>{option.label}</span>
-                      </Button>
-                    );
-                  })}
-                </div>
-              )}
-
-              {currentQuestion.type === "slider" && (
-                <div className="space-y-6">
-                  <div className="px-4">
-                    <Slider
-                      value={[answers[currentQuestion.id] || currentQuestion.min]}
-                      onValueChange={(value) => handleAnswer(currentQuestion.id, value[0])}
-                      max={currentQuestion.max}
-                      min={currentQuestion.min}
-                      step={1}
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <span className="text-2xl font-bold text-primary">
-                      {answers[currentQuestion.id] || currentQuestion.min} {currentQuestion.unit}
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              <div className="flex justify-between pt-6">
-                <Button
-                  variant="outline"
-                  onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
-                  disabled={currentStep === 0}
-                >
-                  Previous
-                </Button>
-                
-                <Button
-                  onClick={handleNext}
-                  disabled={!answers[currentQuestion.id]}
-                  size="lg"
-                  className="bg-gradient-red-3d shadow-red-glow"
-                >
-                  {currentStep === questions.length - 1 ? "Get Recommendations" : "Next"}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="flex justify-between pt-6">
+              <Button
+                variant="outline"
+                onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
+                disabled={currentStep === 0}
+                size="lg"
+              >
+                Previous
+              </Button>
+              
+              <Button
+                onClick={handleNext}
+                disabled={!answers[currentQuestion.id]}
+                size="lg"
+                className="bg-gradient-red-3d shadow-red-glow"
+              >
+                {currentStep === questions.length - 1 ? "Get Recommendations" : "Next"}
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
