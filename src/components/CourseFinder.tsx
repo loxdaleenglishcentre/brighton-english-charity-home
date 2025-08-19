@@ -365,7 +365,7 @@ const CourseFinderTool = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 gradient-text">
               Find Your Perfect Course
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -399,15 +399,53 @@ const CourseFinderTool = () => {
 
             <CardContent className="space-y-6">
               {currentQuestion.type === "age-range" && (
-                <div className="space-y-4">
-                  <input
-                    type="number"
-                    placeholder="Enter your age"
-                    className="w-full p-4 border rounded-lg text-lg"
-                    onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
-                    min="8"
-                    max="100"
-                  />
+                <div className="space-y-6">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-green-3d rounded-2xl blur-sm opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <div className="relative bg-gradient-to-br from-background via-background to-muted/10 border-2 border-muted-foreground/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]">
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-primary/10"></div>
+                      <div className="relative p-8">
+                        <div className="text-center mb-6">
+                          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-green-3d rounded-full mb-4 shadow-lg">
+                            <User className="w-8 h-8 text-white" />
+                          </div>
+                          <h3 className="text-xl font-semibold text-foreground mb-2">What's your age?</h3>
+                          <p className="text-muted-foreground">This helps us recommend the perfect course for you</p>
+                        </div>
+                        
+                        <div className="relative">
+                          <input
+                            type="number"
+                            placeholder="Enter your age (8-100)"
+                            className="w-full p-6 bg-background/80 backdrop-blur-sm border-2 border-muted-foreground/20 rounded-2xl text-2xl text-center font-bold focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all duration-300 hover:border-primary/60 hover:shadow-lg"
+                            onChange={(e) => handleAnswer(currentQuestion.id, parseInt(e.target.value))}
+                            min="8"
+                            max="100"
+                            style={{
+                              background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
+                              boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1), 0 4px 20px rgba(0,0,0,0.05)'
+                            }}
+                          />
+                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-primary/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        </div>
+                        
+                        <div className="mt-6 flex justify-center gap-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-2 bg-muted/50 rounded-full px-4 py-2">
+                            <div className="w-2 h-2 bg-gradient-green-3d rounded-full"></div>
+                            <span>8-12: Pre-teens</span>
+                          </div>
+                          <div className="flex items-center gap-2 bg-muted/50 rounded-full px-4 py-2">
+                            <div className="w-2 h-2 bg-gradient-green-3d rounded-full"></div>
+                            <span>13-17: Teens</span>
+                          </div>
+                          <div className="flex items-center gap-2 bg-muted/50 rounded-full px-4 py-2">
+                            <div className="w-2 h-2 bg-gradient-green-3d rounded-full"></div>
+                            <span>18+: Adults</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
 
