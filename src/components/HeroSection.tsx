@@ -10,7 +10,21 @@ const HeroSection = () => {
     const v = videoRef.current;
     if (!v) return;
     v.muted = true;
-    v.play().catch(() => {});
+    // Ensure iOS treats as muted
+    v.defaultMuted = true;
+    // Try to play immediately
+    v.play().catch((err) => {
+      console.info("Hero video autoplay blocked, awaiting user gesture", err);
+    });
+    // Gesture fallback
+    const tryPlayOnGesture = () => {
+      v.play().catch(() => {});
+      document.removeEventListener("pointerdown", tryPlayOnGesture);
+    };
+    document.addEventListener("pointerdown", tryPlayOnGesture, { once: true });
+    return () => {
+      document.removeEventListener("pointerdown", tryPlayOnGesture);
+    };
   }, []);
   return (
     <section 
@@ -28,21 +42,25 @@ const HeroSection = () => {
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
           poster={heroImage}
+          // Ensure iOS treats as muted
+          
+          onLoadedData={(e) => {
+            e.currentTarget.play().catch(() => {});
+          }}
+          onPlay={() => console.info("Hero video playing")}
           onError={(e) => {
             const v = e.currentTarget;
-            if (v.src.includes('loxdale-building-new.mp4')) {
-              v.src = '/videos/loxdale-building.mp4';
-              v.load();
-              v.play().catch(() => {});
-            }
+            console.warn("Hero video error, switching to fallback");
+            v.src = '/videos/loxdale-building.mp4';
+            v.load();
+            v.play().catch(() => {});
           }}
         >
-          <source src="/videos/loxdale-building-new.mp4" type="video/mp4" />
           <source src="/videos/loxdale-building.mp4" type="video/mp4" />
         </video>
         
         {/* Lighter Gradient Overlay */}
-        <div className="absolute inset-0" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.6) 0%, hsl(var(--card) / 0.3) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.6) 0%, hsl(var(--card) / 0.3) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
         
         {/* Animated Pattern Overlay */}
         <div className="absolute inset-0 animated-bg opacity-[0.06] pointer-events-none"></div>
