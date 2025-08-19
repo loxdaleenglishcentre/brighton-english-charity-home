@@ -131,7 +131,7 @@ const WhyChooseLoxdale = () => {
                     <div className={`text-5xl font-bold tracking-tight text-foreground transition-all duration-700 ${
                       inView ? 'animate-fade-in scale-100' : 'scale-90 opacity-0'
                     }`}>
-                      <span className="inline-block animate-pulse text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+                      <span className="inline-block animate-pulse text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-red-600">
                         {formatted}
                       </span>
                     </div>
