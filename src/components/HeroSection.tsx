@@ -11,9 +11,9 @@ const HeroSection = () => {
     }}>
         <iframe title="Loxdale English Centre promo video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V2_cpfv5b&profile=LOXDALE%20HOMEPAGE%20VIDEO2&autoplay=true&loop=true&colors[base]=%23FFFFFF&colors[accent]=%23FFFFFF&muted=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
         
-        {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none"></div>
+        {/* Lighter Gradient Overlay for Brighter Video */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35 pointer-events-none"></div>
         
         {/* Animated Pattern Overlay */}
         <div className="absolute inset-0 animated-bg opacity-[0.06] pointer-events-none"></div>
@@ -38,7 +38,7 @@ const HeroSection = () => {
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative">
+            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
               <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent mix-blend-difference">
                 Study English in England.
                 <br />
@@ -48,7 +48,8 @@ const HeroSection = () => {
             
             {/* Subline */}
             <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in mix-blend-difference max-w-4xl" style={{
-              animationDelay: '0.3s'
+              animationDelay: '0.3s',
+              textShadow: '1px 1px 4px rgba(0,0,0,0.8)'
             }}>
               Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships.
             </p>
@@ -84,7 +85,8 @@ const HeroSection = () => {
       {/* Right side description text */}
       <div className="absolute top-64 right-8 lg:right-16 z-30 max-w-md">
         <p className="text-lg lg:text-xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference text-right" style={{
-        animationDelay: '0.3s'
+        animationDelay: '0.3s',
+        textShadow: '1px 1px 4px rgba(0,0,0,0.8)'
       }}>Join the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence in beautiful Sussex.</p>
       </div>
       
