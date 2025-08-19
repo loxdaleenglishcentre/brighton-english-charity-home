@@ -49,18 +49,9 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-8 mb-12 justify-center lg:justify-start animate-fade-in" style={{
             animationDelay: '0.6s'
           }}>
-              <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
-                
-                <span className="font-semibold text-white mix-blend-difference">16+ Age Group</span>
-              </div>
-              <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
-                <Clock className="w-6 h-6 text-secondary" />
-                <span className="font-semibold text-white mix-blend-difference">20 Lessons/Week</span>
-              </div>
-              <div className="flex items-center gap-3 glass rounded-full px-6 py-3">
-                <Award className="w-6 h-6 text-yellow-400" />
-                <span className="font-semibold text-white mix-blend-difference">Applied English</span>
-              </div>
+              
+              
+              
             </div>
             
             {/* CTA Buttons */}
