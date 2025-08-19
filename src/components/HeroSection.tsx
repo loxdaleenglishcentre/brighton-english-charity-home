@@ -20,7 +20,6 @@ const HeroSection = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
-          src="/videos/loxdale-building-new.mp4"
           autoPlay
           muted
           loop
@@ -29,7 +28,18 @@ const HeroSection = () => {
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
           poster={heroImage}
-        />
+          onError={(e) => {
+            const v = e.currentTarget;
+            if (v.src.includes('loxdale-building-new.mp4')) {
+              v.src = '/videos/loxdale-building.mp4';
+              v.load();
+              v.play().catch(() => {});
+            }
+          }}
+        >
+          <source src="/videos/loxdale-building-new.mp4" type="video/mp4" />
+          <source src="/videos/loxdale-building.mp4" type="video/mp4" />
+        </video>
         
         {/* Lighter Gradient Overlay */}
         <div className="absolute inset-0" style={{ background: "radial-gradient(1200px 800px at 8% 12%, hsl(var(--card) / 0.6) 0%, hsl(var(--card) / 0.3) 35%, transparent 60%), linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--accent) / 0.08) 100%)" }}></div>
