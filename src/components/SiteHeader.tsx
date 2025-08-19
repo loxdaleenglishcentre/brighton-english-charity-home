@@ -60,14 +60,19 @@ const SiteHeader = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "glass border-b border-white/10 backdrop-blur-xl" 
+          ? "backdrop-blur-xl border-b border-white/10" 
           : "bg-transparent"
       }`}
+      style={{
+        background: scrolled 
+          ? "linear-gradient(180deg, hsl(0 0% 0% / 0.8) 0%, hsl(0 0% 0% / 0.6) 70%, hsl(0 0% 0% / 0.3) 100%)"
+          : "transparent"
+      }}
       role="banner"
     >
       
-      {/* Subtle gradient behind logo */}
-      <div className="absolute left-0 top-0 bottom-0 w-80 pointer-events-none" style={{ background: "linear-gradient(90deg, hsl(0 0% 100% / 0.15) 0%, hsl(0 0% 100% / 0.08) 40%, transparent 70%)" }} />
+      {/* Subtle gradient behind logo for visibility */}
+      <div className="absolute left-0 top-0 bottom-0 w-96 pointer-events-none" style={{ background: "linear-gradient(90deg, hsl(0 0% 100% / 0.12) 0%, hsl(0 0% 100% / 0.06) 50%, transparent 80%)" }} />
       
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         <nav className="flex items-center justify-between h-32 lg:h-36" role="navigation" aria-label="Main navigation">
