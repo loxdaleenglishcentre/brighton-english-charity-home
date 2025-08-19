@@ -12,16 +12,13 @@ const HeroSection = () => {
       {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0">
         <iframe
-          src="https://www.youtube.com/embed/rVsyJ2d9e-8?si=4gVHc8fGE-bwABsR&autoplay=1&mute=1&playsinline=1&loop=1&playlist=rVsyJ2d9e-8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          src="https://www.youtube-nocookie.com/embed/rVsyJ2d9e-8?si=4gVHc8fGE-bwABsR&autoplay=1&mute=1&playsinline=1&loop=1&playlist=rVsyJ2d9e-8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
           title="Loxdale English Centre Video"
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          style={{ 
-            width: '100vw', 
-            height: '100vh', 
-            transform: 'scale(1.2)',
-            transformOrigin: 'center center'
-          }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          className="absolute inset-0 w-full h-full"
+          style={{ width: '100vw', height: '100vh', objectFit: 'cover' as const }}
+          frameBorder={0}
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
         
