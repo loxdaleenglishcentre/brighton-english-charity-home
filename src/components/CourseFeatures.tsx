@@ -163,6 +163,9 @@ const CourseFeatures = () => {
 
         {/* White spacer */}
         <div className="section-spacer"></div>
+
+        {/* Student Reviews Section */}
+        <FeaturedTestimonial />
       </div>
       
       {/* White spacer */}
