@@ -43,9 +43,7 @@ const HeroSection = () => {
                 Centre
               </span>
               <br />
-              <span className="bg-gradient-to-r from-primary via-amber-400 to-white bg-clip-text text-transparent">
-                At Brighton's #1 Charity School
-              </span>
+              
             </h1>
             
             <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed max-w-2xl animate-fade-in" style={{
