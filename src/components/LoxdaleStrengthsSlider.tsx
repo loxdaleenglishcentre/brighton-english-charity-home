@@ -141,9 +141,11 @@ const LoxdaleStrengthsSlider = () => {
 
           {/* 12 Areas of Strength Section */}
           <div className="mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              12 Areas of Strength
-            </h3>
+            <div className="bg-gray-800 text-white rounded-full px-8 py-4 inline-block mb-6">
+              <h3 className="text-2xl font-bold">
+                12 Areas of Strength
+              </h3>
+            </div>
             
             {/* British Council Link and El Gazette Logo */}
             <div className="flex flex-col items-center gap-4 mb-8">
@@ -174,16 +176,19 @@ const LoxdaleStrengthsSlider = () => {
                   const IconComponent = area.icon;
                   return (
                     <div key={`${area.id}-${index}`} className="flex-shrink-0 w-80 mx-4">
-                      <div className="bg-gray-800 text-white rounded-full px-6 py-4 hover:bg-gray-700 transition-all duration-300 hover-scale">
-                        <div className="flex items-center justify-center gap-3">
-                          <div className={`w-8 h-8 ${area.color} rounded-full flex items-center justify-center flex-shrink-0`}>
-                            <IconComponent className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="font-medium text-sm text-center">
-                            {area.title}
-                          </span>
+                    <div className="bg-white rounded-2xl shadow-sm border p-6 hover:shadow-md transition-all duration-300 hover-scale">
+                      <div className="text-center">
+                        <div className={`w-16 h-16 ${area.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                          <IconComponent className="w-8 h-8 text-white" />
                         </div>
+                        <h4 className="font-semibold text-lg text-gray-900 mb-2">
+                          {area.title}
+                        </h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          Excellence in {area.title.toLowerCase()} - part of our comprehensive approach to delivering outstanding English language education.
+                        </p>
                       </div>
+                    </div>
                     </div>
                   );
                 })}
