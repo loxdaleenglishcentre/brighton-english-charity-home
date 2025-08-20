@@ -4,10 +4,10 @@ import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react"
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" aria-labelledby="hero-title">
-      {/* Video Background - Full height including header */}
+      {/* Video Background - Extended to cover entire section */}
       <div className="absolute inset-0 z-0" style={{
       top: '-100px',
-      height: 'calc(100% + 100px)'
+      height: 'calc(100% + 200px)'
     }}>
         <iframe title="Loxdale English Centre promo video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V2_cpfv5b&profile=LOXDALE%20HOMEPAGE%20VIDEO2&autoplay=true&loop=true&colors[base]=%23FFFFFF&colors[accent]=%23FFFFFF&muted=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
       </div>
@@ -31,7 +31,7 @@ const HeroSection = () => {
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in relative text-left" style={{
+            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in relative text-left -mt-8" style={{
               animation: 'titleVisible 30s infinite'
             }}>
               <span className="bg-gradient-to-b from-yellow-200 via-yellow-400 via-amber-500 to-orange-700 bg-clip-text text-transparent drop-shadow-2xl font-black">
@@ -62,7 +62,7 @@ const HeroSection = () => {
       </div>
       
       {/* Text content section below video */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600/95 via-purple-600/95 to-indigo-700/95 backdrop-blur-sm z-30 py-8 px-6">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600/80 via-purple-600/80 to-indigo-700/80 backdrop-blur-md z-30 py-8 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
             <div className="flex flex-col items-start">
