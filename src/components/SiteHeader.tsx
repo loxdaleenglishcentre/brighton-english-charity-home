@@ -4,72 +4,59 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Search, ArrowRight } from "lucide-react";
 import Logo from "@/components/Logo";
 import SearchBar from "@/components/SearchBar";
-
 const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-
-  const navItems = [
-    { label: "Courses", href: "#courses" },
-    { label: "Brighton", href: "#brighton" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ];
-
+  const navItems = [{
+    label: "Courses",
+    href: "#courses"
+  }, {
+    label: "Brighton",
+    href: "#brighton"
+  }, {
+    label: "Pricing",
+    href: "#pricing"
+  }, {
+    label: "About",
+    href: "#about"
+  }, {
+    label: "Contact",
+    href: "#contact"
+  }];
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let maxRatio = 0;
-        let activeId = "";
-        
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            activeId = entry.target.id;
-          }
-        });
-        
-        if (activeId) {
-          setActiveSection(activeId);
+    const observer = new IntersectionObserver(entries => {
+      let maxRatio = 0;
+      let activeId = "";
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          activeId = entry.target.id;
         }
-      },
-      {
-        threshold: [0.1, 0.5, 0.7],
-        rootMargin: "-20% 0px -20% 0px"
+      });
+      if (activeId) {
+        setActiveSection(activeId);
       }
-    );
-
-    document.querySelectorAll("section[id]").forEach((section) => {
+    }, {
+      threshold: [0.1, 0.5, 0.7],
+      rootMargin: "-20% 0px -20% 0px"
+    });
+    document.querySelectorAll("section[id]").forEach(section => {
       observer.observe(section);
     });
-
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? "backdrop-blur-xl border-b border-white/10" 
-          : ""
-      }`}
-      style={{
-        background: "transparent"
-      }}
-      role="banner"
-    >
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl border-b border-white/10" : ""}`} style={{
+    background: "transparent"
+  }} role="banner">
       
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 bg-gray-50">
         <nav className="flex items-center justify-between h-32 lg:h-36" role="navigation" aria-label="Main navigation">
           
           {/* Logo */}
@@ -83,27 +70,12 @@ const SiteHeader = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 bg-white/40 backdrop-blur-sm rounded-full px-6 py-3">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`text-sm font-medium transition-all duration-300 hover:text-primary ${
-                  activeSection === item.href.slice(1)
-                    ? "text-primary border-b-2 border-primary pb-1"
-                    : "text-white drop-shadow-lg hover:text-white"
-                }`}
-                aria-current={activeSection === item.href.slice(1) ? "page" : undefined}
-              >
+          <div className="hidden lg:flex items-center space-x-8 backdrop-blur-sm rounded-full px-6 py-3 bg-emerald-50">
+            {navItems.map(item => <a key={item.label} href={item.href} className={`text-sm font-medium transition-all duration-300 hover:text-primary ${activeSection === item.href.slice(1) ? "text-primary border-b-2 border-primary pb-1" : "text-white drop-shadow-lg hover:text-white"}`} aria-current={activeSection === item.href.slice(1) ? "page" : undefined}>
                 {item.label}
-              </a>
-            ))}
+              </a>)}
             
-            <Button 
-              asChild 
-              size="sm" 
-              className="bg-gradient-green-3d text-primary-foreground border-0 shadow-green-glow transition-all duration-300 px-6 font-semibold"
-            >
+            <Button asChild size="sm" className="bg-gradient-green-3d text-primary-foreground border-0 shadow-green-glow transition-all duration-300 px-6 font-semibold">
               <a href="#contact" className="flex items-center gap-2">
                 Enquire Now
                 <ArrowRight className="w-4 h-4" />
@@ -129,23 +101,13 @@ const SiteHeader = () => {
                 
                 {/* Mobile Navigation Links */}
                 <nav className="flex flex-col space-y-4" aria-label="Mobile navigation">
-                  {navItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="text-lg font-medium text-white/90 hover:text-white transition-colors duration-200 py-2"
-                    >
+                  {navItems.map(item => <a key={item.label} href={item.href} className="text-lg font-medium text-white/90 hover:text-white transition-colors duration-200 py-2">
                       {item.label}
-                    </a>
-                  ))}
+                    </a>)}
                 </nav>
                 
                 {/* Mobile CTA */}
-                <Button 
-                  asChild 
-                  size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 mt-8"
-                >
+                <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 mt-8">
                   <a href="#contact" className="flex items-center justify-center gap-2">
                     Enquire Now
                     <ArrowRight className="w-4 h-4" />
@@ -156,8 +118,6 @@ const SiteHeader = () => {
           </Sheet>
         </nav>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default SiteHeader;
