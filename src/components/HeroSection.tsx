@@ -20,8 +20,8 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-8 lg:px-10 relative z-20">
-        <div className="grid grid-cols-1 gap-12 items-start pt-8 md:pt-6" style={{
-        paddingTop: '1.5rem'
+        <div className="grid grid-cols-1 gap-12 items-start pt-2 md:pt-1" style={{
+        paddingTop: '0.25rem'
       }}>
           
           {/* Content */}
