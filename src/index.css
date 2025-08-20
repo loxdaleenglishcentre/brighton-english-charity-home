@@ -405,6 +405,15 @@ All colors MUST be HSL.
     100% { transform: rotateY(360deg) scale(1); }
   }
   
+  @keyframes titleVisible {
+    0% { opacity: 1; }
+    10% { opacity: 1; }
+    15% { opacity: 0; }
+    25% { opacity: 0; }
+    30% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+  
   .number-spin {
     animation: numberSpin 0.8s ease-in-out;
   }

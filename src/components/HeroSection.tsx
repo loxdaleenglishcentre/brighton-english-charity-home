@@ -10,13 +10,6 @@ const HeroSection = () => {
       height: 'calc(100% + 100px)'
     }}>
         <iframe title="Loxdale English Centre promo video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V2_cpfv5b&profile=LOXDALE%20HOMEPAGE%20VIDEO2&autoplay=true&loop=true&colors[base]=%23FFFFFF&colors[accent]=%23FFFFFF&muted=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
-        
-        {/* Minimal overlay for professional brightness */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/15 pointer-events-none"></div>
-        
-        {/* Animated Pattern Overlay */}
-        <div className="absolute inset-0 animated-bg opacity-[0.06] pointer-events-none"></div>
       </div>
       
       
@@ -27,8 +20,8 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-8 lg:px-10 relative z-20">
-        <div className="grid grid-cols-1 gap-12 items-start pt-32 md:pt-28" style={{
-        paddingTop: '8rem'
+        <div className="grid grid-cols-1 gap-12 items-start pt-16 md:pt-12" style={{
+        paddingTop: '3rem'
       }}>
           
           {/* Content */}
@@ -38,9 +31,12 @@ const HeroSection = () => {
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative text-left">
-              <span className="bg-gradient-to-br from-slate-100 via-blue-50 to-amber-100 bg-clip-text text-transparent drop-shadow-xl">
-                Loxdale English<br />
+            <h1 id="hero-title" className="text-4xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in relative text-left" style={{
+              animation: 'titleVisible 30s infinite'
+            }}>
+              <span className="bg-gradient-to-br from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-2xl font-black">
+                Loxdale<br />
+                English<br />
                 Centre
               </span>
             </h1>
