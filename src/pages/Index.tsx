@@ -6,10 +6,8 @@ import WhyChooseLoxdale from "@/components/WhyChooseLoxdale";
 import CourseFeatures from "@/components/CourseFeatures";
 import StudentLifeGallery from "@/components/StudentLifeGallery";
 import { ArrowRight } from "lucide-react";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-transparent">
+  return <div className="min-h-screen bg-transparent">
       <HeroSection />
       
       {/* Black section with text content */}
@@ -21,12 +19,8 @@ const Index = () => {
                 Apply Now
                 <ArrowRight className="w-5 h-5 ml-3" />
               </Button>
-              <p className="text-xl lg:text-2xl leading-relaxed text-white/90 mb-6">
-                Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships.
-              </p>
-              <p className="text-xl lg:text-2xl leading-relaxed text-white/90">
-                Join the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence in beautiful Sussex.
-              </p>
+              <p className="text-xl lg:text-2xl leading-relaxed text-white/90 mb-6">Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships. We are the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence.</p>
+              
             </div>
           </div>
         </div>
@@ -39,8 +33,6 @@ const Index = () => {
       <StudentLifeGallery />
       <CourseFinder />
       <CourseFeatures />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
