@@ -27,21 +27,20 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-8 lg:px-10 relative z-20">
-        <div className="grid grid-cols-1 gap-12 items-center pt-48 md:pt-44" style={{
-        paddingTop: '12rem'
+        <div className="grid grid-cols-1 gap-12 items-start pt-32 md:pt-28" style={{
+        paddingTop: '8rem'
       }}>
           
           {/* Content */}
-          <div className="text-center lg:text-left">
-            <div className="flex items-center gap-3 mb-8 justify-center lg:justify-start">
+          <div className="text-left">
+            <div className="flex items-center gap-3 mb-8 justify-start">
               
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative text-center lg:text-left">
+            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative text-left">
               <span className="bg-gradient-to-br from-slate-100 via-blue-50 to-amber-100 bg-clip-text text-transparent drop-shadow-xl">
-                Loxdale<br />
-                English<br />
+                Loxdale English<br />
                 Centre
               </span>
             </h1>
@@ -67,7 +66,7 @@ const HeroSection = () => {
       </div>
       
       {/* Text content section below video */}
-      <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-30 py-8 px-6">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600/95 via-purple-600/95 to-indigo-700/95 backdrop-blur-sm z-30 py-8 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
             <div className="flex flex-col items-start">
