@@ -3,24 +3,20 @@ import { Badge } from "@/components/ui/badge";
 import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react";
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
 const HeroSection = () => {
-  return <section className="relative h-screen w-full flex items-center justify-center overflow-hidden" aria-labelledby="hero-title">
-      {/* Video Background - Full-page coverage */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-0" aria-labelledby="hero-title">
+      {/* Video Background - Full-bleed behind header and content */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-slate-50" style={{ top: 0, height: '100%' }}>
         <video
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          src="https://res.cloudinary.com/dw4q8cuuc/video/upload/f_auto,vc_auto,q_auto/Loxdale_Promo_Video_Full_version_V2_cpfv5b.mp4"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          aria-hidden="true"
           poster="/images/brighton-pier-unsplash.jpg"
-        >
-          <source src="https://res.cloudinary.com/dw4q8cuuc/video/upload/f_auto,vc_auto,q_auto/QUIK_20181108_150856_V1_qcjvrz.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Black overlay at bottom to hide subtitles */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+          aria-hidden="true"
+        />
       </div>
       
       
