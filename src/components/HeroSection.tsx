@@ -2,13 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react";
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
+import BackgroundVideo from "@/components/BackgroundVideo";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-0" aria-labelledby="hero-title">
-      
-      
-      <div className="absolute top-40 right-12 glass rounded-full p-4 animate-float z-30" style={{
-      animationDelay: '2s'
-    }}>
+        
+        {/* Background video confined to hero */}
+        <div className="absolute inset-0 -z-10">
+          <div className="sticky top-0 h-screen">
+            <BackgroundVideo />
+          </div>
+        </div>
+        
+        <div className="absolute top-40 right-12 glass rounded-full p-4 animate-float z-30" style={{
+        animationDelay: '2s'
+      }}>
         <Award className="w-8 h-8 text-primary" />
       </div>
       
