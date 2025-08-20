@@ -64,15 +64,10 @@ const SiteHeader = () => {
           : ""
       }`}
       style={{
-        background: scrolled 
-          ? "linear-gradient(180deg, hsl(0 0% 0% / 0.4) 0%, hsl(0 0% 0% / 0.2) 70%, hsl(0 0% 0% / 0.1) 100%)"
-          : "transparent"
+        background: "transparent"
       }}
       role="banner"
     >
-      
-      {/* Subtle gradient behind logo for visibility */}
-      <div className="absolute left-0 top-0 bottom-0 w-96 pointer-events-none" style={{ background: "linear-gradient(90deg, hsl(0 0% 100% / 0.2) 0%, hsl(0 0% 100% / 0.12) 50%, transparent 80%)" }} />
       
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         <nav className="flex items-center justify-between h-32 lg:h-36" role="navigation" aria-label="Main navigation">

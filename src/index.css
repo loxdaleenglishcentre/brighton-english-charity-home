@@ -407,10 +407,10 @@ All colors MUST be HSL.
   
   @keyframes titleVisible {
     0% { opacity: 1; }
-    30% { opacity: 1; }
-    35% { opacity: 0; }
-    65% { opacity: 0; }
-    70% { opacity: 1; }
+    10% { opacity: 1; }
+    11% { opacity: 0; }
+    89% { opacity: 0; }
+    90% { opacity: 1; }
     100% { opacity: 1; }
   }
   
