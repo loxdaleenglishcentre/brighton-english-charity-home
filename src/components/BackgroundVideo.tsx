@@ -7,7 +7,7 @@ const BackgroundVideo: React.FC = () => {
       aria-hidden="true"
     >
       <video
-        className="fixed inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
         src="https://res.cloudinary.com/dw4q8cuuc/video/upload/Loxdale_Promo_Video_Full_version_V2_cpfv5b.mp4"
         autoPlay
         muted
