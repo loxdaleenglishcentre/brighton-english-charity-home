@@ -406,12 +406,11 @@ All colors MUST be HSL.
   }
   
   @keyframes titleVisible {
-    0% { opacity: 1; }
-    5% { opacity: 1; }
-    6% { opacity: 0; }
-    38% { opacity: 0; }
-    39% { opacity: 1; }
-    100% { opacity: 1; }
+    0% { opacity: 0; }
+    45% { opacity: 0; }
+    50% { opacity: 1; }
+    98% { opacity: 1; }
+    100% { opacity: 0; }
   }
   
   .number-spin {
