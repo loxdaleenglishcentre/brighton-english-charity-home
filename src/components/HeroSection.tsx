@@ -8,14 +8,17 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=QUIK_20181108_150856_V1_qcjvrz&profile=LOXDALE%20HOMEPAGE%20VIDEO3"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
           aria-hidden="true"
-        />
+          poster="/images/brighton-pier-unsplash.jpg"
+        >
+          <source src="https://res.cloudinary.com/dw4q8cuuc/video/upload/f_auto,vc_auto,q_auto/QUIK_20181108_150856_V1_qcjvrz.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         {/* Black overlay at bottom to hide subtitles */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
       </div>
