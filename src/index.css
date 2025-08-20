@@ -229,8 +229,8 @@ All colors MUST be HSL.
   }
   
   /* Text contrast backdrop utility */
-  .bg-text-contrast { background-color: hsl(var(--background) / 0.4); }
-  .bg-text-contrast-strong { background-color: hsl(var(--background) / 0.5); }
+  .bg-text-contrast { background-color: hsl(var(--background) / 0.65); }
+  .bg-text-contrast-strong { background-color: hsl(var(--background) / 0.8); }
 
   /* Gradient backgrounds */
   .bg-gradient-primary {
