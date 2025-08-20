@@ -5,7 +5,7 @@ import heroImage from "@/assets/loxdale-teacher-036.jpg";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-0" aria-labelledby="hero-title">
       {/* Video Background - Full-bleed behind header and content */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-slate-100" style={{ top: 0, height: '100%' }}>
+      <div className="absolute inset-0 z-0 overflow-hidden bg-slate-50" style={{ top: 0, height: '100%' }}>
         <video
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           src="https://res.cloudinary.com/dw4q8cuuc/video/upload/f_auto,vc_auto,q_auto/Loxdale_Promo_Video_Full_version_V2_cpfv5b.mp4"
