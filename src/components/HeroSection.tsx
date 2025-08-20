@@ -20,8 +20,8 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-8 lg:px-10 relative z-20">
-        <div className="grid grid-cols-1 gap-12 items-start pt-16 md:pt-12" style={{
-        paddingTop: '3rem'
+        <div className="grid grid-cols-1 gap-12 items-start pt-8 md:pt-6" style={{
+        paddingTop: '1.5rem'
       }}>
           
           {/* Content */}
@@ -31,10 +31,10 @@ const HeroSection = () => {
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-4xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in relative text-left" style={{
+            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in relative text-left" style={{
               animation: 'titleVisible 30s infinite'
             }}>
-              <span className="bg-gradient-to-br from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-2xl font-black">
+              <span className="bg-gradient-to-b from-yellow-200 via-yellow-400 via-amber-500 to-orange-700 bg-clip-text text-transparent drop-shadow-2xl font-black">
                 Loxdale<br />
                 English<br />
                 Centre
