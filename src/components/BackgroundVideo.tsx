@@ -8,7 +8,7 @@ const BackgroundVideo: React.FC = () => {
     >
       <video
         className="fixed inset-0 w-full h-full object-cover"
-        src="https://res.cloudinary.com/dw4q8cuuc/video/upload/f_auto,vc_auto,q_auto/QUIK_20181108_150856_V1_qcjvrz.mp4"
+        src="https://res.cloudinary.com/dw4q8cuuc/video/upload/Loxdale_Promo_Video_Full_version_V2_cpfv5b.mp4"
         autoPlay
         muted
         loop
@@ -16,6 +16,13 @@ const BackgroundVideo: React.FC = () => {
         preload="auto"
         poster="/images/brighton-pier-unsplash.jpg"
       />
+      
+      {/* Animated text overlay */}
+      <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <h1 className="text-6xl md:text-8xl lg:text-9xl text-white font-handwritten animate-text-appear">
+          Loxdale English Centre
+        </h1>
+      </div>
       {/* Bottom black overlay to hide subtitles with text */}
       <div className="fixed inset-x-0 bottom-0 h-[18vh] bg-black flex items-center justify-center">
         <div className="text-center text-white px-6">

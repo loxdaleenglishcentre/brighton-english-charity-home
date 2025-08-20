@@ -23,16 +23,7 @@ const HeroSection = () => {
               
             </div>
             
-            {/* Title */}
-            <h1 id="hero-title" className="text-6xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in relative text-left -mt-8" style={{
-              animation: 'titleVisible 30s infinite'
-            }}>
-              <span className="bg-gradient-to-b from-yellow-200 via-yellow-400 via-amber-500 to-orange-700 bg-clip-text text-transparent drop-shadow-2xl font-black">
-                Loxdale<br />
-                English<br />
-                Centre
-              </span>
-            </h1>
+            {/* Title removed - now shown in video overlay */}
             
             {/* Stats */}
             <div className="flex flex-wrap gap-8 mb-12 justify-center lg:justify-start animate-fade-in" style={{

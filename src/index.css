@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -499,5 +501,36 @@ All colors MUST be HSL.
   }
   .text-outline-sm {
     -webkit-text-stroke: 0.75px hsl(0 0% 0%);
+  }
+
+  /* Handwritten font for video overlay */
+  .font-handwritten {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Text appear animation for video overlay */
+  .animate-text-appear {
+    animation: textAppear 5s ease-in-out;
+  }
+
+  @keyframes textAppear {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
   }
 }
