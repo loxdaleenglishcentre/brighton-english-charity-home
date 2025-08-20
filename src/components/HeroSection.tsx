@@ -62,7 +62,7 @@ const HeroSection = () => {
       </div>
       
       {/* Text content section below video */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600/80 via-purple-600/80 to-indigo-700/80 backdrop-blur-md z-30 py-8 px-6">
+      <div className="absolute bottom-0 left-0 right-0 z-30 py-8 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
             <div className="flex flex-col items-start">
