@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import LoginButtons from "@/components/LoginButtons";
+import BackgroundVideo from "@/components/BackgroundVideo";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <BackgroundVideo />
         <SiteHeader />
         <Routes>
           <Route path="/" element={<Index />} />
