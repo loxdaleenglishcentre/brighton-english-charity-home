@@ -57,7 +57,7 @@ const SiteHeader = () => {
   }} role="banner">
       
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 bg-gray-50">
-        <nav className="flex items-center justify-between h-32 lg:h-36" role="navigation" aria-label="Main navigation">
+        <nav role="navigation" aria-label="Main navigation" className="flex items-center justify-between h-32 lg:h-36 bg-slate-50">
           
           {/* Logo */}
           <div className="flex items-center space-x-4">
