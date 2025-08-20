@@ -71,7 +71,7 @@ const SiteHeader = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8 backdrop-blur-sm rounded-full px-6 py-3 bg-emerald-50">
-            {navItems.map(item => <a key={item.label} href={item.href} className={`text-sm font-medium transition-all duration-300 hover:text-primary ${activeSection === item.href.slice(1) ? "text-primary border-b-2 border-primary pb-1" : "text-white drop-shadow-lg hover:text-white"}`} aria-current={activeSection === item.href.slice(1) ? "page" : undefined}>
+            {navItems.map(item => <a key={item.label} href={item.href} className={`text-sm font-medium transition-all duration-300 hover:text-primary ${activeSection === item.href.slice(1) ? "text-primary border-b-2 border-primary pb-1" : "text-slate-700 font-semibold hover:text-primary"}`} aria-current={activeSection === item.href.slice(1) ? "page" : undefined}>
                 {item.label}
               </a>)}
             
