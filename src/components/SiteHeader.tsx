@@ -83,7 +83,7 @@ const SiteHeader = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 bg-text-contrast backdrop-blur-sm rounded-full px-6 py-3">
+          <div className="hidden lg:flex items-center space-x-8 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
             {navItems.map((item) => (
               <a
                 key={item.label}
