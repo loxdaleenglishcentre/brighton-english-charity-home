@@ -38,21 +38,11 @@ const HeroSection = () => {
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+            <h1 id="hero-title" className="text-6xl lg:text-8xl font-black mb-6 leading-tight animate-fade-in relative" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
               <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent mix-blend-difference">
-                Study English in England.
-                <br />
-                Live, Learn, and Belong.
+                Loxdale English Centre
               </span>
             </h1>
-            
-            {/* Subline */}
-            <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in mix-blend-difference max-w-4xl" style={{
-              animationDelay: '0.3s',
-              textShadow: '1px 1px 4px rgba(0,0,0,0.8)'
-            }}>
-              Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships.
-            </p>
             
             {/* Stats */}
             <div className="flex flex-wrap gap-8 mb-12 justify-center lg:justify-start animate-fade-in" style={{
@@ -82,18 +72,28 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Right side description text */}
-      <div className="absolute top-64 right-8 lg:right-16 z-30 max-w-md">
-        <p className="text-lg lg:text-xl text-white/95 leading-relaxed animate-fade-in mix-blend-difference text-right" style={{
-        animationDelay: '0.3s',
-        textShadow: '1px 1px 4px rgba(0,0,0,0.8)'
-      }}>Join the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence in beautiful Sussex.</p>
-      </div>
-      
       {/* Scroll Indicator */}
       <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
         <div className="w-8 h-12 border-2 border-white/40 rounded-full flex justify-center glass">
           <div className="w-2 h-4 bg-white/80 rounded-full mt-3 animate-pulse"></div>
+        </div>
+      </div>
+      
+      {/* Text content section below video */}
+      <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-30 py-8 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+            <div>
+              <p className="text-lg lg:text-xl leading-relaxed">
+                Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg lg:text-xl leading-relaxed">
+                Join the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence in beautiful Sussex.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       
