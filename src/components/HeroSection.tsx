@@ -4,10 +4,10 @@ import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react"
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" aria-labelledby="hero-title">
-      {/* Video Background - Extended to cover entire section */}
+      {/* Video Background - Extended to cover entire section including bottom text */}
       <div className="absolute inset-0 z-0" style={{
       top: '-100px',
-      height: 'calc(100% + 200px)'
+      height: 'calc(100% + 300px)'
     }}>
         <iframe title="Loxdale English Centre promo video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V2_cpfv5b&profile=LOXDALE%20HOMEPAGE%20VIDEO2&autoplay=true&loop=true&colors[base]=%23FFFFFF&colors[accent]=%23FFFFFF&muted=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
       </div>
