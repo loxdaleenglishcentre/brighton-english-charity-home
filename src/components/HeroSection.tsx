@@ -5,7 +5,7 @@ import heroImage from "@/assets/loxdale-teacher-036.jpg";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" aria-labelledby="hero-title">
       {/* Video Background - Extended to cover entire section including bottom text */}
-      <div className="absolute inset-0 z-0" style={{
+      <div className="absolute inset-0 z-0 overflow-hidden" style={{
       top: '-100px',
       height: 'calc(100% + 300px)'
     }}>
@@ -16,7 +16,7 @@ const HeroSection = () => {
           allow="autoplay; fullscreen; encrypted-media; picture-in-picture" 
           frameBorder="0"
           style={{
-            transform: 'scale(1.1)',
+            transform: 'scale(1.35)',
             transformOrigin: 'center center'
           }}
         />
@@ -97,8 +97,6 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Small white spacer between hero and next section */}
-      <div className="h-4 bg-background"></div>
     </section>;
 };
 export default HeroSection;
