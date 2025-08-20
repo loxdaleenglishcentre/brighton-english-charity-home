@@ -68,26 +68,6 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Text content section below video */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 py-8 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-center text-white">
-            <div className="flex flex-col items-center text-center rounded-xl p-6 max-w-4xl">
-              <Button size="lg" className="bg-gradient-red-3d shadow-red-glow transition-all duration-500 hover:scale-105 border-0 text-white/90 px-8 py-4 text-lg rounded-full mb-6">
-                Apply Now
-                <ArrowRight className="w-5 h-5 ml-3" />
-              </Button>
-              <p className="text-lg lg:text-xl leading-relaxed text-white/90 mb-4">
-                Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships.
-              </p>
-              <p className="text-lg lg:text-xl leading-relaxed text-white/90">
-                Join the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence in beautiful Sussex.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
     </section>;
 };
 export default HeroSection;
