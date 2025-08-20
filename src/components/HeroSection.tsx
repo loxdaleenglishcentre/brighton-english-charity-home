@@ -4,16 +4,16 @@ import { PlayCircle, ArrowRight, Users, Clock, Award, Star } from "lucide-react"
 import heroImage from "@/assets/loxdale-teacher-036.jpg";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-8" aria-labelledby="hero-title">
-      {/* Video Background - Full height covering header + hero */}
+      {/* Video Background - Full height including header */}
       <div className="absolute inset-0 z-0" style={{
-      top: '-80px',
-      height: 'calc(100% + 80px)'
+      top: '-100px',
+      height: 'calc(100% + 100px)'
     }}>
         <iframe title="Loxdale English Centre promo video" src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V2_cpfv5b&profile=LOXDALE%20HOMEPAGE%20VIDEO2&autoplay=true&loop=true&colors[base]=%23FFFFFF&colors[accent]=%23FFFFFF&muted=true&controls=false&preload=auto&playsinline=true" className="absolute inset-0 w-full h-full object-cover pointer-events-none" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" frameBorder="0"></iframe>
         
-        {/* Lighter Gradient Overlay for Brighter Video */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35 pointer-events-none"></div>
+        {/* Minimal overlay for professional brightness */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/15 pointer-events-none"></div>
         
         {/* Animated Pattern Overlay */}
         <div className="absolute inset-0 animated-bg opacity-[0.06] pointer-events-none"></div>
@@ -38,9 +38,11 @@ const HeroSection = () => {
             </div>
             
             {/* Title */}
-            <h1 id="hero-title" className="text-6xl lg:text-8xl font-black mb-6 leading-tight animate-fade-in relative" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
-              <span className="bg-gradient-to-r from-white via-amber-300 to-white bg-clip-text text-transparent mix-blend-difference">
-                Loxdale English Centre
+            <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in relative text-center lg:text-left">
+              <span className="bg-gradient-to-br from-slate-100 via-blue-50 to-amber-100 bg-clip-text text-transparent drop-shadow-xl">
+                Loxdale<br />
+                English<br />
+                Centre
               </span>
             </h1>
             
@@ -51,21 +53,6 @@ const HeroSection = () => {
               
               
               
-            </div>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start animate-fade-in" style={{
-            animationDelay: '0.9s'
-          }}>
-              <Button size="lg" className="bg-gradient-red-3d shadow-red-glow transition-all duration-500 hover:scale-105 border-0 text-white px-10 py-6 text-xl rounded-full">
-                Apply Now
-                <ArrowRight className="w-6 h-6 ml-3" />
-              </Button>
-              
-              <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 px-10 py-6 text-xl rounded-full backdrop-blur-sm transition-all duration-500 hover:scale-105">
-                <PlayCircle className="w-6 h-6 mr-3" />
-                Watch Student Stories
-              </Button>
             </div>
           </div>
           
@@ -83,12 +70,20 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-30 py-8 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
-            <div>
+            <div className="flex flex-col items-start">
+              <Button size="lg" className="bg-gradient-red-3d shadow-red-glow transition-all duration-500 hover:scale-105 border-0 text-white px-8 py-4 text-lg rounded-full mb-6">
+                Apply Now
+                <ArrowRight className="w-5 h-5 ml-3" />
+              </Button>
               <p className="text-lg lg:text-xl leading-relaxed">
                 Join us and learn in a breathtaking Victorian building surrounded by the natural beauty of Sussex—discover language, culture, and lifelong friendships.
               </p>
             </div>
-            <div>
+            <div className="flex flex-col items-start">
+              <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 px-8 py-4 text-lg rounded-full backdrop-blur-sm transition-all duration-500 hover:scale-105 mb-6">
+                <PlayCircle className="w-5 h-5 mr-3" />
+                Watch Student Stories
+              </Button>
               <p className="text-lg lg:text-xl leading-relaxed">
                 Join the UK's top 8% of English schools as an educational charity offering world-class teaching at unbeatable prices. Over 45 years of excellence in beautiful Sussex.
               </p>
