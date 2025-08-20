@@ -23,6 +23,25 @@ const BackgroundVideo: React.FC = () => {
           Loxdale English Centre
         </h1>
       </div>
+      {/* Transparent tabs at bottom corners */}
+      <div className="absolute bottom-8 left-8 z-20 pointer-events-auto">
+        <a 
+          href="#homestay" 
+          className="inline-flex items-center px-6 py-3 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg text-white hover:bg-black/50 transition-all duration-300 hover:scale-105"
+        >
+          <span className="text-sm font-medium">Homestay Info</span>
+        </a>
+      </div>
+      
+      <div className="absolute bottom-8 right-8 z-20 pointer-events-auto">
+        <a 
+          href="#quote" 
+          className="inline-flex items-center px-6 py-3 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg text-white hover:bg-black/50 transition-all duration-300 hover:scale-105"
+        >
+          <span className="text-sm font-medium">Get Quote</span>
+        </a>
+      </div>
+
       {/* Bottom black overlay to hide subtitles with text */}
       <div className="absolute inset-x-0 bottom-0 h-[18vh] bg-black flex items-center justify-center">
         <div className="text-center text-white px-6">
