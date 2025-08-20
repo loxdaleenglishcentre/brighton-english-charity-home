@@ -545,4 +545,14 @@ All colors MUST be HSL.
       transform: scale(1);
     }
   }
+  
+  /* Scroll Animation Styles */
+  .scroll-animate {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-animate.in-view {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+  }
 }

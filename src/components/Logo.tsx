@@ -8,7 +8,7 @@ import siteLogo from "@/assets/loxdale-logo-site.png";
 const Logo = ({ className = "", height }: LogoProps) => {
   return (
     <div
-      className={`flex items-center ${className}`}
+      className={`flex items-center ${className} bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2`}
       style={height ? { height } : undefined}
       aria-label="Loxdale English Centre logo"
     >

@@ -30,9 +30,36 @@ const Index = () => {
       <div className="bg-white h-8"></div>
       <LoxdaleStrengthsSlider />
       <WhyChooseLoxdale />
+      
+      {/* Strategic Get Quote Button after Why Choose */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-6 text-center">
+          <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4 text-lg">
+            Get Your Personal Quote
+            <ArrowRight className="w-5 h-5 ml-3" />
+          </Button>
+        </div>
+      </section>
+      
       <StudentLifeGallery />
       <CourseFinder />
       <CourseFeatures />
+      
+      {/* Final Get Quote Button */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="container mx-auto px-6 text-center">
+          <h3 className="text-2xl font-bold mb-6">Ready to Start Your English Journey?</h3>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4">
+              Get Quote Now
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+            <Button variant="outline" className="px-8 py-4">
+              Download Brochure
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>;
 };
 export default Index;

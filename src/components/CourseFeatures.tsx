@@ -147,17 +147,33 @@ const CourseFeatures = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              {appliedEnglishOptions.map((option, index) => <Card key={index} className="hover-float border-0 shadow-md bg-card/50 backdrop-blur-sm" style={{
-              animationDelay: `${index * 0.05}s`
-            }}>
-                  <CardContent className="p-4 text-center">
-                    <option.icon className="w-6 h-6 text-primary mx-auto mb-2" />
-                    <h4 className="font-semibold text-sm mb-1">{option.title}</h4>
-                    <Badge variant="outline" className="text-xs">
-                      {option.level}
-                    </Badge>
-                  </CardContent>
-                </Card>)}
+              {appliedEnglishOptions.map((option, index) => {
+                const rainbowColors = [
+                  "text-red-500", "text-orange-500", "text-yellow-500", "text-green-500",
+                  "text-blue-500", "text-indigo-500", "text-purple-500", "text-pink-500"
+                ];
+                return (
+                  <Card key={index} className="hover-float border-0 shadow-md bg-card/50 backdrop-blur-sm" style={{
+                    animationDelay: `${index * 0.05}s`
+                  }}>
+                    <CardContent className="p-4 text-center">
+                      <option.icon className={`w-6 h-6 ${rainbowColors[index % rainbowColors.length]} mx-auto mb-2`} />
+                      <h4 className="font-semibold text-sm mb-1">{option.title}</h4>
+                      <Badge variant="outline" className="text-xs">
+                        {option.level}
+                      </Badge>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+            
+            {/* Test Your English Level Button */}
+            <div className="col-span-2 flex justify-center mt-6">
+              <Button className="bg-gradient-to-r from-blue-600/90 to-purple-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-110 hover:from-blue-500/95 hover:to-purple-500/95 px-8 py-4">
+                Test Your English Level
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
             </div>
           </div>
         </div>

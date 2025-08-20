@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Award, Users, Globe, BookOpen, Heart, MapPin, GraduationCap, Palmtree, Target, FileText, Building, Settings, Leaf, Calendar, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface Strength {
   id: string;
@@ -96,6 +97,8 @@ const areasOfStrength = [
 ];
 
 const LoxdaleStrengthsSlider = () => {
+  useScrollAnimation();
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [activeStrengthTab, setActiveStrengthTab] = useState(areasOfStrength[0].id);
@@ -132,7 +135,8 @@ const LoxdaleStrengthsSlider = () => {
       {/* Clean Green Gradient Header */}
       <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 py-16">
         <div className="container mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-green-metallic">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-green-metallic transition-all duration-1000 transform scroll-animate opacity-0 translate-y-8 scale-95"
+              id="loxdale-special-title">
             What Makes Loxdale Special
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">

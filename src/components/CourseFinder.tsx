@@ -379,6 +379,9 @@ const CourseFinderTool = () => {
               <Button size="lg" className="bg-gradient-red-3d shadow-red-glow">
                 Apply Now
               </Button>
+              <Button size="lg" className="bg-gradient-to-r from-blue-600/90 to-purple-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-110 hover:from-blue-500/95 hover:to-purple-500/95">
+                Homestay Info
+              </Button>
               <Button size="lg" variant="outline">
                 Speak to an Advisor
               </Button>
