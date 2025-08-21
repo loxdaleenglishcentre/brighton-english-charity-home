@@ -54,6 +54,12 @@ All colors MUST be HSL.
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--secondary-glow)) 0%, hsl(var(--secondary)) 30%, hsl(var(--primary)) 70%, hsl(var(--accent)) 100%);
     
+    /* Purple gradient tokens */
+    --purple: 265 85% 60%;
+    --purple-variant: 275 70% 55%;
+    --gradient-purple: linear-gradient(135deg, hsl(var(--purple)), hsl(var(--purple-variant)));
+    --gradient-purple-soft: linear-gradient(135deg, hsl(var(--purple) / 0.08), hsl(var(--purple-variant) / 0.08));
+    
     /* Red 3D Gradient from Loxdale Logo */
     --gradient-red-3d: linear-gradient(135deg, #ff6b35 0%, #e63946 25%, #d62828 50%, #ba181b 75%, #a4161a 100%);
     --gradient-red-glow: 0 0 40px rgba(230, 57, 70, 0.4);
@@ -266,6 +272,9 @@ All colors MUST be HSL.
   .bg-gradient-section-alt {
     background: var(--gradient-section-alt);
   }
+  
+  .bg-gradient-purple { background: var(--gradient-purple); }
+  .bg-gradient-purple-soft { background: var(--gradient-purple-soft); }
   
   .bg-gradient-red-3d {
     background: var(--gradient-red-3d);
