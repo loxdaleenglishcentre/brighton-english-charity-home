@@ -33,17 +33,9 @@ const Index = () => {
       
       {/* Gradient spacer with color accent */}
       <div className="bg-gradient-to-r from-white via-primary/5 to-white h-8"></div>
-      {/* Section with purple background */}
-      <section className="relative py-16 bg-purple-gradient overflow-hidden">
-        <YoungLearnersVideo />
-      </section>
-      
+      <YoungLearnersVideo />
       <LoxdaleStrengthsSlider />
-      
-      {/* Section with purple background */}
-      <section className="relative py-16 bg-purple-gradient overflow-hidden">
-        <WhyChooseLoxdale />
-      </section>
+      <WhyChooseLoxdale />
       
       {/* Strategic Get Quote Button after Why Choose */}
       <section className="relative py-12 bg-gradient-to-br from-muted/30 via-primary/5 to-muted/40 overflow-hidden">
@@ -58,26 +50,17 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Section with purple background */}
-      <section className="relative py-16 bg-purple-gradient overflow-hidden">
-        <StudentLifeGallery />
-      </section>
-      
+      <StudentLifeGallery />
       <CourseFinder />
+      <CourseFeatures />
       
-      {/* Section with purple background */}
-      <section className="relative py-16 bg-purple-gradient overflow-hidden">
-        <CourseFeatures />
-      </section>
-      
-      {/* Ready to Start Your English Journey with Video */}
+      {/* Promotional Video Section */}
       <section className="relative py-20 bg-gradient-to-br from-background via-primary/3 to-background overflow-hidden">
         <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/8 rounded-full blur-3xl opacity-60"></div>
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/6 rounded-full blur-2xl opacity-50"></div>
         
         <div className="container mx-auto px-6 relative">
-          {/* Video Section */}
-          <div className="max-w-5xl mx-auto mb-12">
+          <div className="max-w-5xl mx-auto">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-card/80 to-card border border-border/20 backdrop-blur-sm">
               <div className="aspect-video">
                 <iframe
@@ -94,19 +77,25 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none rounded-3xl"></div>
             </div>
           </div>
-          
-          {/* CTA Section */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-6">Ready to Start Your English Journey?</h3>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4">
-                Get Quote Now
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button variant="outline" className="px-8 py-4 border-primary/20 hover:bg-primary/5">
-                Download Brochure
-              </Button>
-            </div>
+        </div>
+      </section>
+      
+      {/* Final Get Quote Button */}
+      <section className="relative py-16 bg-gradient-to-br from-primary/8 via-accent/6 to-primary/10 overflow-hidden">
+        {/* Enhanced color accents */}
+        <div className="absolute top-0 right-0 w-96 h-48 bg-primary/12 rounded-full blur-3xl opacity-70"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-40 bg-accent/10 rounded-full blur-2xl opacity-60"></div>
+        
+        <div className="container mx-auto px-6 text-center relative">
+          <h3 className="text-2xl font-bold mb-6">Ready to Start Your English Journey?</h3>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4">
+              Get Quote Now
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+            <Button variant="outline" className="px-8 py-4 border-primary/20 hover:bg-primary/5">
+              Download Brochure
+            </Button>
           </div>
         </div>
       </section>
