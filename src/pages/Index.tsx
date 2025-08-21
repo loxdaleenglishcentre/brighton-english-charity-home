@@ -5,7 +5,7 @@ import LoxdaleStrengthsSlider from "@/components/LoxdaleStrengthsSlider";
 import WhyChooseLoxdale from "@/components/WhyChooseLoxdale";
 import CourseFeatures from "@/components/CourseFeatures";
 import StudentLifeGallery from "@/components/StudentLifeGallery";
-import MagicalBookVideo from "@/components/MagicalBookVideo";
+import YoungLearnersVideo from "@/components/MagicalBookVideo";
 import { ArrowRight } from "lucide-react";
 const Index = () => {
   return <div className="min-h-screen bg-transparent">
@@ -29,6 +29,7 @@ const Index = () => {
       
       {/* Small white spacer */}
       <div className="bg-white h-8"></div>
+      <YoungLearnersVideo />
       <LoxdaleStrengthsSlider />
       <WhyChooseLoxdale />
       
@@ -43,7 +44,6 @@ const Index = () => {
       </section>
       
       <StudentLifeGallery />
-      <MagicalBookVideo />
       <CourseFinder />
       <CourseFeatures />
       
