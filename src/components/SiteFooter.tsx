@@ -28,28 +28,40 @@ import Logo from "@/components/Logo";
 const SiteFooter = () => {
   const partnerLogos = [
     {
-      name: "British Council",
-      logo: "/lovable-uploads/british-council-logo.png",
-      url: "https://www.britishcouncil.org/",
-      description: "Accredited by the British Council"
+      name: "Young Learners English UK",
+      logo: "/lovable-uploads/e9dbae5c-630d-4e06-a8b5-b81754620159.png",
+      url: "https://yleuk.com/",
+      description: "Young Learners Accreditation"
     },
     {
       name: "English UK",
-      logo: "/lovable-uploads/english-uk-logo.png", 
-      url: "https://www.englishuk.com/",
+      logo: "/lovable-uploads/df69767f-057f-4c98-9e4e-069a7eee6a76.png", 
+      url: "https://www.englishuk.com/en",
       description: "Member of English UK"
     },
     {
-      name: "Sussex Study Forum",
-      logo: "/lovable-uploads/sussex-study-forum-logo.png",
-      url: "#",
-      description: "Sussex Study Forum Member"
+      name: "el-gazette Centre of Excellence",
+      logo: "/lovable-uploads/ff64f121-072c-495c-b05a-7a7c4def8e7d.png",
+      url: "https://www.elgazette.com/category/supplements/uk-language-centre-rankings/",
+      description: "Centre of Excellence 2024-2025"
     },
     {
-      name: "el-gazette Centre of Excellence",
-      logo: "/lovable-uploads/el-gazette-logo.png",
-      url: "#",
-      description: "Centre of Excellence 2024-2025"
+      name: "Visit Brighton",
+      logo: "/lovable-uploads/807e9599-4257-4b43-b98b-4ead09f00916.png",
+      url: "https://www.visitbrighton.com/",
+      description: "Official Brighton Partner"
+    },
+    {
+      name: "Braheskolan",
+      logo: "/lovable-uploads/9fdbbe6a-4dc8-46ad-bb27-afb0ff4bc970.png",
+      url: "https://www.braheskolan.se/",
+      description: "Educational Partnership"
+    },
+    {
+      name: "West Sussex Safeguarding",
+      logo: "/lovable-uploads/39e3deba-996f-45f1-bb79-3e3ab8bfeff5.png",
+      url: "https://www.westsussexscp.org.uk/",
+      description: "Safeguarding Children Partnership"
     }
   ];
 
@@ -125,24 +137,27 @@ const SiteFooter = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
             {partnerLogos.map((partner, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-border/50 hover:shadow-md transition-all duration-300 text-center">
+              <a 
+                key={index} 
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-xl p-6 shadow-sm border border-border/50 hover:shadow-md transition-all duration-300 text-center group"
+              >
                 <div className="h-16 flex items-center justify-center mb-4">
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h4 className="font-semibold text-foreground mb-1">{partner.name}</h4>
+                <h4 className="font-semibold text-foreground mb-1 text-sm">{partner.name}</h4>
                 <p className="text-xs text-muted-foreground">
-                  {partner.name === "British Council" && "Quality Assurance"}
-                  {partner.name === "English UK" && "Professional Standards"}
-                  {partner.name === "Sussex Study Forum" && "Sussex Study Forum Member"}
-                  {partner.name === "el-gazette Centre of Excellence" && "Centre of Excellence 2024-2025"}
+                  {partner.description}
                 </p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
