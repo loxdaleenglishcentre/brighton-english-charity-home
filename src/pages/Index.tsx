@@ -39,7 +39,7 @@ const Index = () => {
       <WhyChooseLoxdale />
       
       {/* Strategic Get Quote Button after Why Choose */}
-      <section className="relative py-12 bg-gradient-purple-soft overflow-hidden">
+      <section className="relative py-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden">
         {/* Subtle color accent */}
         <div className="absolute top-0 left-1/3 w-64 h-32 bg-primary/8 rounded-full blur-2xl opacity-60"></div>
         
