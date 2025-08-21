@@ -58,37 +58,19 @@ const MagicalBookVideo = () => {
 
             {/* Video embedded in the right page */}
             <div className={`video-page absolute transition-all duration-1000 ${bookOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-              {/* Parchment background */}
-              <div className="parchment-bg"></div>
-              
-              {/* Page binding effect */}
-              <div className="page-binding"></div>
-              
-              {/* Video container with book page styling */}
               <div className="video-container">
                 <iframe
                   src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Short_2024_Version_1_V1_t9os8s&autoplay=true&source_types[0]=webm%2Fvp9&poster_options[transformation][start_offset]=1"
                   allow="autoplay; fullscreen; encrypted-media"
                   allowFullScreen
-                  className="w-full h-full border-none rounded-sm"
+                  className="w-full h-full border-none"
                   title="Loxdale English Centre Video"
                 />
-                
-                {/* Page texture overlay */}
-                <div className="page-texture"></div>
               </div>
-              
-              {/* Book page shadow/depth */}
-              <div className="page-shadow"></div>
             </div>
 
-            {/* Magical sparkles around the video */}
-            <div className={`magical-sparkles absolute transition-all duration-1000 ${bookOpen ? 'opacity-100' : 'opacity-0'}`}>
-              <div className="sparkle sparkle-1"></div>
-              <div className="sparkle sparkle-2"></div>
-              <div className="sparkle sparkle-3"></div>
-              <div className="sparkle sparkle-4"></div>
-            </div>
+            {/* Magical glow effect around video */}
+            <div className={`magical-glow absolute transition-all duration-1000 ${bookOpen ? 'opacity-100' : 'opacity-0'}`}></div>
           </div>
         </div>
       </div>
@@ -112,123 +94,50 @@ const MagicalBookVideo = () => {
           transform-style: preserve-3d;
         }
 
-        .parchment-bg {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, 
-            #f4f1e8 0%, 
-            #ede4d3 25%, 
-            #e8dcc6 50%, 
-            #ddd2ba 75%, 
-            #d4c7a8 100%
-          );
-          border-radius: 8px;
-          opacity: 0.15;
-        }
-
-        .page-binding {
-          position: absolute;
-          left: -2px;
-          top: 0;
-          width: 6px;
-          height: 100%;
-          background: linear-gradient(to right, 
-            rgba(139, 115, 85, 0.4) 0%,
-            rgba(160, 130, 98, 0.2) 50%,
-            transparent 100%
-          );
-          border-radius: 2px 0 0 2px;
-        }
-
         .video-container {
           width: 100%;
           height: 100%;
-          position: relative;
-          border-radius: 6px;
-          overflow: hidden;
+          background: linear-gradient(145deg, rgba(212, 185, 143, 0.1), rgba(139, 115, 85, 0.1));
+          border-radius: 8px;
           box-shadow: 
-            inset 0 0 25px rgba(101, 67, 33, 0.3),
-            inset 0 0 8px rgba(139, 115, 85, 0.2),
-            0 2px 15px rgba(0, 0, 0, 0.15);
+            inset 0 0 20px rgba(0, 0, 0, 0.3),
+            0 0 30px rgba(255, 215, 0, 0.2);
+          position: relative;
         }
 
-        .page-texture {
+        .video-container::before {
+          content: '';
           position: absolute;
           inset: 0;
-          background: 
-            radial-gradient(circle at 20% 80%, rgba(139, 115, 85, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(160, 130, 98, 0.03) 0%, transparent 50%),
-            linear-gradient(45deg, transparent 48%, rgba(101, 67, 33, 0.02) 49%, rgba(101, 67, 33, 0.02) 51%, transparent 52%);
-          pointer-events: none;
-          border-radius: 6px;
-          mix-blend-mode: multiply;
-        }
-
-        .page-shadow {
-          position: absolute;
-          inset: -4px;
-          background: radial-gradient(ellipse, 
-            rgba(101, 67, 33, 0.1) 0%, 
-            rgba(139, 115, 85, 0.05) 30%, 
-            transparent 70%
+          background: linear-gradient(145deg, 
+            rgba(255, 215, 0, 0.1) 0%,
+            transparent 20%,
+            transparent 80%,
+            rgba(255, 165, 0, 0.1) 100%
           );
-          border-radius: 12px;
+          border-radius: 8px;
           pointer-events: none;
         }
 
-        .magical-sparkles {
+        .magical-glow {
           top: 22%;
           left: 52%;
           width: 41%;
           height: 56%;
+          background: radial-gradient(ellipse, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+          border-radius: 50%;
+          animation: pulseGlow 4s infinite ease-in-out;
           pointer-events: none;
         }
 
-        .sparkle {
-          position: absolute;
-          width: 4px;
-          height: 4px;
-          background: radial-gradient(circle, 
-            rgba(255, 215, 0, 0.8) 0%, 
-            rgba(255, 165, 0, 0.4) 50%, 
-            transparent 100%
-          );
-          border-radius: 50%;
-          animation: sparkleFloat 3s infinite ease-in-out;
-        }
-
-        .sparkle-1 {
-          top: 10%;
-          left: 85%;
-          animation-delay: 0s;
-        }
-
-        .sparkle-2 {
-          top: 30%;
-          right: 10%;
-          animation-delay: 1s;
-        }
-
-        .sparkle-3 {
-          bottom: 25%;
-          left: 90%;
-          animation-delay: 2s;
-        }
-
-        .sparkle-4 {
-          bottom: 10%;
-          right: 15%;
-          animation-delay: 0.5s;
-        }
-
-        @keyframes sparkleFloat {
+        @keyframes pulseGlow {
           0%, 100% {
-            transform: translateY(0px) scale(1);
-            opacity: 0.6;
+            transform: scale(1);
+            opacity: 0.3;
           }
           50% {
-            transform: translateY(-8px) scale(1.2);
-            opacity: 1;
+            transform: scale(1.05);
+            opacity: 0.6;
           }
         }
 
@@ -241,7 +150,7 @@ const MagicalBookVideo = () => {
             height: 50%;
           }
           
-          .magical-sparkles {
+          .magical-glow {
             top: 23%;
             left: 50%;
             width: 44%;
@@ -257,7 +166,7 @@ const MagicalBookVideo = () => {
             height: 48%;
           }
           
-          .magical-sparkles {
+          .magical-glow {
             top: 24%;
             left: 49%;
             width: 46%;
