@@ -193,41 +193,6 @@ const WhyChooseLoxdale = () => {
           />
         </div>
 
-        {/* Call to Action */}
-        <Card className="glass border-0 shadow-xl">
-          <CardContent className="p-8 lg:p-12 text-center">
-            <div className="max-w-3xl mx-auto">
-              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              
-              <h3 className="text-3xl font-bold mb-6 text-gradient-green-metallic">
-                Ready to Start Your English Journey?
-              </h3>
-              
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Join our community of international learners and experience the difference that charity-driven, 
-                award-winning education makes. Limited places available for our exclusive programmes.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg"
-                  className="bg-gradient-red-3d shadow-red-glow text-white border-0 px-8 py-4 hover:scale-105 transition-all duration-300"
-                >
-                  Book Your Place Now
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-border hover:bg-muted px-8 py-4"
-                >
-                  Download Brochure
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
       
       {/* White spacer */}
