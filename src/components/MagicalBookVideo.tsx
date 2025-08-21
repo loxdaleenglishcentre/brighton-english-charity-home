@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const YoungLearnersVideo = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,29 +40,39 @@ const YoungLearnersVideo = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Side */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Where Young Minds
-              <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"> Flourish</span>
-            </h2>
-            <p className="text-xl text-white/90 mb-6 leading-relaxed">
-              From children as young as 8 to teenagers and adults, we create magical learning experiences that spark curiosity and build confidence.
-            </p>
-            <div className="space-y-4 text-white/80">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
-                <span>Junior courses for ages 8-17</span>
+            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Where Young Minds
+                <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"> Flourish</span>
+              </h2>
+              <p className="text-xl text-white mb-8 leading-relaxed">
+                From children as young as 8 to teenagers and adults, we create magical learning experiences that spark curiosity and build confidence.
+              </p>
+              <div className="space-y-4 text-white/90 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+                  <span>Junior courses for ages 8-17</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></div>
+                  <span>Interactive games and creative activities</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></div>
+                  <span>Safe, nurturing environment for all ages</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full"></div>
+                  <span>Building friendships across cultures</span>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></div>
-                <span>Interactive games and creative activities</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></div>
-                <span>Safe, nurturing environment for all ages</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full"></div>
-                <span>Building friendships across cultures</span>
+              
+              {/* Young Learner Courses Button */}
+              <div className="text-center">
+                <Button className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-400 hover:to-orange-500 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 hover:scale-105">
+                  Young Learner Courses
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             </div>
           </div>
@@ -70,8 +82,8 @@ const YoungLearnersVideo = () => {
             <div className="relative">
               <div className="video-container rounded-2xl overflow-hidden shadow-2xl">
                 <iframe
-                  src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Short_2024_Version_1_V1_t9os8s&autoplay=true&source_types[0]=webm%2Fvp9&poster_options[transformation][start_offset]=1"
-                  allow="autoplay; fullscreen; encrypted-media"
+                  src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Short_2024_Version_1_V1_t9os8s&fluid=true&controls=true&muted=true&autoplay=true&loop=true&source_types[0]=webm%2Fvp9&poster_options[transformation][start_offset]=1"
+                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                   allowFullScreen
                   className="w-full h-80 lg:h-96 border-none"
                   title="Loxdale Young Learners Video"
