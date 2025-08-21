@@ -40,16 +40,16 @@ const SiteFooter = () => {
       description: "Member of English UK"
     },
     {
-      name: "IALC",
-      logo: "/lovable-uploads/ialc-logo.png",
-      url: "https://www.ialc.org/",
-      description: "International Association of Language Centres"
+      name: "Sussex Study Forum",
+      logo: "/lovable-uploads/sussex-study-forum-logo.png",
+      url: "#",
+      description: "Sussex Study Forum Member"
     },
     {
-      name: "Quality English",
-      logo: "/lovable-uploads/quality-english-logo.png",
-      url: "https://www.quality-english.com/",
-      description: "Quality English Member"
+      name: "el-gazette Centre of Excellence",
+      logo: "/lovable-uploads/el-gazette-logo.png",
+      url: "#",
+      description: "Centre of Excellence 2024-2025"
     }
   ];
 
@@ -139,8 +139,8 @@ const SiteFooter = () => {
                 <p className="text-xs text-muted-foreground">
                   {partner.name === "British Council" && "Quality Assurance"}
                   {partner.name === "English UK" && "Professional Standards"}
-                  {partner.name === "IALC" && "International Standards"}
-                  {partner.name === "Quality English" && "Excellence Network"}
+                  {partner.name === "Sussex Study Forum" && "Sussex Study Forum Member"}
+                  {partner.name === "el-gazette Centre of Excellence" && "Centre of Excellence 2024-2025"}
                 </p>
               </div>
             ))}
