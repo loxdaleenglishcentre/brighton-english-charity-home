@@ -234,6 +234,11 @@ All colors MUST be HSL.
   .bg-text-contrast { background-color: hsl(var(--background) / 0.65); }
   .bg-text-contrast-strong { background-color: hsl(var(--background) / 0.8); }
 
+  /* Purple gradient for alternating sections */
+  .bg-purple-gradient {
+    background: linear-gradient(135deg, #6b46c1 0%, #7c3aed 25%, #8b5cf6 50%, #a855f7 75%, #c084fc 100%);
+  }
+
   /* Gradient backgrounds */
   .bg-gradient-primary {
     background: var(--gradient-primary);
