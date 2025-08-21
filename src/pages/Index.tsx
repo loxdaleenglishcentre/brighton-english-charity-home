@@ -54,6 +54,32 @@ const Index = () => {
       <CourseFinder />
       <CourseFeatures />
       
+      {/* Promotional Video Section */}
+      <section className="relative py-20 bg-gradient-to-br from-background via-primary/3 to-background overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/8 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/6 rounded-full blur-2xl opacity-50"></div>
+        
+        <div className="container mx-auto px-6 relative">
+          <div className="max-w-5xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-card/80 to-card border border-border/20 backdrop-blur-sm">
+              <div className="aspect-video">
+                <iframe
+                  src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V1_zoqjhn&autoplay=true&loop=true"
+                  width="100%"
+                  height="100%"
+                  className="w-full h-full"
+                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                ></iframe>
+              </div>
+              {/* Subtle gradient overlay on the container */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none rounded-3xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Final Get Quote Button */}
       <section className="relative py-16 bg-gradient-to-br from-primary/8 via-accent/6 to-primary/10 overflow-hidden">
         {/* Enhanced color accents */}
