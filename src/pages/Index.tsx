@@ -13,9 +13,9 @@ const Index = () => {
       
       {/* Black section with text content */}
       <section className="relative bg-black py-16 px-6 overflow-hidden">
-        {/* More visible purple accent glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-80"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/15 rounded-full blur-3xl opacity-70"></div>
+        {/* Subtle purple accent glow */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/8 rounded-full blur-3xl opacity-40"></div>
         
         <div className="container mx-auto max-w-6xl relative">
           <div className="flex justify-center text-white">
@@ -31,16 +31,16 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Enhanced gradient spacer with color accent */}
-      <div className="bg-gradient-to-r from-white via-primary/15 to-white h-8"></div>
+      {/* Gradient spacer with color accent */}
+      <div className="bg-gradient-to-r from-white via-primary/5 to-white h-8"></div>
       <YoungLearnersVideo />
       <LoxdaleStrengthsSlider />
       <WhyChooseLoxdale />
       
       {/* Strategic Get Quote Button after Why Choose */}
-      <section className="relative py-12 bg-gradient-to-br from-muted/40 via-primary/12 to-muted/50 overflow-hidden">
-        {/* More visible color accent */}
-        <div className="absolute top-0 left-1/3 w-64 h-32 bg-primary/20 rounded-full blur-2xl opacity-80"></div>
+      <section className="relative py-12 bg-gradient-to-br from-muted/30 via-primary/5 to-muted/40 overflow-hidden">
+        {/* Subtle color accent */}
+        <div className="absolute top-0 left-1/3 w-64 h-32 bg-primary/8 rounded-full blur-2xl opacity-60"></div>
         
         <div className="container mx-auto px-6 text-center relative">
           <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4 text-lg">
@@ -55,10 +55,10 @@ const Index = () => {
       <CourseFeatures />
       
       {/* Final Get Quote Button */}
-      <section className="relative py-16 bg-gradient-to-br from-primary/15 via-accent/12 to-primary/18 overflow-hidden">
-        {/* More prominent color accents */}
-        <div className="absolute top-0 right-0 w-96 h-48 bg-primary/25 rounded-full blur-3xl opacity-85"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-40 bg-accent/20 rounded-full blur-2xl opacity-75"></div>
+      <section className="relative py-16 bg-gradient-to-br from-primary/8 via-accent/6 to-primary/10 overflow-hidden">
+        {/* Enhanced color accents */}
+        <div className="absolute top-0 right-0 w-96 h-48 bg-primary/12 rounded-full blur-3xl opacity-70"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-40 bg-accent/10 rounded-full blur-2xl opacity-60"></div>
         
         <div className="container mx-auto px-6 text-center relative">
           <h3 className="text-2xl font-bold mb-6">Ready to Start Your English Journey?</h3>
@@ -67,7 +67,7 @@ const Index = () => {
               Get Quote Now
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button variant="outline" className="px-8 py-4 border-primary/30 hover:bg-primary/8">
+            <Button variant="outline" className="px-8 py-4 border-primary/20 hover:bg-primary/5">
               Download Brochure
             </Button>
           </div>
