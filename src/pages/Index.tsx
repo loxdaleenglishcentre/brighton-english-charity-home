@@ -68,7 +68,7 @@ const Index = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-card/80 to-card border border-border/20 backdrop-blur-sm">
               <AspectRatio ratio={16 / 9}>
                 <iframe
-                  src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V1_zoqjhn&autoplay=true&loop=true&muted=true&controls=false&preload=auto"
+                  src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V1_zoqjhn&autoplay=true&loop=true"
                   width="100%"
                   height="100%"
                   title="Loxdale English Centre Promotional Video"
