@@ -111,6 +111,42 @@ const SiteFooter = () => {
 
           </div>
         </div>
+        {/* Accredited Excellence Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
+                <Star className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-emerald-700">Accredited Excellence</h3>
+            </div>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              Our commitment to quality is validated by prestigious international accreditations and memberships
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {partnerLogos.map((partner, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-border/50 hover:shadow-md transition-all duration-300 text-center">
+                <div className="h-16 flex items-center justify-center mb-4">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <h4 className="font-semibold text-foreground mb-1">{partner.name}</h4>
+                <p className="text-xs text-muted-foreground">
+                  {partner.name === "British Council" && "Quality Assurance"}
+                  {partner.name === "English UK" && "Professional Standards"}
+                  {partner.name === "IALC" && "International Standards"}
+                  {partner.name === "Quality English" && "Excellence Network"}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Links Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Quick Links */}
