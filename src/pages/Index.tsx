@@ -65,7 +65,7 @@ const Index = () => {
               Get Quote Now
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button variant="outline" className="px-8 py-4 border-white/30 text-white hover:bg-white/10">
+            <Button variant="outline" className="px-8 py-4 border-white/30 text-black hover:bg-white/10">
               Download Brochure
             </Button>
           </div>
