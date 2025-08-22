@@ -79,13 +79,38 @@ const WhyChooseLoxdale = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-secondary opacity-5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 lg:px-8">
-        {/* School Building Image */}
-        <div className="mb-16">
-          <img 
-            src="/lovable-uploads/dace829c-1240-4e3a-ae65-1905c1c72eb6.png"
-            alt="Loxdale English Centre - Beautiful Victorian building exterior"
-            className="w-full max-w-4xl mx-auto h-80 lg:h-96 object-cover rounded-3xl shadow-2xl"
-          />
+        {/* School Building Video with Title Overlay */}
+        <div className="relative w-full mb-16">
+          <div className="w-full">
+            <div className="aspect-video w-full relative overflow-hidden">
+              <iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=The_incredible_Loxdale_building_home_to_Loxdale_English_Centre_itjj2c&autoplay=true"
+                width="100%"
+                height="100%"
+                title="The Incredible Loxdale Building - Home to Loxdale English Centre"
+                className="w-full h-full object-cover"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
+              />
+              {/* Title Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-center justify-center">
+                <div className="text-center px-6">
+                  <div className="mb-4">
+                    <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
+                      🏆 EL Gazette Centre of Excellence
+                    </div>
+                  </div>
+                  <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-4 drop-shadow-lg">
+                    Ranked in UK's Top 8% Schools
+                  </h2>
+                  <p className="text-white/90 text-lg max-w-2xl mx-auto drop-shadow-md">
+                    Award-winning education that delivers exceptional results for students from over 60 countries worldwide
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Header */}
