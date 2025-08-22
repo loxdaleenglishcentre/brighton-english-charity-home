@@ -41,14 +41,15 @@ const FeaturedTestimonial = () => {
     <section className="relative py-16 overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <iframe
-          src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=68a8ad3229e2adc86855943a_d2liud&muted=true&autoplay=true&loop=true&controls=false&playsinline=true"
-          title="Student Stories Background"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-          allowFullScreen
-          frameBorder="0"
-        ></iframe>
+        >
+          <source src="https://res.cloudinary.com/dw4q8cuuc/raw/upload/v1755885823/68a8ad3229e2adc86855943a_d2liud" type="video/mp4" />
+        </video>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
