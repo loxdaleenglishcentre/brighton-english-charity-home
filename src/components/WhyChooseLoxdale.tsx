@@ -88,13 +88,13 @@ const WhyChooseLoxdale = () => {
                 width="100%"
                 height="100%"
                 title="The Incredible Loxdale Building - Home to Loxdale English Centre"
-                className="w-full h-full object-cover relative z-0"
+                className="w-full h-full object-cover"
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                 allowFullScreen
                 frameBorder="0"
               />
               {/* Title Overlay */}
-              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center px-8 py-8 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10">
                   <div className="mb-4">
                     <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
@@ -109,29 +109,24 @@ const WhyChooseLoxdale = () => {
                   </p>
                 </div>
               </div>
-
-              {/* CTA Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-10">
-                <div className="text-center px-6 sm:px-8 py-5 sm:py-6 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10 max-w-4xl mx-auto">
-                  <div className="mb-4 sm:mb-6">
-                    <div className="inline-block rounded-full px-6 py-3 bg-gradient-primary text-white text-xl sm:text-2xl font-bold">
-                      Ready to Start Your English Journey?
-                    </div>
-                  </div>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button className="bg-gradient-accent text-white px-8 py-3 rounded-full text-lg font-medium shadow-md hover:opacity-90">
-                      Get Quote Now →
-                    </Button>
-                    <Button variant="secondary" className="rounded-full px-8 py-3 text-lg font-medium">
-                      Download Brochure
-                    </Button>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="mb-6">
+            <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
+              🏆 EL Gazette Centre of Excellence
+            </div>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gradient-green-metallic mb-4">
+            Ranked in UK's Top 8% Schools
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Award-winning education that delivers exceptional results for students from over 60 countries worldwide
+          </p>
+        </div>
 
         {/* Rolling Achievement Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
