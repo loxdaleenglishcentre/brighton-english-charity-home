@@ -94,7 +94,7 @@ const WhyChooseLoxdale = () => {
                 frameBorder="0"
               />
               {/* Title Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
                 <div className="text-center px-8 py-8 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10">
                   <div className="mb-4">
                     <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
@@ -109,24 +109,22 @@ const WhyChooseLoxdale = () => {
                   </p>
                 </div>
               </div>
+              {/* Bottom CTA Overlay */}
+              <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 sm:px-6 sm:pb-6">
+                <div className="mx-auto max-w-5xl">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl bg-black/50 backdrop-blur-sm border border-white/10 p-4 sm:p-6">
+                    <h3 className="text-white text-lg sm:text-xl font-semibold text-center sm:text-left">Ready to Start Your English Journey?</h3>
+                    <div className="flex items-center gap-3">
+                      <Button size="lg" className="bg-gradient-primary text-white shadow-lg">Get a Quote</Button>
+                      <Button size="lg" variant="secondary" className="bg-gradient-accent text-white">Contact Us</Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
-              🏆 EL Gazette Centre of Excellence
-            </div>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gradient-green-metallic mb-4">
-            Ranked in UK's Top 8% Schools
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Award-winning education that delivers exceptional results for students from over 60 countries worldwide
-          </p>
-        </div>
 
         {/* Rolling Achievement Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
