@@ -94,8 +94,8 @@ const WhyChooseLoxdale = () => {
                 frameBorder="0"
               />
               {/* Title Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-center justify-center">
-                <div className="text-center px-6">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center px-8 py-8 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10">
                   <div className="mb-4">
                     <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
                       🏆 EL Gazette Centre of Excellence
