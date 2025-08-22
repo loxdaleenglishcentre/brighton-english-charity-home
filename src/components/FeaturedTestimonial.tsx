@@ -38,17 +38,35 @@ const FeaturedTestimonial = () => {
   ];
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="text-center mb-8">
-        <h3 className="text-3xl font-bold text-gray-900 mb-2">
-          What Our Students Say
-        </h3>
-        <p className="text-gray-600">
-          Real feedback from real students
-        </p>
+    <section className="relative py-16 overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="https://res.cloudinary.com/dw4q8cuuc/raw/upload/v1755885823/68a8ad3229e2adc86855943a_d2liud" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      <Card className="bg-white border border-gray-200 shadow-sm">
+      <div className="max-w-2xl mx-auto relative z-10">
+        <div className="text-center mb-8">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
+            <span className="inline-block bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
+              What Our Students Say
+            </span>
+          </h3>
+          <p className="text-lg text-white/90 backdrop-blur-sm bg-white/10 rounded-full px-6 py-3 inline-block border border-white/20">
+            Real feedback from real students
+          </p>
+        </div>
+
+      <Card className="bg-white/95 backdrop-blur-md border border-white/30 shadow-2xl rounded-2xl">
         <CardContent className="p-8">
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Student Image */}
@@ -113,7 +131,8 @@ const FeaturedTestimonial = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </section>
   );
 };
 
