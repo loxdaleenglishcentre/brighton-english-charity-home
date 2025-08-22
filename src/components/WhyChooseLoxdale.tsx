@@ -88,13 +88,13 @@ const WhyChooseLoxdale = () => {
                 width="100%"
                 height="100%"
                 title="The Incredible Loxdale Building - Home to Loxdale English Centre"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover relative z-0"
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                 allowFullScreen
                 frameBorder="0"
               />
               {/* Title Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
                 <div className="text-center px-8 py-8 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10">
                   <div className="mb-4">
                     <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
@@ -111,19 +111,18 @@ const WhyChooseLoxdale = () => {
               </div>
 
               {/* CTA Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <div className="text-center px-8 py-6 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10 max-w-4xl mx-auto">
-                  <div className="mb-6">
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent px-6 py-3 rounded-full inline-block" 
-                        style={{backgroundColor: 'rgba(59, 130, 246, 0.9)'}}>
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-10">
+                <div className="text-center px-6 sm:px-8 py-5 sm:py-6 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10 max-w-4xl mx-auto">
+                  <div className="mb-4 sm:mb-6">
+                    <div className="inline-block rounded-full px-6 py-3 bg-gradient-primary text-white text-xl sm:text-2xl font-bold">
                       Ready to Start Your English Journey?
-                    </h3>
+                    </div>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-medium">
+                    <Button className="bg-gradient-accent text-white px-8 py-3 rounded-full text-lg font-medium shadow-md hover:opacity-90">
                       Get Quote Now →
                     </Button>
-                    <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 px-8 py-3 rounded-full text-lg font-medium">
+                    <Button variant="secondary" className="rounded-full px-8 py-3 text-lg font-medium">
                       Download Brochure
                     </Button>
                   </div>
