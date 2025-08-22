@@ -109,24 +109,30 @@ const WhyChooseLoxdale = () => {
                   </p>
                 </div>
               </div>
+
+              {/* CTA Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="text-center px-8 py-6 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10 max-w-4xl mx-auto">
+                  <div className="mb-6">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent px-6 py-3 rounded-full inline-block" 
+                        style={{backgroundColor: 'rgba(59, 130, 246, 0.9)'}}>
+                      Ready to Start Your English Journey?
+                    </h3>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-medium">
+                      Get Quote Now →
+                    </Button>
+                    <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 px-8 py-3 rounded-full text-lg font-medium">
+                      Download Brochure
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
-              🏆 EL Gazette Centre of Excellence
-            </div>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gradient-green-metallic mb-4">
-            Ranked in UK's Top 8% Schools
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Award-winning education that delivers exceptional results for students from over 60 countries worldwide
-          </p>
-        </div>
 
         {/* Rolling Achievement Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
