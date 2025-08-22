@@ -59,16 +59,6 @@ const Index = () => {
       {/* Final Get Quote Button */}
       <section className="relative py-20 overflow-hidden">
         <div className="container mx-auto px-6 text-center relative">
-          <h3 className="text-2xl font-bold mb-6 text-white bg-gradient-to-r from-blue-600 to-purple-600 inline-block px-8 py-4 rounded-2xl">Ready to Start Your English Journey?</h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4">
-              Get Quote Now
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-            <Button variant="outline" className="px-8 py-4 border-white/30 text-black hover:bg-white/10">
-              Download Brochure
-            </Button>
-          </div>
           {/* Integrated promo video */}
           <div className="max-w-5xl mx-auto">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-card/80 to-card border border-border/20 backdrop-blur-sm">
@@ -84,7 +74,25 @@ const Index = () => {
                   frameBorder="0"
                 ></iframe>
               </AspectRatio>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none rounded-3xl"></div>
+              {/* CTA Overlay over video */}
+              <div className="absolute inset-0 z-20 flex items-end justify-center pb-8 px-4">
+                <div className="text-center">
+                  <div className="inline-block rounded-2xl px-8 py-4 mb-5 bg-gradient-to-r from-purple-700/60 to-fuchsia-700/60 backdrop-blur-sm border border-white/10">
+                    <h3 className="text-2xl font-bold text-white">Ready to Start Your English Journey?</h3>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4">
+                      Get Quote Now
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                    <Button variant="outline" className="px-8 py-4 border-white/30 text-white hover:bg-white/10 bg-white/10 backdrop-blur-sm">
+                      Download Brochure
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              {/* Subtle top gradient for readability, kept transparent to preserve button color */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none rounded-3xl"></div>
             </div>
           </div>
         </div>
