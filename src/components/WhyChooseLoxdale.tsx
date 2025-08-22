@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Award, Heart, TrendingUp, Users, Star, Shield, DollarSign, Globe } from "lucide-react";
+import { Award, Heart, TrendingUp, Users, Star, Shield, DollarSign, Globe, ArrowRight } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 // Rolling counter hook for animated numbers
@@ -107,6 +107,26 @@ const WhyChooseLoxdale = () => {
                   <p className="text-white/90 text-lg max-w-2xl mx-auto drop-shadow-md">
                     Award-winning education that delivers exceptional results for students from over 60 countries worldwide
                   </p>
+                </div>
+              </div>
+              
+              {/* Journey CTA Overlay */}
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-md">
+                <div className="text-center px-6">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold mb-4 text-white bg-gradient-to-r from-blue-600 to-purple-600 inline-block px-8 py-3 rounded-2xl">
+                      Ready to Start Your English Journey?
+                    </h3>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-3 flex items-center justify-center gap-2">
+                      Get Quote Now
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                    <button className="px-8 py-3 border border-white/30 text-white hover:bg-white/10 rounded-2xl backdrop-blur-md transition-all duration-300">
+                      Download Brochure
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
