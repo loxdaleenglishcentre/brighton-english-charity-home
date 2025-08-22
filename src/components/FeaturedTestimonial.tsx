@@ -66,6 +66,19 @@ const FeaturedTestimonial = () => {
           </p>
         </div>
 
+        {/* Review Video */}
+        <div className="mb-8">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-white/30"
+          >
+            <source src="https://res.cloudinary.com/dw4q8cuuc/video/upload/v1755886523/Loxdale_English_Centre_Brighton_Review_V2_z1q3rg.webm" type="video/webm" />
+          </video>
+        </div>
+
       <Card className="bg-white/95 backdrop-blur-md border border-white/30 shadow-2xl rounded-2xl">
         <CardContent className="p-8">
           <div className="flex flex-col lg:flex-row gap-6">
