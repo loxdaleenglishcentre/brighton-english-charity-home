@@ -93,8 +93,8 @@ const WhyChooseLoxdale = () => {
                 allowFullScreen
                 frameBorder="0"
               />
-              {/* Title Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
+               {/* Title Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
                 <div className="text-center px-8 py-8 bg-black/40 backdrop-blur-sm rounded-2xl border border-white/10">
                   <div className="mb-4">
                     <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
@@ -109,24 +109,27 @@ const WhyChooseLoxdale = () => {
                   </p>
                 </div>
               </div>
+              
+              {/* CTA Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 z-20">
+                <div className="text-center px-8 py-12 bg-gradient-to-t from-purple-900/60 via-purple-800/40 to-transparent backdrop-blur-sm">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6 drop-shadow-lg">
+                    Ready to Start Your English Journey?
+                  </h3>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button size="lg" className="bg-gradient-primary hover:bg-gradient-primary/90 text-white border-0 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      Enquire Now
+                    </Button>
+                    <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20 px-8 py-3 text-lg font-semibold backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      Watch Preview
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-medium border-0">
-              🏆 EL Gazette Centre of Excellence
-            </div>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gradient-green-metallic mb-4">
-            Ranked in UK's Top 8% Schools
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Award-winning education that delivers exceptional results for students from over 60 countries worldwide
-          </p>
-        </div>
 
         {/* Rolling Achievement Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
