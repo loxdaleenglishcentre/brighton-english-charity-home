@@ -57,9 +57,9 @@ const Index = () => {
       
       
       {/* Final Get Quote Button */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
         <div className="container mx-auto px-6 text-center relative">
-          <h3 className="text-2xl font-bold mb-6 text-white">Ready to Start Your English Journey?</h3>
+          <h3 className="text-2xl font-bold mb-6 text-white bg-gradient-to-r from-blue-600 to-purple-600 inline-block px-8 py-4 rounded-2xl">Ready to Start Your English Journey?</h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4">
               Get Quote Now
