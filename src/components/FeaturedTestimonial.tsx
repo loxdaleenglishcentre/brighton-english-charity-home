@@ -1,19 +1,21 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, Quote, ExternalLink, Facebook, Chrome } from "lucide-react";
-import mariaImage from "@/assets/testimonials/maria-gonzalez.jpg";
+import { Star, Quote, ExternalLink, Facebook, Chrome, Volume2, VolumeX } from "lucide-react";
+import { useState } from "react";
+const micheleImage = "/lovable-uploads/1cb42d7a-ac62-4ee1-8755-5e79c146e1a0.png";
 
 const FeaturedTestimonial = () => {
+  const [isMuted, setIsMuted] = useState(true);
+  
   const testimonial = {
-    name: "Maria González",
-    country: "Spain",
-    age: 28,
-    image: mariaImage,
+    name: "Michele Zaccagnino",
+    country: "Italy",
+    age: 25,
+    image: micheleImage,
     rating: 5,
-    text: "The Applied English approach was exactly what I needed! I chose Business English and Creative Writing, which helped me land my dream job in London. The teachers are incredibly supportive and the international atmosphere is amazing.",
-    course: "4 weeks, Business English focus",
-    verified: "Verified Student • June 2024"
+    text: "Perfect for experience abroad. The school as a building is really very beautiful, surrounded by greenery, with a very suggestive entrance driveway. The organized activities are truly fantastic, especially the trips to discover English places.",
+    verified: "Verified Student • August 2024"
   };
 
   const reviewPlatforms = [
@@ -56,27 +58,39 @@ const FeaturedTestimonial = () => {
 
       <div className="max-w-2xl mx-auto relative z-10">
         <div className="text-center mb-8">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
-            <span className="inline-block bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-4 text-white drop-shadow-lg">
+            <span className="inline-block bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-400 bg-clip-text text-transparent animate-gradient drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               What Our Students Say
             </span>
           </h3>
-          <p className="text-lg text-white/90 backdrop-blur-sm bg-white/10 rounded-full px-6 py-3 inline-block border border-white/20">
+          <p className="text-lg text-white drop-shadow-lg backdrop-blur-sm bg-black/30 rounded-full px-6 py-3 inline-block border border-white/30">
             Real feedback from real students
           </p>
         </div>
 
         {/* Review Video */}
-        <div className="mb-8">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-white/30"
-          >
-            <source src="https://res.cloudinary.com/dw4q8cuuc/video/upload/v1755886523/Loxdale_English_Centre_Brighton_Review_V2_z1q3rg.webm" type="video/webm" />
-          </video>
+        <div className="mb-8 text-center">
+          <div className="relative inline-block">
+            <video
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              className="w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-white/30"
+            >
+              <source src="https://res.cloudinary.com/dw4q8cuuc/video/upload/v1755886523/Loxdale_English_Centre_Brighton_Review_V2_z1q3rg.webm" type="video/webm" />
+            </video>
+            <button
+              onClick={() => setIsMuted(!isMuted)}
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+              aria-label={isMuted ? "Enable sound" : "Disable sound"}
+            >
+              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+            </button>
+          </div>
+          <p className="text-sm text-white/80 mt-3 backdrop-blur-sm bg-black/20 rounded-full px-4 py-2 inline-block">
+            (or keep sound off and just take a look around the inside of our school)
+          </p>
         </div>
 
       <Card className="bg-white/95 backdrop-blur-md border border-white/30 shadow-2xl rounded-2xl">
@@ -84,14 +98,14 @@ const FeaturedTestimonial = () => {
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Student Image */}
             <div className="flex-shrink-0 text-center lg:text-left">
-              <div className="w-24 h-24 rounded-full overflow-hidden shadow-md mx-auto lg:mx-0 mb-4">
+              <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg mx-auto lg:mx-0 mb-4">
                 <img 
                   src={testimonial.image}
                   alt={`${testimonial.name} profile photo`}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="lg:w-24">
+              <div className="lg:w-32">
                 <h4 className="text-lg font-semibold text-gray-900">{testimonial.name}</h4>
                 <p className="text-sm text-gray-600 mb-2">
                   {testimonial.country} • Age {testimonial.age}
@@ -114,10 +128,6 @@ const FeaturedTestimonial = () => {
               <p className="text-gray-700 leading-relaxed mb-4 text-base">
                 {testimonial.text}
               </p>
-              
-              <Badge variant="outline" className="bg-gray-50 text-gray-700 border-gray-200 text-sm mb-6">
-                {testimonial.course}
-              </Badge>
             </div>
           </div>
 
