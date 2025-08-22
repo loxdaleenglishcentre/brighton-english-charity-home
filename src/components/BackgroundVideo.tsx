@@ -1,25 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const BackgroundVideo: React.FC = () => {
-  const [titleVisible, setTitleVisible] = useState(true);
-
-  useEffect(() => {
-    // Hide title after 11 seconds
-    const hideTimer = setTimeout(() => {
-      setTitleVisible(false);
-    }, 11000);
-
-    // Show title again at 17 seconds
-    const showTimer = setTimeout(() => {
-      setTitleVisible(true);
-    }, 17000);
-
-    return () => {
-      clearTimeout(hideTimer);
-      clearTimeout(showTimer);
-    };
-  }, []);
-
   return (
     <div
       className="absolute inset-0 -z-10 overflow-hidden pointer-events-none"
@@ -38,7 +19,7 @@ const BackgroundVideo: React.FC = () => {
       
       {/* Animated text overlay */}
       <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-        <h1 className={`text-6xl md:text-8xl lg:text-9xl text-white font-handwritten transition-opacity duration-500 ${titleVisible ? 'opacity-100 animate-text-appear' : 'opacity-0'}`}>
+        <h1 className="text-6xl md:text-8xl lg:text-9xl text-white font-handwritten animate-text-appear">
           Loxdale English Centre
         </h1>
       </div>
