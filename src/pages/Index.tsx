@@ -39,17 +39,7 @@ const Index = () => {
       <WhyChooseLoxdale />
       
       {/* Strategic Get Quote Button after Why Choose */}
-      <section className="relative py-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden">
-        {/* Subtle color accent */}
-        <div className="absolute top-0 left-1/3 w-64 h-32 bg-primary/8 rounded-full blur-2xl opacity-60"></div>
-        
-        <div className="container mx-auto px-6 text-center relative">
-          <Button className="bg-gradient-to-r from-emerald-500/90 to-teal-600/90 backdrop-blur-md border border-white/30 rounded-2xl text-white shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-110 hover:from-emerald-400/95 hover:to-teal-500/95 px-8 py-4 text-lg">
-            Get Your Personal Quote
-            <ArrowRight className="w-5 h-5 ml-3" />
-          </Button>
-        </div>
-      </section>
+      
       
       <StudentLifeGallery />
       <CourseFinder />
@@ -63,16 +53,7 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-card/80 to-card border border-border/20 backdrop-blur-sm">
               <AspectRatio ratio={16 / 9}>
-                <iframe
-                  src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V1_zoqjhn&autoplay=true&loop=true"
-                  width="100%"
-                  height="100%"
-                  title="Loxdale English Centre Promotional Video"
-                  className="w-full h-full"
-                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  frameBorder="0"
-                ></iframe>
+                <iframe src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Promo_Video_Full_version_V1_zoqjhn&autoplay=true&loop=true" width="100%" height="100%" title="Loxdale English Centre Promotional Video" className="w-full h-full" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowFullScreen frameBorder="0"></iframe>
               </AspectRatio>
               {/* CTA Overlay over video */}
               <div className="absolute inset-0 z-20 flex items-end justify-center pb-8 px-4">
