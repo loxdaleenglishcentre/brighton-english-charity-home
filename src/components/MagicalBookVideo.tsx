@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const YoungLearnersVideo = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showTitle, setShowTitle] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,10 +23,28 @@ const YoungLearnersVideo = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      const currentTime = video.currentTime;
+      
+      if (currentTime >= 9 && currentTime < 17) {
+        setShowTitle(false);
+      } else {
+        setShowTitle(true);
+      }
+    };
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
+  }, []);
+
   return (
     <section 
       id="young-learners-section"
-      className="py-20 bg-gradient-to-b from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden"
     >
       {/* Magical background effects */}
       <div className="absolute inset-0 opacity-30">
@@ -40,15 +60,15 @@ const YoungLearnersVideo = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Side */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-lg">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
                 Where Young Minds
                 <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"> Flourish</span>
               </h2>
-              <p className="text-xl text-white mb-8 leading-relaxed">
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                 From children as young as 8 to teenagers and adults, we create magical learning experiences that spark curiosity and build confidence.
               </p>
-              <div className="space-y-4 text-white/90 mb-8">
+              <div className="space-y-4 text-gray-600 mb-8">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
                   <span>Junior courses for ages 8-17</span>
@@ -81,13 +101,23 @@ const YoungLearnersVideo = () => {
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative">
               <div className="video-container rounded-2xl overflow-hidden shadow-2xl">
-                <iframe
-                  src="https://player.cloudinary.com/embed/?cloud_name=dw4q8cuuc&public_id=Loxdale_Short_2024_Version_1_V1_t9os8s&fluid=true&controls=true&muted=true&autoplay=true&loop=true&source_types[0]=webm%2Fvp9&poster_options[transformation][start_offset]=1"
-                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-80 lg:h-96 border-none"
-                  title="Loxdale Young Learners Video"
+                <video
+                  ref={videoRef}
+                  className="w-full h-80 lg:h-96 object-cover"
+                  src="https://res.cloudinary.com/dw4q8cuuc/video/upload/Loxdale_Short_2024_Version_1_V1_t9os8s.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
                 />
+                
+                {/* Animated title overlay */}
+                <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${showTitle ? 'opacity-100' : 'opacity-0'}`}>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold text-center px-4">
+                    Young Minds Flourish Here
+                  </h1>
+                </div>
               </div>
               
               {/* Magical glow effect around video */}
