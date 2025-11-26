@@ -40,25 +40,25 @@ function useCountUp(target: number, duration = 2000, start = false) {
 const WhyChooseLoxdale = () => {
   const advantages = [
     {
-      icon: Heart,
+      imageUrl: "https://yourwebsite.com/path/to/charity-image.jpg",
       title: "Educational Charity",
       description: "We're a non-profit organization dedicated to affordable, quality education. Every penny goes back into improving your learning experience.",
       color: "bg-gradient-primary"
     },
     {
-      icon: Award,
+      imageUrl: "https://yourwebsite.com/path/to/award-badge-image.jpg",
       title: "Top 8% UK School",
       description: "Ranked among the UK's elite language schools by EL Gazette. Our Centre of Excellence award speaks to our commitment to outstanding education.",
       color: "bg-gradient-secondary"
     },
     {
-      icon: DollarSign,
+      imageUrl: "https://yourwebsite.com/path/to/value-pricing-image.jpg",
       title: "Unbeatable Value",
       description: "Get premium education at charity prices. Our non-profit status means you pay 30-50% less than commercial schools without compromising quality.",
       color: "bg-gradient-accent"
     },
     {
-      icon: Globe,
+      imageUrl: "https://yourwebsite.com/path/to/teaching-method-image.jpg",
       title: "Applied English Method",
       description: "Our unique teaching approach lets you personalize your learning with specialized subjects like Business English, Creative Writing, and Cultural Studies.",
       color: "bg-gradient-primary"
@@ -197,8 +197,12 @@ const WhyChooseLoxdale = () => {
             >
               <CardContent className="p-8">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className={`w-12 h-12 ${advantage.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                    <advantage.icon className={`w-6 h-6 ${advantage.color.includes("secondary") ? "text-foreground" : "text-white"}`} />
+                  <div className="loxdale-feature-icon group-hover:scale-110 transition-transform duration-300" style={{ width: '56px', height: '56px', borderRadius: '14px', overflow: 'hidden', flexShrink: 0 }}>
+                    <img 
+                      src={advantage.imageUrl} 
+                      alt={`${advantage.title} Icon`} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
