@@ -393,17 +393,12 @@ const CourseFinderTool = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-muted/30 to-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Enhanced Header */}
         <div className="text-center mb-12">
-          <div className="mb-4">
-            <Badge className="bg-gradient-primary text-white border-0 px-6 py-2 text-sm font-medium">
-              🎯 Course Finder
-            </Badge>
-          </div>
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            Find Your <span className="text-gradient-green-metallic">Perfect</span> Course
+            Choose Your <span className="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">Path</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light mb-4">
             Answer 5 quick questions to unlock your ideal English journey
@@ -413,11 +408,8 @@ const CourseFinderTool = () => {
           </p>
         </div>
 
-        {/* Choose Your Path - Course Category Tiles */}
+        {/* Course Category Tiles */}
         <div className="mb-16">
-          <h3 className="text-2xl lg:text-3xl font-bold text-center mb-8">
-            Choose Your <span className="text-primary">Path</span>
-          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Adults Card */}
             <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 via-card to-card border-2 border-primary/20 hover:border-primary/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
