@@ -396,7 +396,7 @@ const CourseFinderTool = () => {
     <section className="py-24 bg-gradient-to-br from-background via-muted/30 to-background">
       <div className="container mx-auto px-6">
         {/* Enhanced Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="mb-4">
             <Badge className="bg-gradient-primary text-white border-0 px-6 py-2 text-sm font-medium">
               🎯 Course Finder
@@ -411,6 +411,120 @@ const CourseFinderTool = () => {
           <p className="text-sm text-muted-foreground/80">
             ✨ Personalized recommendations • 🚀 Takes 2 minutes • 🎓 Expert guidance
           </p>
+        </div>
+
+        {/* Choose Your Path - Course Category Tiles */}
+        <div className="mb-16">
+          <h3 className="text-2xl lg:text-3xl font-bold text-center mb-8">
+            Choose Your <span className="text-primary">Path</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Adults Card */}
+            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 via-card to-card border-2 border-primary/20 hover:border-primary/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
+              <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <User className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-2xl font-bold text-foreground mb-2">Adults</h4>
+                <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary border-0">16+ / 18+</Badge>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  General English, English Plus, Exam Preparation, and One-to-One courses for independent learners.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary" />
+                    <span>Year-round availability</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary" />
+                    <span>All levels A1-C2</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary" />
+                    <span>Creative & cultural options</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-gradient-primary hover:opacity-90 text-white border-0 group-hover:shadow-lg transition-all">
+                  Explore Adult Courses
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Young Learners Card */}
+            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-500/5 via-card to-card border-2 border-sky-500/20 hover:border-sky-500/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500 opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
+              <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-2xl font-bold text-foreground mb-2">Young Learners</h4>
+                <Badge variant="secondary" className="mb-4 bg-sky-500/10 text-sky-600 dark:text-sky-400 border-0">8–17 years</Badge>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Summer programmes for teens and pre-teens with activities, excursions, and age-appropriate learning.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-sky-500" />
+                    <span>Summer holiday dates</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-sky-500" />
+                    <span>Full activity programme</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-sky-500" />
+                    <span>Safe, supervised environment</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-gradient-to-r from-sky-500 to-cyan-500 hover:opacity-90 text-white border-0 group-hover:shadow-lg transition-all">
+                  Explore Youth Courses
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Families & 40+ Card */}
+            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500/5 via-card to-card border-2 border-emerald-500/20 hover:border-emerald-500/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500 opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
+              <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Home className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-2xl font-bold text-foreground mb-2">Families & 40+</h4>
+                <Badge variant="secondary" className="mb-4 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-0">All ages</Badge>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Learn together as a family or join our mature learner programmes with like-minded students.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    <span>Family accommodation</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    <span>Flexible scheduling</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    <span>Cultural experiences</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:opacity-90 text-white border-0 group-hover:shadow-lg transition-all">
+                  Explore Family Courses
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center gap-4 max-w-2xl mx-auto mt-12">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+            <span className="text-muted-foreground font-medium px-4">or use our interactive finder</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto justify-center">
