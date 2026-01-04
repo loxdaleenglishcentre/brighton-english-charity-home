@@ -135,7 +135,7 @@ const LoxdaleStrengthsSlider = () => {
       {/* Clean Green Gradient Header */}
       <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 py-16">
         <div className="container mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-green-metallic transition-all duration-1000 transform scroll-animate opacity-0 translate-y-8 scale-95"
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-section-title transition-all duration-1000 transform scroll-animate opacity-0 translate-y-8 scale-95"
               id="loxdale-special-title">
             What Makes Loxdale Special
           </h2>
