@@ -84,6 +84,9 @@ All colors MUST be HSL.
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
     --shadow-glow-secondary: 0 0 40px hsl(var(--secondary-glow) / 0.3);
     
+    /* Section Title Color */
+    --section-title: 215 75% 15%;
+    
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
