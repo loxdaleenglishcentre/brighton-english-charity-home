@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Award, Heart, TrendingUp, Users, Star, Shield, DollarSign, Globe } from "lucide-react";
+import { Award, Heart, TrendingUp, Users, Star, Shield, DollarSign, Globe, MapPin, BookOpen, Home, CheckCircle, Coins } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 // Rolling counter hook for animated numbers
@@ -185,6 +185,129 @@ const WhyChooseLoxdale = () => {
 
             return <StatItem key={index} stat={achievement} />;
           })}
+        </div>
+
+        {/* At-a-Glance Answer Box */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-3">
+              Loxdale English Centre at a Glance
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Everything you need to know about studying English with us in Brighton
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* Location */}
+            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-foreground mb-2">Location</h3>
+                    <p className="text-primary font-semibold mb-1">Brighton & Portslade</p>
+                    <p className="text-muted-foreground text-sm">Locks Hill, Portslade, Brighton, BN41 2LA</p>
+                    <p className="text-muted-foreground text-sm">Easy access to Brighton city centre and beach</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Ages */}
+            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-sky-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-foreground mb-2">Ages</h3>
+                    <p className="text-sm"><span className="text-primary font-semibold">Adults:</span> 16+ / 18+</p>
+                    <p className="text-sm"><span className="text-sky-500 font-semibold">Young Learners:</span> 8–17 years</p>
+                    <p className="text-sm"><span className="text-emerald-500 font-semibold">Families:</span> All ages welcome</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* English Levels */}
+            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center flex-shrink-0">
+                    <BookOpen className="w-6 h-6 text-violet-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-foreground mb-2">English Levels</h3>
+                    <p className="text-sm"><span className="text-primary font-semibold">A1 to C2</span> (Beginner to Proficiency)</p>
+                    <p className="text-sm"><span className="text-violet-500 font-semibold">Speciality:</span> Advanced English (C1/C2)</p>
+                    <p className="text-muted-foreground text-sm">IELTS & Cambridge exam preparation</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Homestay */}
+            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                    <Home className="w-6 h-6 text-amber-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-foreground mb-2">Homestay</h3>
+                    <p className="text-sm"><span className="text-primary font-semibold">Maximum 28-minute walk</span> from school</p>
+                    <p className="text-muted-foreground text-sm">Carefully selected host families</p>
+                    <p className="text-muted-foreground text-sm">Safe, comfortable accommodation</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Accreditation */}
+            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-6 h-6 text-emerald-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-foreground mb-2">Accreditation</h3>
+                    <p className="text-sm text-primary font-semibold">British Council Accredited</p>
+                    <p className="text-sm text-emerald-500 font-semibold">English UK Member</p>
+                    <p className="text-muted-foreground text-sm">Quality assured teaching standards</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Charity Status */}
+            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                    <Coins className="w-6 h-6 text-amber-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-foreground mb-2">Charity Status</h3>
+                    <p className="text-sm"><span className="text-primary font-semibold">Registered Charity</span> (No. 280428)</p>
+                    <p className="text-muted-foreground text-sm">Affordable, high-quality courses</p>
+                    <p className="text-muted-foreground text-sm">Reinvested profits for student benefit</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Bottom Banner */}
+          <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-4 text-center border border-amber-200 dark:border-amber-700/30">
+            <p className="text-foreground font-medium">
+              🎓 <span className="font-bold">Start any Monday</span> • Small class sizes • Experienced native English teachers • Social programme included
+            </p>
+          </div>
         </div>
 
         {/* Main Advantages Grid */}
